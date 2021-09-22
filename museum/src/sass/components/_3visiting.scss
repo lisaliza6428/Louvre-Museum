@@ -1,0 +1,60 @@
+.visiting_section{
+    padding: 75px 0;
+}
+
+.cards_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.card_title{
+    text-decoration: none;
+    display: block;
+    font-family: 'Forum', cursive;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+}
+.card_hr{
+    width: 300px;
+    height: 2px;
+    margin: 0;
+    background-color: #710707;
+    border:none;
+}
+.tour{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 10px 0 10px;
+ display: block;
+
+}
+.panorama{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21px;
+   
+    
+}
+.panorama_padding{
+    padding-bottom: 77px;
+
+}
+
+
+a.card_item:hover{
+    cursor: pointer;
+    .card_hr{
+        width: 440px;
+        transition: 1s ease-in-out;
+    
+    }
+}

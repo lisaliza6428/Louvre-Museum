@@ -1,0 +1,41 @@
+.dark_section.gallery{
+    padding: 75px 0 0 0;
+
+}
+.gallery_shade{
+    display:block;
+    position:absolute;
+    bottom:0;
+    width: 1440px;
+    height: 360px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+
+}
+
+.picture-container{
+    margin-top: 75px;
+    height: 1985px;
+    overflow-y: hidden;
+    position:relative;
+}
+
+
+
+
+.picture-inner-container{
+  column-count: 3;
+  justify-content: space-between;
+  overflow-y: hidden;
+  
+ 
+ 
+ 
+}
+.img_gallery{
+    width: 456px;
+    margin-bottom: 24px;
+    &.ledge{margin-top: 50px;
+
+    }
+    
+}

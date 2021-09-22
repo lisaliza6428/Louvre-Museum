@@ -1,0 +1,28 @@
+.container_2_column{
+    display: flex;
+    justify-content: space-between;
+}
+.hr_explore{
+    width: 660px;
+    height: 3px;
+    background-color: #710707;
+    border: none;
+    margin: 25px 0 75px;
+}
+.explore_text{
+    font-family: 'Roboto', sans-serif;
+    max-width: 660px;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 38px;
+    margin-bottom: 26px;
+
+}
+.golden_text{
+    color: #9d8665;
+}
+
+
+.img_explore {
+    padding-top: 15px;
+}

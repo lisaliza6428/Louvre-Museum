@@ -1,0 +1,17 @@
+.welcome_button{
+    width: 360px;
+    height: 75px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    background-color: #710707; 
+    border: none;
+    border-radius: 10px;
+    &:hover{
+        cursor: pointer;
+        background-color: #9d8665;   
+    }
+}

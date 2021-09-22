@@ -1,0 +1,67 @@
+.dark_section.header{
+    padding: 50px 0 ;
+}
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0;
+
+}
+    
+.logo_link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #FFFFFF;
+    &:hover{ 
+    filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+    cursor: pointer;
+
+
+    }
+}
+
+
+ .header_link  > a {
+    text-decoration: none;
+    color: #FFFFFF;
+    &:hover{
+        cursor: pointer;
+        color: #9d8665; 
+    }
+}
+
+
+.logo { 
+    background-image: url(/img/logo.svg);
+    background-repeat: no-repeat;
+    width: 49px;
+    height: 26px;
+    padding-bottom: 8px;
+}
+.header_navigation{
+    display: flex;
+    
+}
+.logo_title{
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: "Forum", cursive;
+    margin-left: 20px;
+    
+}
+
+.header_link {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    margin-left: 55px;
+   
+}
