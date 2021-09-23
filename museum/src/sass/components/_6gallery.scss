@@ -14,9 +14,10 @@
 
 .picture-container{
     margin-top: 75px;
-    height: 1985px;
+    height: 1960px;
     overflow-y: hidden;
     position:relative;
+
 }
 
 
@@ -24,7 +25,9 @@
 
 .picture-inner-container{
   column-count: 3;
-  justify-content: space-between;
+  column-gap: 36px;
+  height: 3000px;
+  
   
   
  
@@ -34,8 +37,15 @@
 .img_gallery{
     width: 456px;
     margin-bottom: 24px;
-    &.ledge{margin-top: 50px;
+    &:first-child{margin-top: 50px;
 
     }
+    &:nth-child(11){margin-top: 50px;
+
+    }
+    
+    
+    
+    
     
 }
