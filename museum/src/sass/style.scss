@@ -43,12 +43,13 @@ content: '';
 content: none;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Forum', cursive;
     font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-  
+   
 }
 
 
@@ -97,7 +98,7 @@ h2{
 .full_line{
     width: 1440px;
     height: 3px;
-    margin: 40px 0;
+    margin: 25px 0 75px 0;
     background-color: #710707;
     border: none;
 }
