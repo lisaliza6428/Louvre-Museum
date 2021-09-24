@@ -1,0 +1,110 @@
+.form_container{
+    margin: 0 auto;
+    padding: 60px 0;
+    background-color: rgb(180, 177, 177);
+    height: 1000px;
+}
+
+.overlay{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.form{
+   position: relative;
+    width: 1440px;
+    height: 845px;
+    background: #FFFFFF;
+    
+}
+.close-form{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+
+
+
+.logo_ { 
+    background-image: url(/form/form_logo.svg);
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 41px;
+    
+}
+.form_title{
+
+font-weight: normal;
+font-size: 50px;
+line-height: 55px;
+text-transform: uppercase;
+letter-spacing: 0;
+color: #9D8665;
+}
+
+
+.form_content{
+    display: flex;
+    padding: 91px 235px;
+}
+
+.booking{
+    display: flex;
+    flex-direction: column;
+}
+.text_tour{
+
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+color: #710707;
+margin: 14px 0 9px 0;
+}
+.hr_tour{
+    width: 400px;
+    height: 3px;
+    background: #740C11;
+  
+    margin:0 0 60px 0;
+}
+.date_time{
+    display: flex;
+    justify-content: space-between;
+}
+.booking input{
+  
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+
+
+border: 1px solid #030303;
+box-sizing: border-box;
+width: 400px;
+height: 45px;
+margin-bottom: 20px;
+&.short{
+    width: 190px;
+}
+}
+
+.icon{
+    background: url(/form/name.svg) no-repeat center left 15px;
+
+    margin-right: 15px;
+    padding-left: 45px;
+}
+
+::placeholder {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #030303;
+  }
