@@ -267,13 +267,10 @@
                             </div>
         
                             <h4 class="total_amount">Total €220</h4>   
-                            <button class="button_buy" type="button">Buy Now</button> 
-                         
 
-                           
-        
-                           
-        
+                            <button class="button_buy" type="button">Buy Now
+                            </button> 
+
                          </div>
                       </div>        
                
@@ -296,7 +293,7 @@
                     <div class="logo_"></div>
                     <h2 class="form_title">Booking tickets</h2>
                     <p class="text_tour">Tour to Louvre</p>
-                    <hr class="hr_tour">
+                    <hr class="hr_form">
                     <div class="date_time">
                         <input class="short" type="date" placeholder="Date" >
                         <input class="short" type="time" placeholder="Time">
@@ -305,11 +302,71 @@
                     <input type="email" placeholder="E-mail">
                     <input type="tel" placeholder="Phone">
                     <input type="select" placeholder="Ticket Type">
-                    <p>Entry ticket</p>
-                    <hr>
+
+                    <div class="entry_wrapper">
+                        <p>Entry ticket</p>
+                        <hr class="hr_form hr_entry">
+                        <div class="age_wrapper">
+                            <p>Basic 18+ (20 €)</p>
+                            <div class="numborber_">
+                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <input type="number" min="0" max="20" value="2" readonly class="number_">
+                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                            </div>
+                        </div>
+                        <div class="age_wrapper">
+                            <p>Senior 65+ (10 €)</p>
+                            <div class="numborber_">
+                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <input type="number" min="0" max="20" value="2" readonly class="number_">
+                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
                    
                 </div>
-                <div class="overwiew"></div>
+                <div class="overwiew">
+                    <div class="overview_wrapper">
+                        <div class="overview_wrapper_text">
+                            <p class="overwiew_title">Overview</p>
+                            <p class="overwiew_subtitle">Tour to Louvre</p>
+                            <div class="overwiew_info"><img src="/form/overview/date.svg" alt=""> Friday, August 19</div>
+                            <div class="overwiew_info"><img src="/form/overview/Time.svg" alt=""> 16 : 30</div>
+                            <div class="overwiew_info"><img src="/form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
+                        </div>
+                        
+                        <img src="/form/overview/louvre.jpg" width="150" height="120" alt="">    
+                    </div>
+                    <div class="basket">
+                        <div class="items">
+                            <img src="/form/overview/2.svg" alt="">
+                            <div class="basket_descr">Basic (20 €)</div>
+                        </div>
+                    
+                        <div class="basket_descr">40 €</div>
+                    </div>
+                    <div class="basket">
+                        <div class="items">
+                            <img src="/form/overview/2.svg" alt="">
+                            <div class="basket_descr">Senior (10 €)</div>
+                        </div>
+                    
+                        <div class="basket_descr">20 €</div>
+                    </div>
+                    <hr class="hr_backet">
+                    <div class="total_am">
+                        <div class="total_text">Total:</div>
+                        <div class="total_sum">60 €</div>
+                    </div>
+                    <div class="bank_cards"></div>
+                    <button class="button_book btn_ripple" type="button">Book
+                        <div class="ripple"></div>
+                    </button> 
+                   
+                    
+                </div>
             </div>  
             </form>
         </div>  

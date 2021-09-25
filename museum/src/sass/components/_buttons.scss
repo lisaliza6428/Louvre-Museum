@@ -10,8 +10,94 @@
     background-color: #710707; 
     border: none;
     border-radius: 10px;
+    transition: 0.5s ease-out;
     &:hover{
         cursor: pointer;
         background-color: #9d8665;   
     }
 }
+   
+.button_buy {
+    background-color: #000; 
+    border-radius: 2px;
+    width: 175px;
+    height: 50px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    line-height: 26px;
+    letter-spacing: 2px;
+    transition: 0.5s ease-out;
+   
+ 
+    
+}
+
+.button_buy:visited {
+    background-color: #fff;
+   } 
+.button_buy:hover {
+    background-color: #9d8665;   
+    
+   }
+.button_buy:active {
+    background-color: #9d8665; 
+   }
+
+
+
+
+.button_book{
+    background: #710707;
+    width: 220px;
+    height: 45px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    line-height: 26px;
+    transition: 0.5s ease-out;
+
+}
+
+
+
+
+
+
+/*RIPPLE*////////////////////////////////////////////////////////
+@keyframes ripple {
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+  
+  .btn_ripple {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ripple {
+    position: absolute;
+    background-color: #eeeeee;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transform: scale(0);
+  }
+  .ripple-active {
+    animation-name: ripple;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    
+  }
+  

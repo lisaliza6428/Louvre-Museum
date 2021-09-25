@@ -13,7 +13,7 @@
 .form{
    position: relative;
     width: 1440px;
-    height: 845px;
+    height: auto;
     background: #FFFFFF;
     
 }
@@ -48,6 +48,8 @@ color: #9D8665;
 .form_content{
     display: flex;
     padding: 91px 235px;
+    gap: 40px;
+    justify-content: space-between;
 }
 
 .booking{
@@ -63,16 +65,23 @@ line-height: 21px;
 color: #710707;
 margin: 14px 0 9px 0;
 }
-.hr_tour{
+.hr_form{
     width: 400px;
     height: 3px;
     background: #740C11;
-  
+    border: none;
     margin:0 0 60px 0;
+}
+
+.hr_entry{
+    width: 370px;
+    height: 2px;
+    margin:0 0 15px 0;
 }
 .date_time{
     display: flex;
     justify-content: space-between;
+    max-width: 400px;
 }
 .booking input{
   
@@ -92,7 +101,10 @@ margin-bottom: 20px;
     width: 190px;
 }
 }
-
+.age_wrapper input {
+    width: 105px;
+height: 25px;
+}
 .icon{
     background: url(/form/name.svg) no-repeat center left 15px;
 
@@ -108,3 +120,111 @@ margin-bottom: 20px;
     align-items: center;
     color: #030303;
   }
+
+.entry_wrapper{
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 1px solid #030303;
+    box-sizing: border-box;
+}
+  .age_wrapper{
+      display: flex;
+      align-items: center;
+  }
+
+
+
+  /* overwiew //////////////////////////////////////*/
+.overwiew{
+    padding: 25px 30px;
+    border: 1px solid black;
+}
+  
+  .overview_wrapper {
+      display: flex;
+      gap: 124px;
+      width: 470px;
+    height: 151px;
+    margin-bottom: 22px;
+  
+}
+
+.overwiew_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: #272727;
+    margin-bottom: 2px;
+}
+.overwiew_subtitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #740C11;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+.overwiew_info {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+    margin-bottom: 5px;
+    &img{
+        width: 15px;
+        padding-right: 15px;
+    }
+    
+}
+
+.basket{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    >.items{
+        display: flex;
+        align-items: center;
+        >img{
+            width: 32px;
+            height: 20px;
+            padding-right: 10px;
+        }
+
+    }
+}
+.basket_descr{
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 26px;
+color: #030303;
+
+}
+
+.hr_backet{
+    width: 470px;
+    height: 2px;
+    background: #740C11;
+}
+.total_am {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.total_text {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+    color: #030303;
+
+}
+.total_sum {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    color: #030303;
+}

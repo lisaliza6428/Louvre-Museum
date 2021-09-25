@@ -110,6 +110,7 @@ display: flex;
       .amountwrapper{
         display: flex;
         flex-direction: column;
+        
      
        
         
@@ -126,6 +127,7 @@ display: flex;
         font-size: 28px;
         font-weight: bold;
         line-height: 33px;
+        margin-bottom: 23px;
 
     
     }    
@@ -136,6 +138,8 @@ display: flex;
         font-size: 22px;
         font-weight: 300;
         line-height: 33px;
+        margin-left: 25px;
+        margin-bottom: 10px;
      
     
     }
@@ -146,6 +150,10 @@ display: flex;
         align-items: center;
         border: 3px solid #000;
         width: 150px;
+        height: 51px;
+        margin-left:auto;
+        margin-bottom:7px;
+        box-sizing: border-box;
 
       
     
@@ -161,27 +169,29 @@ display: flex;
         font-weight: 400;
         line-height: 37px;
         text-align: center;
+        padding-left: 10px;
+        padding-right: 30px;
 
     }
     
     .number {   
             width: 50px;
             height: 30px;
-            font-weight: 300;
+            font-weight: 100;
             text-align: center;
             font-size: 22px;
             color: #000;
             line-height: 26px;
             vertical-align:middle;
+            padding-left: 12px;
 
           }
           
     
           
     .total_amount {
-        margin-top: 20px;
-        padding-bottom: 50px;
-        padding-left: 25px;
+        
+        margin: 42px 0 60px 25px;
         font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-weight: bold;
@@ -192,37 +202,5 @@ display: flex;
     }
     
     
-    
-     .button_buy {
-        background-color: #000; 
-        border-radius: 2px;
-        width: 175px;
-        height: 50px;
-        color: #fff;
-        font-family: 'Roboto', sans-serif;
-        font-size: 22px;
-        font-weight: 300;
-        text-align: center;
-        text-decoration: none;
-        line-height: 26px;
-        letter-spacing: 2px;
-     
-        
-    
-    }
-    
-    .button_tickets:visited {
-        background-color: #fff;
-       } 
-    .button_tickets:hover {
-        background-color: #9d8665;   
-        
-       }
-    .button_tickets:active {
-        background-color: #9d8665; 
-       }
-    
-    
-    
-    
-    
+ 
+ 
