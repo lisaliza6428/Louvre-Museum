@@ -15,12 +15,12 @@
   background: rgba(0,0,0,0.5);
   opacity: 0;
   pointer-events: none;
-  transition: 0.5s all;
+  transition: 0.75s all;
 }
 .overlay.active {
     opacity: 1;
     pointer-events: all;
-    transition: 0.5s all;
+    transition: 0.75s all;
   }
 .form{
    
@@ -28,15 +28,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-150%, -50%) scale(0);
     background: #fff;
     width: 1440px;
     height: 845px;
-    transition: 0.5s all;
+    transition: 0.75s all;
 }
 .form.active {
     transform: translate(-50%, -50%) scale(1);
-    transition: 0.5s all;
+    transition: 0.75s all;
   }
 .close-form{
     position: absolute;

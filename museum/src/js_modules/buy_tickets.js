@@ -1,3 +1,4 @@
+/* RIPPLE */
 const btn = document.querySelector(".btn_ripple");
 const ripple = document.querySelector(".ripple");
 
