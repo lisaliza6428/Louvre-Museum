@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0;
+  
 }
     
 .logo_link{
@@ -16,18 +17,21 @@
     &:hover{ 
     filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
     cursor: pointer;
-
-
     }
 }
 
 
  .header_link  > a {
+    cursor: pointer;
     text-decoration: none;
     color: #FFFFFF;
     &:hover{
-        cursor: pointer;
+        
         color: #9d8665; 
+    }
+    &:active{
+        
+        color: #7E6C51;
     }
 }
 
@@ -40,6 +44,7 @@
 }
 .header_navigation{
     display: flex;
+    margin: 0;
     
 }
 .logo_title{
@@ -49,7 +54,7 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     font-family: "Forum", cursive;
-    margin-left: 20px;
+    margin-left: 25px;
     
 }
 
@@ -58,8 +63,8 @@
     font-style: normal;
     font-weight: 100;
     font-size: 22px;
-    line-height: 50px;
+    line-height: 26px;
     letter-spacing: 2px;
-    margin-left: 55px;
+    margin-left: 56px;
    
 }

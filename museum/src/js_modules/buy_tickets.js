@@ -19,3 +19,32 @@ btn.addEventListener("touchstart", pointerdown);
 btn.addEventListener("mouseup", pointerup);
 btn.addEventListener("touchend", pointerup);
 
+
+
+/* FORM */
+let overlay = document.querySelector('.overlay');
+let form = document.querySelector('.form');
+let open = document.querySelectorAll('.open-form');
+let close = document.querySelector('.close-form');
+
+open.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.classList.add('active');
+        form.classList.add('active');
+    })
+});
+
+close.addEventListener('click',() => {
+    overlay.classList.remove('active');
+    form.classList.remove('active');
+});
+
+document.addEventListener('click', (e) => {
+    if(e.target === overlay) {
+        overlay.classList.remove('active');
+        form.classList.remove('active');
+    }
+});
+
+

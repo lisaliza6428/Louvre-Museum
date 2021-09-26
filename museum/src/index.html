@@ -34,6 +34,7 @@
             
         </div>
     </header>
+    <main>
     <section class="dark_section welcome_container">
         <div class="container">
             <div class="welcome_wrapper">
@@ -41,9 +42,8 @@
                     <h2 id="welcome" class="title_white">Welcome</h2>
                     <h2 class="title_white">to the Louvre</h2>
                     <p class="title_text">From the castle to the museum</p>
-                    <a href="/tour/tour1.html" target="_blank">
-                        <button type="button" class="welcome_button">Discover the Louvre</button>
-                    </a>
+                    <a class="welcome_button" href="/tour/tour1.html" target="_blank">
+                         Discover the Louvre           </a>
                     
                 </div>
                 <div class="welcome_slider">
@@ -71,8 +71,8 @@
                                     <div class="slider_dot"></div>
                                     <div class="slider_dot"></div>
                                 </div>
-                                <button class="arrowleft"><img src="/img/welcome-slider/arrowleft.svg" alt=""></button>
-                                <button class="arrowright"><img src="/img/welcome-slider/arrowright.svg" alt=""></button>
+                                <button class="arrowleft"><img src="/img/welcome-slider/arrowleft.svg" alt="1"></button>
+                                <button class="arrowright"><img src="/img/welcome-slider/arrowright.svg" alt="2"></button>
                         
                                 </div>
                 </div>
@@ -135,7 +135,7 @@
             </div>
         </div>
     </section>
-    <section class="dark_section">
+    <section class="dark_section picture_explore">
         <div class="container">
             <div class="container_2_column">
                 <div class="explore_contant">
@@ -145,7 +145,7 @@
                     <p class="explore_text">It was cleaned in 1984 to remove a <span class="golden_text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
                     <p class="explore_text">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                 </div>
-                <img class="img_explore" src="/img/explore.jpg" alt="Explore">
+                <img class="img_explore" src="/img/explore-slider/Rectangl.png" width="720" height="700" alt="1">
 
             </div>
         </div>
@@ -162,7 +162,7 @@
 
             <div class="player">
             <div class="video_container">
-                <img class="largebtn large" src="/btn/largebtn.svg" alt="">
+                <button><img class="largebtn large" src="/btn/largebtn.svg" alt="1"></button>
                 <video class = "video active" id="glass" width="1440" height="810" src="/video/video0.mp4" poster="/video/poster0.jpg">   
                 </video>
             </div>
@@ -172,13 +172,13 @@
             </button>
            
            
-            <input type="range" class="video_bar" value="0" min="0" max="100" step="0.1">
+            <input type="range" class="video_bar" value="53.7" min="0" max="100" step="0.1">
         
             <button class="sound btn_soundon" type ="button">
                   
             </button>
         
-            <input type="range" class="sound_bar" value="20" min="0" max="100">
+            <input type="range" class="sound_bar" value="43.2" min="0" max="100">
         
            
             <button class="fullsceen">
@@ -191,17 +191,17 @@
             <div class="video_slider">
                 <div class="video_slides">
                     <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
                 </div>
                 <div class="video_slider_controls">
                     <ul class = "video_slider_navigation">
                         <li class="video_navigation__item"><button class="video_prevslide"><img src="/slider/prevslide.svg" alt="prev"></button></li>
-                        <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
+                        <li class="video_navigation__item"><span class="video_navigation__item_circle active"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
@@ -253,7 +253,7 @@
                             
                             <p class="age" >Basic 18+</p>
                             <div class="numborber">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
                                 <input type="number" min="0" max="20" value="1" readonly class="number">
                                 <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
@@ -261,14 +261,15 @@
                             <p class="age">Senior 65+</p>
         
                             <div class="numborber">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
                                 <input type="number" min="0" max="20" value="1" readonly class="number">
                                 <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
         
                             <h4 class="total_amount">Total €220</h4>   
 
-                            <button class="button_buy" type="button">Buy Now
+
+                            <button class="button_buy open-form" type="button">Buy Now
                             </button> 
 
                          </div>
@@ -283,7 +284,7 @@
 
         </div>       
     </section>
-    <div class="form_container">
+   
         <div class="overlay">
             <form class="form">
             <img class="close-form" src="/form/close.svg" alt="1">
@@ -360,7 +361,30 @@
                         <div class="total_text">Total:</div>
                         <div class="total_sum">60 €</div>
                     </div>
-                    <div class="bank_cards"></div>
+                    <div class="bank_cards">
+                        <div class="card_inside">
+                           
+                               
+                                    <p class="card_text">Card number</p>
+                                    <input type="text">
+                                    <p class="card_text">Expiration date</p>
+                                    <input class = "date_ex" type="text"><input  class = "year_ex" type="text">
+                                
+                               
+
+
+
+                           
+
+                            
+
+
+                            <p class="card_text">Cardholder name</p>
+                            <input class = "cardholder" type="text">
+
+                        </div>
+                        <div class="card_outside"></div>
+                    </div>
                     <button class="button_book btn_ripple" type="button">Book
                         <div class="ripple"></div>
                     </button> 
@@ -370,7 +394,7 @@
             </div>  
             </form>
         </div>  
-    </div>
+    
     
     <div class="parallax"></div>
     
@@ -382,8 +406,8 @@
                 <div class="contacts_container">
                     <p class="contacts_title">Palais Royal <br> Musee du Louvre</p>
                     <p class="contacts">address: 75001 Paris, France</p>
-                    <p class="contacts">phone: +33(0) 1 40 20 50 50</p>
-                    <p class="contacts">mail: info@louvre.fr</p>
+                    <p class="contacts">phone: <a href="tel:+33(0)140205050">+33(0) 1 40 20 50 50</a></p>
+                    <p class="contacts">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></p>
                 </div> 
                 <img src="/img/contacts.png" alt="map">
             </div>
@@ -391,6 +415,8 @@
 
         </div>
     </section>
+
+</main>
     <footer class="dark_section">
         <div class="container">
             <div class="footer_container">

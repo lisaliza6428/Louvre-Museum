@@ -1,4 +1,4 @@
-console.log('Hi!')
+
 
 
 
@@ -116,14 +116,14 @@ function videoMute(){
   }
 }
 
-
+/* 
 function stopVideo(){
   video.pause();
   video.currentTime = 0;
   
-}
+} */
 
-function speedUp(){
+/* function speedUp(){
   video = document.querySelector('.video.active');
   video.play();
   video.currentTime += 3;
@@ -135,12 +135,12 @@ function speedDown(){
   video.play();
   video.currentTime -= 3;
 }
-
+ */
 
 /////
 
 
-document.addEventListener('keyup', function(e){
+/* document.addEventListener('keyup', function(e){
   if (e.keyCode === 0 || e.keyCode === 32) {
    
     play()
@@ -160,7 +160,7 @@ document.addEventListener('keyup', function(e){
   
 });
 
-
+ */
 
 
 

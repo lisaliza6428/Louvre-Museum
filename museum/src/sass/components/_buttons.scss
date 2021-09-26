@@ -1,8 +1,12 @@
 .welcome_button{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
     width: 360px;
     height: 75px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 22px;
     line-height: 26px;
     letter-spacing: 2px;
@@ -12,7 +16,6 @@
     border-radius: 10px;
     transition: 0.5s ease-out;
     &:hover{
-        cursor: pointer;
         background-color: #9d8665;   
     }
 }
@@ -31,21 +34,17 @@
     line-height: 26px;
     letter-spacing: 2px;
     transition: 0.5s ease-out;
+    padding-left: 3px;
+    &:hover{
+      background-color: #9d8665; 
+      color: #000000;
+  }
    
  
     
 }
 
-.button_buy:visited {
-    background-color: #fff;
-   } 
-.button_buy:hover {
-    background-color: #9d8665;   
-    
-   }
-.button_buy:active {
-    background-color: #9d8665; 
-   }
+
 
 
 
@@ -64,6 +63,16 @@
     transition: 0.5s ease-out;
 
 }
+.button_book:visited {
+  background-color: #fff;
+ } 
+.button_book:hover {
+  background-color: #9d8665;   
+  
+ }
+.button_book:active {
+  background-color: #9d8665; 
+ }
 
 
 

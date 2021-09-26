@@ -9,7 +9,7 @@ padding-bottom: 60px;
 .welcome_content{
     padding-top: 150px;
     padding-bottom: 170px;
-    z-index: 100;
+    z-index: 50;
     position: absolute;
 
 
@@ -30,7 +30,7 @@ padding-bottom: 60px;
     font-size: 28px;
     line-height: 33px;
     letter-spacing: 2px;
-    margin: 26px 0 76px;
+    margin: 25px 0 74px;
 
 }
 .slide{
@@ -64,7 +64,7 @@ padding-bottom: 60px;
     font-weight: normal;
     font-size: 22px;
     line-height: 40px;
-    margin-right: 51px;
+    margin-right: 55px;
     margin-left: 75px;
 
 }
@@ -77,9 +77,13 @@ padding-bottom: 60px;
     border: none;
     width: 16px;
     height: 16px;
-    margin-right: 29px;
+    margin-right: 25px;
     background-repeat: no-repeat;
     background-position: center center;
+    &:hover{ 
+        background-color: #9D8665;
+
+    }
 
 }
 .slider_dot.active{
@@ -88,7 +92,22 @@ padding-bottom: 60px;
 
 .arrowleft{
     
-    padding: 0 11px 0 20px;
+    padding: 0 18px 0 35px;
+    margin-bottom: 1px;
+    &:hover{ 
+        filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+
+    }
+}
+.arrowright{
+    
+   
+    margin-bottom: 1px;
+    &:hover{ 
+        color: #9D8665;
+
+    }
+   
 }
 
 ///GRAADIENT

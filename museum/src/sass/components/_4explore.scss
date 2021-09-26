@@ -1,3 +1,7 @@
+.picture_explore{
+    height: 715px;
+}
+
 .container_2_column{
     display: flex;
     justify-content: space-between;
@@ -19,10 +23,20 @@
 
 }
 .golden_text{
-    color: #9d8665;
+    color: #CAAA7D;
 }
 
 
 .img_explore {
     padding-top: 15px;
+    cursor: pointer;
+}
+
+.explore_img{
+    width: 720px;
+    height: 700px;
+    background-image: url(/img/explore.jpg) cover center center;
+    background-repeat: no-repeat;
+   
+
 }

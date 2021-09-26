@@ -16,6 +16,7 @@
     margin-top: 75px;
     height: 1960px;
     overflow-y: hidden;
+    overflow-x: hidden;
     position:relative;
 
 }
@@ -36,7 +37,7 @@
 }
 .img_gallery{
     width: 456px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     &:first-child{margin-top: 50px;
 
     }
