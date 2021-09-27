@@ -142,17 +142,117 @@ height: 25px;
     color: #030303;
   }
 
+  select {
+      width: 400px;
+      height: 45px;
+      background: #FFFFFF;
+border: 1px solid #030303;
+margin: 0 0 20px 0;
+  }
+
+
+
+
 .entry_wrapper{
     max-width: 400px;
+    height: 135px;
     padding: 10px 15px;
     border: 1px solid #030303;
     box-sizing: border-box;
 }
+.entry_ticket{
+    font-family: 'Forum', cursive;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+text-transform: capitalize;
+color: #9D8665;
+margin-bottom: 5px;
+
+}
   .age_wrapper{
       display: flex;
       align-items: center;
+      justify-content: space-between;
+ 
+       margin-bottom: 18px;
+       &:last-child{
+        margin-bottom: 0;
+       }
+      
+     
   }
 
+  .age_wrapper_tic{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #030303;
+    
+  }
+
+.numborber_{
+
+display: flex;
+
+    & > .btnplus {
+        font-family: 'Roboto', sans-serif;
+        background:#000 ;
+        color: #FFFFFF;
+        width: 35px;
+        height: 25px;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 400;
+     
+        
+        
+
+    }
+
+
+  }
+  .numborber_.btnplus
+   {display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto', sans-serif;
+        background:#000 ;
+        color: #FFFFFF;
+        width: 35px;
+        height: 25px;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+.numberbtn{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .numborber_ input {
+        
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #030303;
+        width: 35px;
+        height: 25px;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+        padding-left: 10px;
+}
+       
+    
 
 
   /* overwiew //////////////////////////////////////*/

@@ -287,7 +287,7 @@
    
         <div class="overlay">
             <form class="form">
-            <img class="close-form" src="/form/close.svg" alt="1">
+            <img class="close-form" src="./form/close.svg" alt="1">
             <div class="form_content">
                 <div class="booking">
                    
@@ -296,31 +296,35 @@
                     <p class="text_tour">Tour to Louvre</p>
                     <hr class="hr_form">
                     <div class="date_time">
-                        <input class="short" type="date" placeholder="Date" >
-                        <input class="short" type="time" placeholder="Time">
+                        <input class="short" type="date"  >
+                        <input class="short" type="time" >
                     </div>
-                    <input type="text" class="icon" placeholder="Name" src="/form/name.svg">
-                    <input type="email" placeholder="E-mail">
-                    <input type="tel" placeholder="Phone">
-                    <input type="select" placeholder="Ticket Type">
+                    <input type = "text" placeholder="Name">
+                    <input type = "email" placeholder="E-mail">
+                    <input type = "tel" placeholder="Phone">
+                    <select name="select"> <!--Supplement an id here instead of using 'name'-->
+                        <option value="value1">Значение 1</option>
+                        <option value="value2" selected>Значение 2</option>
+                        <option value="value3">Значение 3</option>
+                      </select>
 
                     <div class="entry_wrapper">
-                        <p>Entry ticket</p>
+                        <p class="entry_ticket">Entry ticket</p>
                         <hr class="hr_form hr_entry">
                         <div class="age_wrapper">
-                            <p>Basic 18+ (20 €)</p>
+                            <p class="age_wrapper_tic" >Basic 18+ (20 €)</p>
                             <div class="numborber_">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <button class="btnplus numberbtn" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
                                 <input type="number" min="0" max="20" value="2" readonly class="number_">
-                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button class="btnplus numberbtn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
                         </div>
                         <div class="age_wrapper">
-                            <p>Senior 65+ (10 €)</p>
+                            <p class="age_wrapper_tic">Senior 65+ (10 €)</p>
                             <div class="numborber_">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                                <button class="btnplus numberbtn" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
                                 <input type="number" min="0" max="20" value="2" readonly class="number_">
-                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button class="btnplus numberbtn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
                         </div>
                         
@@ -333,16 +337,16 @@
                         <div class="overview_wrapper_text">
                             <p class="overwiew_title">Overview</p>
                             <p class="overwiew_subtitle">Tour to Louvre</p>
-                            <div class="overwiew_info"><img class="overwiew_info_text" src="/form/overview/date.svg" alt=""> Friday, August 19</div>
-                            <div class="overwiew_info"><img class="overwiew_info_text" src="/form/overview/Time.svg" alt=""> 16 : 30</div>
-                            <div class="overwiew_info"><img  src="/form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
+                            <div class="overwiew_info"><img class="overwiew_info_text" src="./form/overview/date.svg" alt=""> Friday, August 19</div>
+                            <div class="overwiew_info"><img class="overwiew_info_text" src="./form/overview/Time.svg" alt=""> 16 : 30</div>
+                            <div class="overwiew_info"><img  src="./form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
                         </div>
                         
-                        <img src="/form/overview/louvre.jpg" width="150" height="120" alt="">    
+                        <img src="./form/overview/louvre.jpg" width="150" height="120" alt="">    
                     </div>
                     <div class="basket">
                         <div class="items">
-                            <img src="/form/overview/2.svg" alt="">
+                            <img src="./form/overview/2.svg" alt="">
                             <div class="basket_descr">Basic (20 €)</div>
                         </div>
                     
@@ -350,7 +354,7 @@
                     </div>
                     <div class="basket">
                         <div class="items">
-                            <img src="/form/overview/2.svg" alt="">
+                            <img src="./form/overview/2.svg" alt="">
                             <div class="basket_descr">Senior (10 €)</div>
                         </div>
                     
@@ -451,7 +455,8 @@
                         
                     </ul>
                 </nav>
-                <ul class="footer_item">
+                <div class="footer_item">
+                    
                         <ul class="social">
                             <li class="social_item"><a href="https://www.youtube.com/user/louvre" class="social_link youtube" target="blank"></a></li>
                             <li class="social_item"><a href="https://www.instagram.com/museelouvre/" class="social_link inst" target="blank"></a></li>
@@ -460,7 +465,7 @@
                             <li class="social_item"><a href="https://www.pinterest.fr/museedulouvre/" class="social_link pint" target="blank"></a></li>
                         </ul>
                     
-                </ul>
+                    </div>
             </div>
          
             
