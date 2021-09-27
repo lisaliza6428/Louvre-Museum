@@ -333,9 +333,9 @@
                         <div class="overview_wrapper_text">
                             <p class="overwiew_title">Overview</p>
                             <p class="overwiew_subtitle">Tour to Louvre</p>
-                            <div class="overwiew_info"><img src="/form/overview/date.svg" alt=""> Friday, August 19</div>
-                            <div class="overwiew_info"><img src="/form/overview/Time.svg" alt=""> 16 : 30</div>
-                            <div class="overwiew_info"><img src="/form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
+                            <div class="overwiew_info"><img class="overwiew_info_text" src="/form/overview/date.svg" alt=""> Friday, August 19</div>
+                            <div class="overwiew_info"><img class="overwiew_info_text" src="/form/overview/Time.svg" alt=""> 16 : 30</div>
+                            <div class="overwiew_info"><img  src="/form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
                         </div>
                         
                         <img src="/form/overview/louvre.jpg" width="150" height="120" alt="">    
@@ -364,9 +364,10 @@
                     <div class="bank_cards">
                         <div class="card_inside">
                            
-                               
+                            <img class="visa" src="./form/overview/Visa.svg" alt="">
+                            <img class="master" src="./form/overview/Mastercard.svg" alt="">
                                     <p class="card_text">Card number</p>
-                                    <input type="text">
+                                    <input class = "card_number" type="text">
                                     <p class="card_text">Expiration date</p>
                                     <input class = "date_ex" type="text"><input  class = "year_ex" type="text">
                                 
@@ -383,10 +384,21 @@
                             <input class = "cardholder" type="text">
 
                         </div>
-                        <div class="card_outside"></div>
+                        <div class="card_outside">
+                            
+                            <div class="card_blackhr"></div>
+                            <span class="card_cvc">CVC/CVV</span>
+                            <input class="card_cvccode" type="text">
+                            <p class="card_digit">The last <br>
+                                3 or 4 digits <br>
+                                on back <br>
+                                of the card</p>
+                        </div>
                     </div>
+
+
                     <button class="button_book btn_ripple" type="button">Book
-                        <div class="ripple"></div>
+                        <span class="ripple"></span>
                     </button> 
                    
                     
