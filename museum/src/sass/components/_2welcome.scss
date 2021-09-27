@@ -70,6 +70,7 @@ padding-bottom: 60px;
 }
 .slider_dots{
     display: flex;
+    margin-bottom: 2px;
 }
 .slider_dot{
     display: block;
@@ -81,35 +82,25 @@ padding-bottom: 60px;
     background-repeat: no-repeat;
     background-position: center center;
     &:hover{ 
-        background-color: #9D8665;
-
+        background-color:  #9D8665;
+  
     }
-
+    
 }
 .slider_dot.active{
     background-color: #D2B183;
 }
 
 .arrowleft{
-    
     padding: 0 18px 0 35px;
-    margin-bottom: 1px;
-    &:hover{ 
-        filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
-
-    }
+    margin-bottom: 3px;  
 }
 .arrowright{
-    
-   
-    margin-bottom: 1px;
-    &:hover{ 
-        color: #9D8665;
-
-    }
-   
+    margin-bottom: 3px; 
 }
-
+.filter-golden:hover{
+    filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+}
 ///GRAADIENT
 
 

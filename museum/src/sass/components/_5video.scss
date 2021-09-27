@@ -31,7 +31,8 @@ section.video_section{
     
 }
 #glass{
-  margin-top: -160px;
+  margin-bottom: -80px;
+  margin-top: -80px;
  
 }
 
@@ -76,7 +77,9 @@ input {
 height: 220px;
 top: calc(50% - 110px);
 left: calc(50% - 110px);
-
+*:hover{
+  filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+}
 
 }
 
@@ -227,4 +230,4 @@ background-image: url(/btn/play.svg);
 
 
 
- 
+
