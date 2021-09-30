@@ -1,5 +1,8 @@
 .dark_section.header{
     padding: 50px 0 ;
+    @media (max-width: 1024px) {
+        padding: 48px 0 41px 0;
+      }
 }
 .header_container {
     display: flex;
@@ -34,9 +37,25 @@
 .header_navigation{
     display: flex;
     justify-content: center;
-  
+
+    
     
 }
+
+.header_link{
+    @media (max-width: 1024px) {
+        display: none;
+      }
+
+}
+.burger{
+    display: none;
+}
+@media (max-width: 1024px) {
+    .burger{
+        display: block;
+    }
+  }  
 .logo_title{
     font-size: 28px;
     font-weight: 400;
@@ -48,11 +67,7 @@
     
 }
 
-.header_link {
-   
-   
-   
-}
+
 .header_link  > a {
     font-family: 'Roboto', sans-serif;
     font-style: normal;

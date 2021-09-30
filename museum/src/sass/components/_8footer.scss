@@ -1,4 +1,7 @@
 
+
+
+
 .footer_container {
     display: flex;
     justify-content: space-between;
@@ -7,15 +10,27 @@
         align-self: flex-end;
       }
       margin-bottom: 40px;
+     
+
       
 }
 
 .footer_item.footer_logo{
     margin-right: 142px;
+    @media (max-width: 1024px) {
+        margin-right: 39px;
+       
+    
+  }
 }
 
 .footer_item.footer_links{
     margin-right: 397px;
+    @media (max-width: 1024px) {
+        margin-right: 92px;
+       
+    
+  }
 
 }
 
@@ -23,6 +38,11 @@
    
     column-count: 2;
     column-gap: 155px;
+    @media (max-width: 1024px) {
+        column-gap: 105px;
+       
+    
+  }
 }
 
 .footer_link {
@@ -51,6 +71,11 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
+    @media (max-width: 1024px) {
+        margin-bottom: 8px;
+       
+    
+  }
     
   
 }

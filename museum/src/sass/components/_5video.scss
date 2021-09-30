@@ -1,6 +1,11 @@
 section.video_section{
     padding-top: 75px;
-    height: 1246px;
+    height: auto;
+    @media (max-width: 1024px) {
+      padding-top: 60px;
+      padding-bottom: 57px;
+  
+}
 }
 .video_content{
     display: flex;
@@ -16,7 +21,10 @@ section.video_section{
     font-size: 22px;
     line-height: 38px;
     padding-right: 30px;
-   
+    @media (max-width: 1024px) {
+     display: none;
+  
+}
 
 }
 
@@ -27,7 +35,12 @@ section.video_section{
     height: 650px;
     margin: 75px 0 0 0;
     position: relative;
-    
+    @media (max-width: 1024px) {
+      margin: 40px 0 0 0;
+      width: 984px;
+      height: 444px;
+   
+ }
     
 }
 #glass{
@@ -51,10 +64,23 @@ section.video_section{
   margin-top: -1px;
   background-color: #000000;
   cursor: pointer;
+  @media (max-width: 1024px) {
+   
+    width: 984px;
+    height: 60px;
+ 
+}
 }
 
 iframe {
   border: none;
+  @media (max-width: 1024px) {
+   
+    width: 300px;
+    height: 170px;
+    border: none;
+ 
+}
 }
 
 
@@ -80,6 +106,13 @@ left: calc(50% - 110px);
 *:hover{
   filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
 }
+@media (max-width: 1024px) {
+  width: 152px;
+  height: 152px;
+  top: calc(50% - 76px);
+left: calc(50% - 76px);
+
+}
 
 }
 
@@ -89,6 +122,7 @@ width: 30px;
 height: 30px;
 background-repeat: no-repeat;
 background-position: center center;
+
 
 }
 .btn_on{
@@ -147,21 +181,45 @@ background-image: url(/btn/play.svg);
 
 .fullsceen{
   margin-left: 47px;
+  @media (max-width: 1024px) {
+    
+    margin: 0 10px 0 47px;
+   
+   }
 }
+  
 
+.fullsceen_btn{
+  @media (max-width: 1024px) {
+    width: 26px;
+    height: 26px;
+    margin: 0 30px 0 0;
+   
+   }
+}
 /**************SLIDER*************************/
 .video_slides{
     margin-top: 40px;
     height: 254px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 1024px) {
+  
+      height: 170px;
+   
+  }
   }
   
   .video_slider_active{
     height: 254px;
     display: block;
     cursor: pointer;
+    @media (max-width: 1024px) {
+  
+      height: 170px;
+   
+  }
+    
   }
   .video_slider_none{
     display: none;

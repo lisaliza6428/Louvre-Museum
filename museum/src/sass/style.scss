@@ -72,16 +72,36 @@ a:hover{
     max-width: 1440px;
     padding: 0 20px 0 20px;
     margin: 0 auto;
+    border: none;
+    @media (max-width: 1024px) {
+        max-width: 984px;
+        padding: 0 20px 0 20px;
+        margin: 0 auto;
+    
+  }
 }
+
+
 
 section, .dark_section {
     padding: 75px 0 ;
     margin: 0;
+    @media (max-width: 1024px) {
+        padding: 60px 0 ;
+    
+  }
 }
 
 .dark_section{
     background-color: #030303;
     color: #FFFFFF;
+}
+
+h2.title_white.welcome{
+    @media (max-width: 1024px) {
+        font-size: 50px;
+        line-height: 90px;
+      }
 }
 h2{
     font-family: 'Forum', cursive;
@@ -90,8 +110,17 @@ h2{
     line-height: 90px;
     letter-spacing: 5px;
     text-transform: uppercase;
+    @media (max-width: 1024px) {
+        font-size: 50px;
+    line-height: 75px;
     
+  } 
 }
+  
+
+
+    
+
 .title_gold {
     color: #9d8665;
 
@@ -102,6 +131,11 @@ h2{
     margin: 25px 0 75px 0;
     background-color: #710707;
     border: none;
+    @media (max-width: 1024px) {
+        width: 984px;
+        margin: 20px 0 60px 0;
+    
+  }
 }
 
 
@@ -115,6 +149,13 @@ h2{
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
+    @media (max-width: 1024px) {
+        width: 100vw;
+        margin: 0 auto;
+       
+    
+  }
+   
     
    
     
