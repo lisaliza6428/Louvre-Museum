@@ -4,6 +4,12 @@
         padding: 60px 0 ;
     
   }
+  @media (max-width: 768px) {
+    padding: 37px 0 80px 0 ;
+  
+    
+
+}
 }
 
 .cards_container{
@@ -16,6 +22,13 @@
         column-gap: 108px;
         row-gap: 61px;
     }
+    @media (max-width: 768px) {
+        column-gap: 56px;
+        row-gap: 40px;
+       
+    
+       
+       }
 
 }
 .card_item{
@@ -38,6 +51,13 @@
           height: 215px;
         
       }
+      @media (max-width: 768px) {
+        width: 280px;
+          height: 180px;
+       
+    
+       
+       }
 }
 .card_title{
     text-decoration: none;
@@ -55,6 +75,13 @@
         letter-spacing: 3px;
       
     }
+    @media (max-width: 768px) {
+        font-size: 22px;
+        line-height: 24px;
+        margin: 21px 0 10px 0;
+        
+
+       }
 }
 .card_hr{
     width: 300px;
@@ -64,8 +91,13 @@
     border:none;
     @media (max-width: 1024px) {
         width: 150px;
-      
     }
+    @media (max-width: 768px) {
+       margin: 0 0 1px 0;
+    
+       
+       }
+    
 }
 .tour{
     font-family: 'Roboto', sans-serif;
@@ -79,6 +111,12 @@
 line-height: 23px;
   
 }
+@media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
+    
+
+   }
 
 }
 .panorama{
@@ -91,6 +129,12 @@ line-height: 23px;
         line-height: 19px;
       
     }
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 19px;
+        
+
+       }
    
     
 }
@@ -109,6 +153,14 @@ a.card_item:hover{
     .card_hr{
         width: 440px;
         transition: 1s ease-in-out;
+        @media (max-width: 1024px) {
+            width: 340px;
+            
+          }
+          @media (max-width: 768px) {
+            width: 280px;
+            
+          }
     
     }
 }

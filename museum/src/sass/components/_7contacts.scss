@@ -1,16 +1,28 @@
+.cont_section{
+    padding-bottom: 67px;
+}
+
 .container_2_column_cont{
     @media (max-width: 1024px) {
         display: flex;
     
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+}
 }
 
 .contacts_png{
     @media (max-width: 1024px) {
         width: 694px;
         height: 454px;
-    
   }
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    width: 728px;
+    height: 476px;
+}
 }
 
 .contacts_title{
@@ -26,6 +38,11 @@
         margin-bottom: 35px;
     
   }
+  @media (max-width: 768px) {
+    font-size: 20px;
+line-height: 23px;
+margin-bottom: 42px;
+}
 
 }
 .contacts{
@@ -52,6 +69,11 @@
         margin-bottom: 15px;
     
   }
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
+
+}
   
 }
 

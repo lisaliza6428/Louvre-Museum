@@ -4,6 +4,10 @@
         padding: 60px 0 0 0;
     
   }
+  @media (max-width: 768px) {
+    padding: 40px 0 0 0;
+
+}
 
 }
 .gallery_shade{
@@ -32,6 +36,10 @@
         height: 1265px;
     
   }
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    height: 1080px;
+  }
 
 }
 
@@ -44,6 +52,12 @@
   height: 3000px;
   @media (max-width: 1024px) {
     height: 2100px;
+
+}
+@media (max-width: 768px) {
+    column-count: 2;
+    column-gap: 24px;
+    height: 3000px;
 
 }
   
@@ -64,9 +78,18 @@
     }
     @media (max-width: 1024px) {
         width: 304px;
+   
     
   }
+  @media (max-width: 768px) {
+
+    width: 352px;
     
+    &:nth-child(11){margin-top: 0;
+
+    }
+
+}
     
     
     
