@@ -7,6 +7,11 @@
         padding: 55px 0 25px 0;
      
      }
+     @media (max-width: 420px) {
+        padding: 33px 0 25px 0;
+     
+     }
+
 }
 .header_container {
     display: flex;
@@ -70,6 +75,10 @@
     @media (max-width: 768px){
         margin-bottom: 10px;
             }
+    @media (max-width: 420px) {
+        margin-bottom: 0;
+             
+             }
     
 }
  

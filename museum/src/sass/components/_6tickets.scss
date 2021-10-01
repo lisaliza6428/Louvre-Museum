@@ -8,6 +8,11 @@
         height: auto;
      
    }
+   @media (max-width: 420px) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
 
 
 
@@ -28,6 +33,11 @@ height: 100%;
     height: 340px;
  
 }
+@media (max-width: 420px) {
+    width: 380px;
+    height: 160px;
+
+}
 }
 
 .tickets_image{
@@ -42,6 +52,11 @@ height: 100%;
     width: 444px;
     height: 340px;
  
+}
+@media (max-width: 420px) {
+   
+    height: 160px;
+
 }
 }
 
@@ -163,6 +178,10 @@ display: flex;
     margin-left: 60px;
  
 }
+@media (max-width: 420px) {
+   margin: 40px 0 0 0;
+
+}
  
 }
 
@@ -170,6 +189,7 @@ display: flex;
       .amountwrapper{
         display: flex;
         flex-direction: column;
+       
         
      
        
@@ -196,6 +216,13 @@ display: flex;
         margin-bottom: 34px;
         
   }
+  @media (max-width: 420px) {
+  
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 21px;
+         }
 
     
     }    
@@ -212,6 +239,11 @@ display: flex;
             margin-left: 0;
             margin-bottom: 6px;
       }
+      @media (max-width: 420px) {
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 14px;
+  }
      
     
     }
@@ -301,8 +333,14 @@ display: flex;
         margin: 15px 0 40px 0;
     
   }
+  @media (max-width: 420px) {
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+
     }
     
-    
+}
  
  
