@@ -1,10 +1,10 @@
 .dark_section.header{
     padding: 50px 0 ;
     @media (max-width: 1024px) {
-        padding: 48px 0 41px 0;
+        padding: 48px 0 38px 0;
       }
     @media (max-width: 768px) {
-        padding: 47px 0 25px 0;
+        padding: 55px 0 25px 0;
      
      }
 }
@@ -32,11 +32,16 @@
  
 
 .logo { 
-    background-image: url(/img/logo.svg);
-    background-repeat: no-repeat;
+   
     width: 49px;
     height: 26px;
     padding-bottom: 8px;
+    @media (max-width: 420px) {
+        width: 29px;
+        height: 16px;
+    
+    
+    }
 }
 .header_navigation{
     display: flex;
@@ -50,16 +55,24 @@
     @media (max-width: 1024px) {
         display: none;
       }
+     
 
 }
 .burger{
     display: none;
-}
-@media (max-width: 1024px) {
-    .burger{
+
+    @media (max-width: 1024px) {
+  
         display: block;
-    }
-  }  
+        margin-bottom: 2px;
+    
+  } 
+    @media (max-width: 768px){
+        margin-bottom: 10px;
+            }
+    
+}
+ 
 .logo_title{
     font-size: 28px;
     font-weight: 400;
@@ -68,6 +81,11 @@
     text-transform: uppercase;
     font-family: "Forum", cursive;
     margin-left: 25px;
+    @media (max-width: 420px) {
+        font-size: 16px;
+        line-height: 18px;
+    
+    }
     
 }
 
@@ -93,5 +111,9 @@
     &:active{
         
         color: #7E6C51;
+    }
+    @media (max-width: 1550px) {
+        margin-left: 40px;
+    
     }
 }

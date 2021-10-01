@@ -16,6 +16,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 1500px) {
+        
+        justify-content: center;
+        column-gap: 108px;
+        row-gap: 61px;
+    }
     @media (max-width: 1024px) {
         
         justify-content: center;

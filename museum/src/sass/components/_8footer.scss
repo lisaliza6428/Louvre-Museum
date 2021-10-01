@@ -1,52 +1,114 @@
 
-
+.dark_section.footer {
+    padding: 55px 0 60px 0;
+    background-color: #030303;
+    @media (max-width: 768px) {
+        padding: 42px 0 60px 0;
+    
+    }
+}
 
 
 .footer_container {
     display: flex;
     justify-content: space-between;
+   
     
     :last-child {
         align-self: flex-end;
       }
-      margin-bottom: 40px;
-     
-
+      margin-bottom: 40px;  
+      @media (max-width: 1024px) {
+        align-items: flex-start;
+        justify-content: initial;
+        row-gap: 42px;
+        flex-wrap: wrap;
+        margin-bottom: 29px; 
+       
+        
+    
+    }
       
+      @media (max-width: 768px) {
+        align-items: flex-start;
+        justify-content: initial;
+        row-gap: 42px;
+        flex-wrap: wrap;
+        margin-bottom: 29px; 
+       
+        
+    
+    }
 }
 
 .footer_item.footer_logo{
     margin-right: 142px;
+    @media (max-width: 1500px) {
+        margin-right: 39px;
+       
+    
+  }
     @media (max-width: 1024px) {
         margin-right: 39px;
        
     
   }
+  @media (max-width: 768px) {
+    margin-right: 100px;
+   display: inline-block;
+  
+   
+   
+
+}
 }
 
 .footer_item.footer_links{
     margin-right: 397px;
+    @media (max-width: 1500px) {
+        margin-right: 92px;
+       
+    
+  }
     @media (max-width: 1024px) {
         margin-right: 92px;
        
     
   }
+  @media (max-width: 768px) {
+  height: 121px;
+  margin-top: 15px;
+  margin-right: 0;
 
 }
 
-.footer_navigation{
-   
+}
+
+ .footer_navigation{
+   height: auto;
     column-count: 2;
     column-gap: 155px;
+ 
+    @media (max-width: 1500px) {
+        column-gap: 105px;
+       
+    
+  }
     @media (max-width: 1024px) {
         column-gap: 105px;
        
     
   }
+  @media (max-width: 768px) {
+    column-gap: 167px;
+    height: 121px;
+   
+
+
+}
 }
 
-.footer_link {
-    
+.footer_link { 
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
@@ -61,7 +123,19 @@
 
         color: #7E6C51;
     }
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 21px;
+       
+
+    }
     
+}
+@media (max-width: 768px) {
+    .footer_menu{
+        margin-bottom: 25px;
+    }
+
 }
 
 
@@ -76,6 +150,14 @@
        
     
   }
+  @media (max-width: 768px) {
+    margin-left: 296px;
+   
+  
+   
+   
+
+}
     
   
 }
@@ -136,6 +218,10 @@
     margin: 25px 0 50px 0;
     background-color:  #666666;
     border: none;
+    @media (max-width: 768px) {
+        height: 1px;
+        margin: 25px 0 43px 0;
+    }
 }
 .footer_bottom {
     display: flex;
@@ -172,3 +258,4 @@
     
 
 }
+
