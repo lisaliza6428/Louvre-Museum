@@ -1,17 +1,32 @@
-/* 
+
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibGlzYWxpemE2NDI4IiwiYSI6ImNrdWNrMW9hajB6NXYzMW12Ymt5M2NuZ3MifQ.T4b2--uZ14J9xjMtZtk8mg';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11'
+
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [2.3364, 48.86091],
+  zoom: 15.6
 });
 
+map.addControl(new mapboxgl.NavigationControl());
 
-// Create a default Marker and add it to the map.
-const marker1 = new mapboxgl.Marker()
-.setLngLat([12.554729, 55.70651])
+  const marker1 = new mapboxgl.Marker({ color: 'black'})
+.setLngLat([2.3364, 48.86091])
 .addTo(map);
- 
-// Create a default Marker, colored black, rotated 45 degrees.
-const marker2 = new mapboxgl.Marker({ color: 'black', rotation: 45 })
-.setLngLat([12.65147, 55.608166])
-.addTo(map); */
+
+const marker2 = new mapboxgl.Marker({ color: '#777777'})
+.setLngLat([2.3333, 48.8602])
+.addTo(map);
+
+const marker3 = new mapboxgl.Marker({ color: '#777777'})
+.setLngLat([2.3397, 48.8607])
+.addTo(map);
+
+const marker4 = new mapboxgl.Marker({ color: '#777777'})
+.setLngLat([2.3330, 48.8619])
+.addTo(map);
+
+const marker5 = new mapboxgl.Marker({ color: '#777777'})
+.setLngLat([2.3365, 48.8625])
+.addTo(map);
