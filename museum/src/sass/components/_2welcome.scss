@@ -17,6 +17,7 @@ border: none;
     
 }
 .welcome_content{
+  -webkit-user-select: none;
     padding: 150px 0 170px 0;
     z-index: 50;
     position: absolute;
@@ -47,6 +48,8 @@ border: none;
 .slide{
   margin-left: auto;
     position: relative;
+   
+  
     
 
   }
@@ -85,12 +88,14 @@ border: none;
 .slide{
     display: none; 
     position: relative;
+
     
 }
 .slide.active{
     display: block;
     border: none;
     margin-left: auto;
+   
   
     @media (max-width: 1024px) {
         width: 70%;
@@ -252,11 +257,20 @@ border: none;
 
 ///GRAADIENT
 
-.image{
-  margin-left: 440px ;
+
+.slides{
+ 
+  position: relative;
+  width: 1000px;
+  overflow: hidden;
+  margin-left: auto;
 }
 .slide.active{
     position:relative;
+    -webkit-user-select: none;
+  
+    
+  
   }
   .overlayed{
   display:block;
@@ -280,6 +294,22 @@ border: none;
   }
 
   ////////////ANIMATION//////////////////
+  .active,
+  .next {
+    display: block;
+    animation: 0.3s ease-in-out;
+  }
+
+
+  .next {
+    
+      position: absolute;
+      top: 0;
+      width: 100%;
+    
+    
+  }
+  
   .to-left {
     animation-name: left;
   }
@@ -315,4 +345,3 @@ border: none;
       left: 0;
     }
   }
-  

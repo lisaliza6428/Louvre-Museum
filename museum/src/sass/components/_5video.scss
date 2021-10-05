@@ -20,7 +20,18 @@ padding-bottom: 75px;
 
 }
 .video.active{
-width: 100%;
+object-fit: cover;
+@media (max-width: 1024px) {
+  margin: 40px 0 0 0;
+  height: 444px;
+
+}
+@media (max-width: 768px) {
+  margin: 20px 0 0 0;
+  height: 329px;
+  object-fit: cover;
+  
+  }
 }
 .video_text{
   font-family: 'Roboto', sans-serif;
@@ -37,31 +48,14 @@ width: 100%;
 }
 
 .video_container{
-  width: 100%;
-  overflow:hidden;
+ 
+  overflow: hidden;
   display:block;
-  height: 650px;
   margin: 75px 0 0 0;
   position: relative;
-  @media (max-width: 1024px) {
-    margin: 40px 0 0 0;
-
-    height: 444px;
  
 }
-@media (max-width: 768px) {
-margin: 20px 0 0 0;
 
-height: 329px;
-
-}
-  
-}
-#glass{
-margin-bottom: -80px;
-margin-top: -80px;
-
-}
 
 .player{
 margin: 0 auto;
@@ -75,7 +69,7 @@ display: flex;
 align-items: center;
 width: 100%;
 height: 85px;
-margin-top: -1px;
+margin-top: -4px;
 background-color: #000000;
 cursor: pointer;
 @media (max-width: 1024px) {

@@ -69,7 +69,17 @@ function progressUpdate (){
     let duration = video.duration;
     let ctime = video.currentTime;
     progress.value = 100*ctime/duration;
-    progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progress.value}%, #C4C4C4 ${progress.value}%, #C4C4C4 100%)`
+    progress.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progress.value}%, #C4C4C4 ${progress.value}%, #C4C4C4 100%)`;
+    if (ctime === duration) {
+      isPlaying = false;
+      toggleBtn()
+      
+     
+    
+
+
+      
+    };
  
 }
 
@@ -80,10 +90,9 @@ function videoreWind(){
     let w = this.offsetWidth;
     let o = event.offsetX;
     this.value = 100 * o /w;
-    video.pause();
     video.currentTime = video.duration * (o/w);
-    video.play();
     
+   
 }
 
 
@@ -112,18 +121,22 @@ function videoMute(){
     btnsound.classList.toggle('btn_soundoff');
     document.querySelector('.sound_bar').value = 0;
     document.querySelector('.sound_bar').style.background = `linear-gradient(to right, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 100%)`
+     if(document.querySelector('.sound_bar').value = 0){
+      btnsound.classList.toggle('btn_soundon');
+
+     }
     
   }
 }
 
-/* 
+
 function stopVideo(){
   video.pause();
   video.currentTime = 0;
   
-} */
+} 
 
-/* function speedUp(){
+function speedUp(){
   video = document.querySelector('.video.active');
   video.play();
   video.currentTime += 3;
@@ -135,15 +148,16 @@ function speedDown(){
   video.play();
   video.currentTime -= 3;
 }
- */
-
-/////
 
 
-/* document.addEventListener('keyup', function(e){
-  if (e.keyCode === 0 || e.keyCode === 32) {
-   
+
+
+document.addEventListener('keyup', function(e){
+  e.preventDefault();
+
+  if (e.keyCode === 0 || e.keyCode === 32) { 
     play()
+   
   }
   if (e.keyCode === 0 || e.keyCode === 77) {
     videoMute()
@@ -157,10 +171,9 @@ function speedDown(){
   if (e.keyCode === 0 || e.keyCode === 37) {
     speedDown()
   }
-  
+  e.preventDefault();
 });
 
- */
 
 
 
