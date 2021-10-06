@@ -94,10 +94,7 @@ function nextItem (sld, blt) {
 	hideItem ('to-left');
 	changeCurrentItem (sld + 1, blt + 1);
 	showItem ('from-right');
-    for (bullet of bullets) {
-        bullet.classList.remove('active');
-    }
-    bullets[blt].classList.add('active');
+
     
    
     
@@ -107,11 +104,8 @@ function previousItem (sld, blt) {
 	hideItem ('to-right');
 	changeCurrentItem (sld - 1 , blt - 1);
 	showItem ('from-left');
-    console.log(blt)
-   /*  for (bullet of bullets) {
-        bullet.classList.remove('active');
-    }
-    bullets[blt].classList.add('active'); */
+    console.log(blt);
+	
   
     
 }

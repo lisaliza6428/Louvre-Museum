@@ -66,7 +66,7 @@
 .img_explore {
     display: block;
     cursor: pointer;
-    margin-top: 62px;
+
     margin-left: auto;
     margin-right: auto;
     top: 0;
@@ -78,5 +78,40 @@
     
     }
     
+}
+///////////////////////////
+
+
+.img_explore_container {
+  position: relative;
+  width: 720px;
+  height: 700px;
+}
+
+.img_explore {
+  position: absolute;
+  width: 720px;
+  height: 700px;
+  overflow: hidden;
+}
+
+.img_explore img {
+  display: block;
+ 
+  top: 0;
+ 
+  
+}
+
+.img-comp-slider {
+    top: 0;
+    bottom:0;
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  width: 39px;
+height: 700px;
+  background-image: url(/img/explore-slider/control.svg);
+
 }
 
