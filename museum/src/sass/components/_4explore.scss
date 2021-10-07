@@ -97,7 +97,7 @@
 
 .img_explore img {
   display: block;
- 
+  width: 720px;
   top: 0;
  
   
@@ -115,3 +115,6 @@ height: 700px;
 
 }
 
+.img_explore.img_explore_overlay {
+  max-width: 720px;
+}

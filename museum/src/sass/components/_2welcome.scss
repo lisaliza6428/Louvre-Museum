@@ -16,6 +16,7 @@ border: none;
     position: relative;
     
 }
+
 .welcome_content{
   -webkit-user-select: none;
     padding: 150px 0 170px 0;
@@ -264,6 +265,8 @@ border: none;
   position: relative;
   width: 1000px;
   overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
   margin-left: auto;
 }
 .slide.active{
