@@ -216,7 +216,6 @@ margin-left: 47px;
   margin-top: 40px;
   height: 254px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   @media (max-width: 1550px) {
 
@@ -243,7 +242,7 @@ margin-left: 47px;
 }
 }
 
-.video_slider_active{
+.video_slide._active{
   height: 254px;
   display: block;
   cursor: pointer;
@@ -256,7 +255,7 @@ margin-left: 47px;
 }
   
 }
-.video_slider_none{
+.video_slide{
   display: none;
   cursor: pointer;
 }

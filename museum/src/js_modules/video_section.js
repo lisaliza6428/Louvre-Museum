@@ -1,7 +1,3 @@
-
-
-
-
 ////////////PLAYER////////////////////////////
 
 document.querySelector('.play').onclick = play;
@@ -12,6 +8,11 @@ document.querySelector('.fullsceen').onclick = videoFull;
 const btnplay = document.querySelector('.play');
 const largeBtnPlay = document.querySelector('.largebtn');
 const btnsound = document.querySelector('.sound');
+
+
+
+
+
 
 
 let isPlay = false;
@@ -53,10 +54,20 @@ function play(){
 }
 
 function videoVolume(){
-    video = document.querySelector('.video.active');
     let v = this.value;
     video.volume = v/100;
-    document.querySelector('.sound_bar').style.background = `linear-gradient(to right, #710707 0%, #710707 ${v}%, #C4C4C4 ${v}%, #C4C4C4 100%)`
+    
+    document.querySelector('.sound_bar').style.background = `linear-gradient(to right, #710707 0%, #710707 ${v}%, #C4C4C4 ${v}%, #C4C4C4 100%)`;
+    if (video.volume === 0){
+      btnsound.classList.add('btn_soundoff');
+    }
+    else{
+
+      btnsound.classList.remove('btn_soundoff');
+
+    }
+  
+   
     
 
 
@@ -73,14 +84,10 @@ function progressUpdate (){
     if (ctime === duration) {
       isPlaying = false;
       toggleBtn()
-      
-     
+
+    };
     
 
-
-      
-    };
- 
 }
 
 
@@ -91,6 +98,11 @@ function videoreWind(){
     let o = event.offsetX;
     this.value = 100 * o /w;
     video.currentTime = video.duration * (o/w);
+  
+    console.log(this.value)
+    if (this.value === 100){
+      console.log('text')
+    }
     
    
 }
@@ -120,7 +132,8 @@ function videoMute(){
     video.muted = true;
     btnsound.classList.toggle('btn_soundoff');
     document.querySelector('.sound_bar').value = 0;
-    document.querySelector('.sound_bar').style.background = `linear-gradient(to right, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 100%)`
+    document.querySelector('.sound_bar').style.background = `linear-gradient(to right, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 100%)`;
+
      if(document.querySelector('.sound_bar').value = 0){
       btnsound.classList.toggle('btn_soundon');
 

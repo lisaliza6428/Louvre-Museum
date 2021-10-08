@@ -201,7 +201,7 @@
             </button>
            
            
-            <input type="range" class="video_bar" value="53.7" min="0" max="100" step="0.1">
+            <input type="range" class="video_bar" value="0" min="0" max="100" step="0.1">
         
             <button class="sound btn_soundon" type ="button">
                   
@@ -219,23 +219,23 @@
 
             <div class="video_slider">
                 <div class="video_slides">
-                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div class="video_slider_none"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slide _active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/zp1BXPX8jcU" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slide _active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slide _active"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slide"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video_slide"><iframe loading="lazy" width="452" height = "254" src="https://www.youtube.com/embed/2OR0OCr6uRE" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
                 </div>
                 <div class="video_slider_controls">
                     <ul class = "video_slider_navigation">
-                        <li class="video_navigation__item"><button class="video_prevslide"><img class = "filter-golden" src="./slider/prevslide.svg" alt="prev"></button></li>
+                        <li class="video_navigation__item"><button id="video_prevslide" class="video_prevslide"><img class = "filter-golden" src="./slider/prevslide.svg" alt="prev"></button></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle active"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
                         <li class="video_navigation__item"><span class="video_navigation__item_circle"></span></li>
-                        <li class="video_navigation__item"><button class="video_nextslide"><img class = "filter-golden" src="./slider/nextslide.svg" alt="next"></button></li>
+                        <li class="video_navigation__item"><button id="video_nextslide" class="video_nextslide"><img class = "filter-golden" src="./slider/nextslide.svg" alt="next"></button></li>
                     </ul>
                 </div>
             </div>
@@ -267,9 +267,9 @@
                     <div class="ticket_type">
                         <h4 class="ticket_title">Ticket Type</h4>
                         <div class="radio_container">
-                            <label class="radio"><input type="radio" name="g" checked><span></span> Permanent exhibition</label>
-                            <label class="radio"><input type="radio" name="g"><span></span> Temporary exhibition</label>
-                            <label class="radio"><input type="radio" name="g"><span></span> Combined Admission</label>
+                            <label class="radio"><input type="radio" name="ticket_type" value="20" checked><span></span> Permanent exhibition</label>
+                            <label class="radio"><input type="radio" name="ticket_type" value="25"> <span></span> Temporary exhibition</label>
+                            <label class="radio"><input type="radio" name="ticket_type" value="40" ><span></span> Combined Admission</label>
                            
                         </div>
                         
@@ -283,7 +283,7 @@
                             <p class="age" >Basic 18+</p>
                             <div class="numborber">
                                 <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" value="1" readonly class="number">
+                                <input type="number" min="0" max="20" name="ticket_basic"  id="ticket_basic"value="1" readonly class="number">
                                 <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
                             
@@ -291,11 +291,11 @@
         
                             <div class="numborber">
                                 <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" value="1" readonly class="number">
+                                <input type="number" min="0" max="20" id="ticket_senior" name="ticket_senior" id="ticket_senior" value="1" readonly class="number">
                                 <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
         
-                            <h4 class="total_amount">Total €220</h4>   
+                            <h4 class="total_amount" id="total_amount">Total €220</h4>   
 
 
                             <button class="button_buy open-form" type="button">Buy Now

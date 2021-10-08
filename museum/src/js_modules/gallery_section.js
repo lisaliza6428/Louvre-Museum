@@ -37,7 +37,6 @@ function addImage(){
     /////////////Animation/////////////////////
     animOnSrroll
     const animItems = document.querySelectorAll('.img_gallery');
-    console.log(animItems)
     if (animItems.length > 0){
         animOnSrroll()
         window.addEventListener('scroll', animOnSrroll);
@@ -46,14 +45,10 @@ function addImage(){
                 const animItem = animItems[index];
                 const animItemHeight = animItem.offsetHeight;
                 const animItemOffset = offset(animItem).top;
-                
-                console.log(window.innerHeight)
-
                 let animItemPoint = window.innerHeight + animItemHeight * 1.75;
                 if (animItemHeight > window.innerHeight){
                     animItemPoint = window.innerHeight + window.innerHeight;
                 }
-                console.log(animItemPoint)
                 if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
                     animItem.classList.add('animate')
                 } else {

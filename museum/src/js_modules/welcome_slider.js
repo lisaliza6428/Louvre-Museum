@@ -99,8 +99,6 @@ function nextItem (currentItem, currentBullet) {
 	hideItem ('to-left');
 	changeCurrentItem (currentItem + 1, currentBullet + 1);
 	showItem ('from-right');
-	console.log(currentItem)
-	
 	if (currentItem === 0){
 		slideNumber.innerHTML = `02`;
 	}
@@ -123,8 +121,7 @@ function previousItem (currentItem, currentBullet) {
 	hideItem ('to-right');
 	changeCurrentItem (currentItem - 1 , currentBullet - 1);
 	showItem ('from-left');  
-	console.log(currentItem)
-	
+
 	if (currentItem === 0){
 		slideNumber.innerHTML = `05`;
 	}
