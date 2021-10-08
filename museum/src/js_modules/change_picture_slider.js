@@ -51,6 +51,7 @@ function comparePictures() {
       img.style.width = x + "px";
       slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
     }
+    
   }
 }
 

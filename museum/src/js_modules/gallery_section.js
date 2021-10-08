@@ -33,3 +33,40 @@ function addImage(){
     
     }
     addImage()
+
+    /////////////Animation/////////////////////
+    animOnSrroll
+    const animItems = document.querySelectorAll('.img_gallery');
+    console.log(animItems)
+    if (animItems.length > 0){
+        animOnSrroll()
+        window.addEventListener('scroll', animOnSrroll);
+        function animOnSrroll(params){
+            for (let index = 0; index < animItems.length; index++ ){
+                const animItem = animItems[index];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                
+                console.log(window.innerHeight)
+
+                let animItemPoint = window.innerHeight + animItemHeight * 1.75;
+                if (animItemHeight > window.innerHeight){
+                    animItemPoint = window.innerHeight + window.innerHeight;
+                }
+                console.log(animItemPoint)
+                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                    animItem.classList.add('animate')
+                } else {
+                    animItem.classList.remove('animate')
+                }
+
+            }
+        }
+
+        function offset(el) {
+            const rect = el.getBoundingClientRect(),
+               scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+               scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
+         }
+    }
