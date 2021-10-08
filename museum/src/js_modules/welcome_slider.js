@@ -60,6 +60,7 @@ let items = document.querySelectorAll('.slide');
 let bullets = document.querySelectorAll('.slider_dot');
 let currentItem = 0;
 let currentBullet = 0;
+let slideNumber = document.getElementById("slide_number");
 let isEnabled = true;
 
 function changeCurrentItem (sld, blt) {
@@ -98,6 +99,23 @@ function nextItem (currentItem, currentBullet) {
 	hideItem ('to-left');
 	changeCurrentItem (currentItem + 1, currentBullet + 1);
 	showItem ('from-right');
+	console.log(currentItem)
+	
+	if (currentItem === 0){
+		slideNumber.innerHTML = `02`;
+	}
+	if (currentItem === 1){
+		slideNumber.innerHTML = `03`;
+	}
+	if (currentItem === 2){
+		slideNumber.innerHTML = `04`;
+	}
+	if (currentItem === 3){
+		slideNumber.innerHTML = `05`;
+	}
+	if (currentItem === 4){
+		slideNumber.innerHTML = `01`;
+	}
 
 }
 
@@ -105,6 +123,23 @@ function previousItem (currentItem, currentBullet) {
 	hideItem ('to-right');
 	changeCurrentItem (currentItem - 1 , currentBullet - 1);
 	showItem ('from-left');  
+	console.log(currentItem)
+	
+	if (currentItem === 0){
+		slideNumber.innerHTML = `05`;
+	}
+	if (currentItem === 1){
+		slideNumber.innerHTML = `01`;
+	}
+	if (currentItem === 2){
+		slideNumber.innerHTML = `02`;
+	}
+	if (currentItem === 3){
+		slideNumber.innerHTML = `03`;
+	}
+	if (currentItem === 4){
+		slideNumber.innerHTML = `04`;
+	}
 }
 
 
