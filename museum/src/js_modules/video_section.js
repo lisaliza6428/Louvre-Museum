@@ -11,6 +11,7 @@ const largeBtnPlay = document.querySelector('.largebtn');
 const btnsound = document.querySelector('.sound');
 const video = document.querySelector('.video.active');
 const progress = document.querySelector('.video_bar');
+const player = document.querySelector('.player');
 let isPlay = false;
 
 
@@ -103,16 +104,6 @@ function videoreWind(){
 }
 
 
-function videoFull() {
-  video = document.querySelector('.video.active');
-    if (!document.fullscreenElement) {
-      video.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    } 
-}
-
-
 function videoMute(){
   if (video.muted){
     video.muted = false;
@@ -138,16 +129,32 @@ function videoMute(){
 
 
 
+function videoFull() {
+  if (!document.fullscreenElement) {
+    video.classList.add('_fullscreen');
+    document.querySelector('.videopanel').classList.add('_fullscreen');
+    document.querySelector('.video_container').classList.add('_fullscreen');
+    player.classList.add('_fullscreen');
+    player.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+    video.classList.remove('_fullscreen');
+    document.querySelector('.videopanel').classList.remove('_fullscreen');
+    document.querySelector('.video_container').classList.remove('_fullscreen');
+    player.classList.remove('_fullscreen');
+  } 
+}
+
 
 function speedUp(){
-  video = document.querySelector('.video.active');
+ 
   video.play();
   video.currentTime += 3;
 
 }
 
 function speedDown(){
-  video = document.querySelector('.video.active');
+ 
   video.play();
   video.currentTime -= 3;
 }
@@ -157,27 +164,31 @@ function speedDown(){
 
 document.addEventListener('keyup', function(e){
   e.preventDefault();
-
-  if (e.keyCode === 0 || e.keyCode === 32) { 
-    play()
-   
-  }
-  if (e.keyCode === 0 || e.keyCode === 77) {
-    videoMute()
-  }
-  if (e.keyCode === 0 || e.keyCode === 70) {
-    videoFull()
-  }
+  
   if (e.keyCode === 0 || e.keyCode === 39) {
     speedUp()
   }
   if (e.keyCode === 0 || e.keyCode === 37) {
     speedDown()
   }
-  e.preventDefault();
 });
 
 
 
 
+document.addEventListener('keyup', function(e){
+  e.preventDefault();
+  if (e.code === 'Space') {
+    play()
+  }
+  if (e.code === 'KeyM') {
+    videoMute()
+  }
+  if (e.code === 'KeyF') {
+    videoFull()
+  }
+});
 
+document.onkeydown = function(e){
+  if (e.keyCode == 32) e.preventDefault();
+};
