@@ -58,10 +58,13 @@ prev.addEventListener('click', prevSlide); */
 
 let items = document.querySelectorAll('.slide');
 let bullets = document.querySelectorAll('.slider_dot');
+console.log(bullets.length)
 let currentItem = 0;
 let currentBullet = 0;
 let slideNumber = document.getElementById("slide_number");
 let isEnabled = true;
+
+
 
 function changeCurrentItem (sld, blt) {
 	currentItem = (sld + items.length) % items.length;
@@ -155,30 +158,34 @@ document.querySelector('.arrowright').addEventListener('click', function() {
 
 
 //////////////DOT CONTROLS////////////////
-bullets.forEach((item, indexDot) => {
-	item.addEventListener('click', () => {
-		currentItem = indexDot;
-		currentBullet = indexDot;
-		console.log(currentItem);
-		console.log(currentBullet);
-		changeCurrentItem (currentItem, currentBullet);
-		for (item of items) {
-			items.classList.remove('active');
+
+
+function funDotControls(){
+	for (let i = 0; i < bullets.length; i++){
+		bullets[i].addEventListener('click', function(a){
+
+	if (i === 0) {
+		nextItem(4,4)
 		}
-		items[currentItem].classList.add('active');
 		
-		for (bullet of bullets) {
-			bullet.classList.remove('active');
+	if (i === 1) {
+		nextItem(0,0)
 		}
-		bullets[currentBullet].classList.add('active'); 
-	
-		
-	
+	if (i === 2) {
+		nextItem(1,1);
+		}
+	if (i === 3) {
+		nextItem(2,2)
+		}
+	if (i === 4) {
+		nextItem(3,3)
+		}
 
-
-
-	})
 })
+
+}
+} 
+funDotControls()
 
 
 ///////////SWIPE//////////////////////

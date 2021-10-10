@@ -282,20 +282,20 @@
                             
                             <p class="age" >Basic 18+</p>
                             <div class="numborber">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" name="ticket_basic"  id="ticket_basic"value="1" readonly class="number">
-                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button id="minus_basic" class="btnplus" type="button">–</button>
+                                <input id="ticket_basic" type="number" min="0" max="20"   value="1" readonly  class="number"/>
+                                <button id="plus_basic" class="btnplus" type="button">+</button>
                             </div>
                             
                             <p class="age">Senior 65+</p>
         
                             <div class="numborber">
-                                <button class="btnplus" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                                <input type="number" min="0" max="20" id="ticket_senior" name="ticket_senior" id="ticket_senior" value="1" readonly class="number">
-                                <button class="btnplus" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button id="minus_senior" class="btnplus" type="button">–</button>
+                                <input id="ticket_senior" type="number" min="0" max="20" id = "d" value = "1"  class="number" >
+                                <button id="plus_senior" class="btnplus" type="button">+</button>
                             </div>
         
-                            <h4 class="total_amount" id="total_amount">Total €220</h4>   
+                            <h4 class="total_amount" id="total_amount">Total €0</h4>   
 
 
                             <button class="button_buy open-form" type="button">Buy Now
