@@ -325,13 +325,35 @@
                     <p class="text_tour">Tour to Louvre</p>
                     <hr class="hr_form">
                     <div class="date_time">
-                        <input class="short" type="date"  >
-                        <input class="short" type="time" >
+                        <input id ="date"  input = "setDate()" name="date" class="short" type="date">
+                       
+                        <select  class="short" id ="time"> 
+                            <option value="09.00">09.00</option>
+                            <option value="09.30">09.30</option>
+                            <option value="10.00">10.00</option>
+                            <option value="10.30">10.30</option>
+                            <option value="11.00">11.00</option>
+                            <option value="11.30">11.30</option>
+                            <option value="12.00">12.00</option>
+                            <option value="12.30">12.30</option>
+                            <option value="13.00">13.00</option>
+                            <option value="13.30">13.30</option>
+                            <option value="14.00">14.00</option>
+                            <option value="14.30">14.30</option>
+                            <option value="15.00">15.00</option>
+                            <option value="15.30">15.30</option>
+                            <option value="16.00">16.00</option>
+                            <option value="16.30">16.30</option>
+                            <option value="17.00">17.00</option>
+                            <option value="17.30">17.30</option>
+                            <option value="18.00">18.00</option>
+                          </select>
+                       
                     </div>
                     <input type = "text" placeholder="Name">
                     <input type = "email" placeholder="E-mail">
                     <input type = "tel" placeholder="Phone">
-                    <select name="select"> <!--Supplement an id here instead of using 'name'-->
+                    <select name="select"> 
                         <option value="value1">Значение 1</option>
                         <option value="value2" selected>Значение 2</option>
                         <option value="value3">Значение 3</option>
@@ -366,10 +388,14 @@
                         <div class="overview_wrapper_text">
                             <p class="overwiew_title">Overview</p>
                             <p class="overwiew_subtitle">Tour to Louvre</p>
-                            <div class="overwiew_info"><img class="overwiew_info_text" src="./form/overview/date.svg" alt=""> Friday, August 19</div>
-                            <div class="overwiew_info"><img class="overwiew_info_text" src="./form/overview/Time.svg" alt=""> 16 : 30</div>
-                            <div class="overwiew_info"><img  src="./form/overview/check_circle_outline.svg" alt="">Temporary exhibition</div>
-                        </div>
+                            <div class="wrapper_data">
+                                <img class="overwiew_info_text" src="./form/overview/date.svg" alt=""><div id="dateText" class="overwiew_info"> Friday, August 19</div>
+                            </div>
+                            
+                            <img class="overwiew_info_text" src="./form/overview/Time.svg" alt=""><div id="timeEntered" class="overwiew_info"> 16 : 30</div>
+                            <div class="wrapper_data"><img src="./form/overview/check_circle_outline.svg" alt=""><div class="overwiew_info">Temporary exhibition</div>
+                        </div> </div>
+                            
                         
                         <img src="./form/overview/louvre.jpg" width="150" height="120" alt="">    
                     </div>

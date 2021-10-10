@@ -71,10 +71,7 @@ const prev = document.getElementById('video_prevslide'),
       next = document.getElementById('video_nextslide'),
       slides = document.querySelectorAll('.video_slide');
       bullets = document.querySelectorAll('.video_navigation__item_circle');
-      console.log(prev);
-      console.log(next);
-      console.log(slides);
-      console.log(bullets);
+     
 let index_left;
 let index_center;
 let index_right;
@@ -96,7 +93,7 @@ const activeSlide = (n, o, p) => {
 }
 
 const nextSlide = () => {
-    console.log(index_left, index_center, index_right)
+    
     if (index_left == 0) {
         index_left = 1;
         index_center = 2;

@@ -3,7 +3,7 @@ let ticketType = document.getElementsByName("ticket_type");
 let ticketBasic = document.getElementsByName("ticket_basic");
 let ticketSenior = document.getElementsByName("ticket_senior");
 const totalPrice = document.getElementById('total_amount');
-console.log(totalPrice)
+
 
 let ticketTypeValue;
 let ticketBasicValue = 1;
@@ -17,10 +17,6 @@ function getTicketType(){
             }
 
 }
-console.log(`Type:${ticketTypeValue}
-  Basic:${ticketBasicValue}
-  Senior:${ticketSeniorValue}
-  `);
   getTicketPrice()
 }
 getTicketType()
@@ -36,13 +32,14 @@ minusButton_basic.addEventListener('click', event => {
   if (currentValue_basic > 0){
   inputField_basic.value = currentValue_basic - 1;
   ticketBasicValue = inputField_basic.value;
-  console.log(`Type:${ticketTypeValue}
-  Basic:${ticketBasicValue}
-  Senior:${ticketSeniorValue}
-  `);
+ 
+
+
+   
   
 }
 getTicketPrice()
+localStorage.setItem("ticket_basic", document.getElementById("ticket_basic").value);
 });
 
 plusButton_basic.addEventListener('click', event => {
@@ -51,12 +48,11 @@ plusButton_basic.addEventListener('click', event => {
   if (currentValue_basic < 20){
   inputField_basic.value = currentValue_basic + 1;
   ticketBasicValue = inputField_basic.value;
-  console.log(`Type:${ticketTypeValue}
-  Basic:${ticketBasicValue}
-  Senior:${ticketSeniorValue}
-  `);
+  
+   
   }
   getTicketPrice()
+  localStorage.setItem("ticket_basic", document.getElementById("ticket_basic").value);
 });
 
 
@@ -72,11 +68,7 @@ plusButton_basic.addEventListener('click', event => {
     if (currentValue_senior > 0){
     inputField_senior.value = currentValue_senior - 1;
     ticketSeniorValue = inputField_senior.value;
-    console.log(ticketSeniorValue)
-    console.log(`Type:${ticketTypeValue}
-    Basic:${ticketBasicValue}
-    Senior:${ticketSeniorValue}
-    `);}
+    }
     getTicketPrice()
   });
   
@@ -86,10 +78,7 @@ plusButton_basic.addEventListener('click', event => {
     if (currentValue_senior < 20){
     inputField_senior.value = currentValue_senior + 1;
     ticketSeniorValue = inputField_senior.value;
-    console.log(`Type:${ticketTypeValue}
-  Basic:${ticketBasicValue}
-  Senior:${ticketSeniorValue}
-  `);
+     
     }
     getTicketPrice()
   });
@@ -99,11 +88,15 @@ plusButton_basic.addEventListener('click', event => {
   function getTicketPrice () {
     let ticketPrice = ticketTypeValue * ticketBasicValue + ticketTypeValue / 2 * ticketSeniorValue;
     totalPrice.innerHTML = `Total €${ticketPrice}`;
+    
 
 
   }
   
   
+///////////////////////////////////////////////
 
 
-  
+
+
+

@@ -58,7 +58,6 @@ prev.addEventListener('click', prevSlide); */
 
 let items = document.querySelectorAll('.slide');
 let bullets = document.querySelectorAll('.slider_dot');
-console.log(bullets.length)
 let currentItem = 0;
 let currentBullet = 0;
 let slideNumber = document.getElementById("slide_number");
