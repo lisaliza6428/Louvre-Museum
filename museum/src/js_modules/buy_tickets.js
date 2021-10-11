@@ -33,6 +33,7 @@ open.forEach((button) => {
         e.preventDefault();
         overlay.classList.add('active');
         form.classList.add('active');
+      
     })
 });
 

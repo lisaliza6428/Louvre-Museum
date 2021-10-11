@@ -9,4 +9,5 @@ import './js_modules/change_picture_slider'
 import './js_modules/tickets_calculator'
 import './js_modules/video_slider'
 import './js_modules/form_validation'
+import './js_modules/tickets_calculatorForm'
 

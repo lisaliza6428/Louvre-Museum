@@ -282,17 +282,17 @@
                             
                             <p class="age" >Basic 18+</p>
                             <div class="numborber">
-                                <button id="minus_basic" class="btnplus" type="button">–</button>
-                                <input id="ticket_basic" type="number" min="0" max="20"   value="1" readonly  class="number"/>
-                                <button id="plus_basic" class="btnplus" type="button">+</button>
+                                <button name="minus_basic" id="minus_basic" class="btnplus" type="button">–</button>
+                                <input name="ticket_basic" id="ticket_basic" type="number" min="0" max="20"   value="1" readonly  class="number"/>
+                                <button name="plus_basic" id="plus_basic" class="btnplus" type="button">+</button>
                             </div>
                             
                             <p class="age">Senior 65+</p>
         
                             <div class="numborber">
-                                <button id="minus_senior" class="btnplus" type="button">–</button>
-                                <input id="ticket_senior" type="number" min="0" max="20" id = "d" value = "1"  class="number" >
-                                <button id="plus_senior" class="btnplus" type="button">+</button>
+                                <button name="minus_senior" id="minus_senior" class="btnplus" type="button">–</button>
+                                <input name="ticket_senior" id="ticket_senior" type="number" min="0" max="20" id = "d" value = "1"  class="number" >
+                                <button name="plus_senior" id="plus_senior" class="btnplus" type="button">+</button>
                             </div>
         
                             <h4 class="total_amount" id="total_amount">Total €0</h4>   
@@ -325,7 +325,7 @@
                     <p class="text_tour">Tour to Louvre</p>
                     <hr class="hr_form">
                     <div class="date_time">
-                        <input id ="date"  input = "setDate()" name="date" class="short" type="date">
+                        <input id ="date"  input = "setDate()" name="date" class="short date" type="date">
                        
                         <select  class="short" id ="time"> 
                             <option value="09.00">09.00</option>
@@ -350,32 +350,32 @@
                           </select>
                        
                     </div>
-                    <input type = "text" placeholder="Name">
-                    <input type = "email" placeholder="E-mail">
-                    <input type = "tel" placeholder="Phone">
-                    <select name="select"> 
-                        <option value="value1">Значение 1</option>
-                        <option value="value2" selected>Значение 2</option>
-                        <option value="value3">Значение 3</option>
+                    <input class = "name_input" type = "text" placeholder="Name">
+                    <input class = "email_input" type = "email" placeholder="E-mail">
+                    <input class = "tel" type = "tel" placeholder="Phone">
+                    <select class = "ticketselect" id="selectTypeTicket" name="select"> 
+                        <option value="20">Permanent exhibition</option>
+                        <option value="25">Temporary exhibition</option>
+                        <option value="40">Combined Admission</option>
                       </select>
 
                     <div class="entry_wrapper">
                         <p class="entry_ticket">Entry ticket</p>
                         <hr class="hr_form hr_entry">
                         <div class="age_wrapper">
-                            <p class="age_wrapper_tic" >Basic 18+ (20 €)</p>
+                            <p id="age_wrapper_tic_basic" class="age_wrapper_tic" >Basic 18+ (20 €)</p>
                             <div class="numborber_">
-                                <button class="btnplus numberbtn" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
-                                <input type="number" min="0" max="20" value="2" readonly class="number_">
-                                <button class="btnplus numberbtn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button name="minus_basic" id="form_minus_basic" class="btnplus numberbtn" type="button">−</button>
+                                <input name="ticket_basic" id="form_ticket_basic" type="number" min="0" max="20" value="2" readonly class="number_">
+                                <button name="plus_basic" id="form_plus_basic" class="btnplus numberbtn" type="button">+</button>
                             </div>
                         </div>
                         <div class="age_wrapper">
-                            <p class="age_wrapper_tic">Senior 65+ (10 €)</p>
+                            <p id="age_wrapper_tic_senior" class="age_wrapper_tic">Senior 65+ (10 €)</p>
                             <div class="numborber_">
-                                <button class="btnplus numberbtn" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
-                                <input type="number" min="0" max="20" value="2" readonly class="number_">
-                                <button class="btnplus numberbtn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button name="minus_senior" id="form_minus_senior" class="btnplus numberbtn" type="button">−</button>
+                                <input name="ticket_senior" id="form_ticket_senior" type="number" min="0" max="20" value="2" readonly class="number_">
+                                <button name="plus_senior" id="form_plus_senior" class="btnplus numberbtn" type="button">+</button>
                             </div>
                         </div>
                         
@@ -393,7 +393,8 @@
                             </div>
                             
                             <img class="overwiew_info_text" src="./form/overview/Time.svg" alt=""><div id="timeEntered" class="overwiew_info"> 16 : 30</div>
-                            <div class="wrapper_data"><img src="./form/overview/check_circle_outline.svg" alt=""><div class="overwiew_info">Temporary exhibition</div>
+                            <div class="wrapper_data">
+                                <img class="overwiew_info_text" src="./form/overview/check_circle_outline.svg" alt=""><div id = "typeExhibition" class="overwiew_info">Temporary exhibition</div>
                         </div> </div>
                             
                         
@@ -401,24 +402,24 @@
                     </div>
                     <div class="basket">
                         <div class="items">
-                            <img src="./form/overview/2.svg" alt="">
-                            <div class="basket_descr">Basic (20 €)</div>
+                            <input id="form_basic" type="number" min="0" max="20" value="1" readonly class="number_ black">
+                            <div id="basket_descr_basic" class="basket_descr">Basic (20 €)</div>
                         </div>
                     
-                        <div class="basket_descr">40 €</div>
+                        <div id="basket_amount_basic" class="basket_descr">40 €</div>
                     </div>
                     <div class="basket">
                         <div class="items">
-                            <img src="./form/overview/2.svg" alt="">
-                            <div class="basket_descr">Senior (10 €)</div>
+                            <input  id="form_senior" type="number" min="0" max="20" value="1" readonly class="number_ black">
+                            <div id="basket_descr_senior" class="basket_descr">Senior (10 €)</div>
                         </div>
                     
-                        <div class="basket_descr">20 €</div>
+                        <div id="basket_amount_senior" class="basket_descr">20 €</div>
                     </div>
                     <hr class="hr_backet">
                     <div class="total_am">
                         <div class="total_text">Total:</div>
-                        <div class="total_sum">60 €</div>
+                        <div id="total_sum" class="total_sum">60 €</div>
                     </div>
                     <div class="bank_cards">
                         <div class="card_inside">
