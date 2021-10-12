@@ -152,7 +152,7 @@ function videoFull() {
 
 
  document.addEventListener('keyup', function(e){
-
+  
   if (e.code === 'Space') {
     play()
   }
@@ -164,18 +164,9 @@ function videoFull() {
   }
 });
 
-window.onload = () => {
-  let observer = new IntersectionObserver(() => {
-    console.log('hhcx!')
-    
 
-      document.addEventListener('keyup', function(e){
-
-        e.preventDefault()
-      }); 
-
-  
-  }, { threshold: 0.4 })
-
-  observer.observe(video)
-}
+window.onkeydown = function(e) {
+  if (e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+  }
+};

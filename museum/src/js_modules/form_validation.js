@@ -29,9 +29,8 @@ document.getElementById("time").addEventListener("change", function() {
 
 
 document.getElementById("name_input").addEventListener("keyup", function(e) {
-    e.stopPropagation();
+    ///////e.stopPropagation();
     let name = document.getElementById('name_input').value;
-    console.log(name)
     let errorMessage = document.getElementById('nameError');
     let regName = /^[a-zа-яё\s]+$/iu;
     
@@ -43,8 +42,62 @@ document.getElementById("name_input").addEventListener("keyup", function(e) {
     }
     else{
         errorMessage.innerHTML = '';
+        document.getElementById('name_input').style.borderColor = "black"
         return true;
     } 
 });
 
 
+document.getElementById("email_input").addEventListener("keyup", function(e) {
+    ////////e.stopPropagation();
+    let email = document.getElementById('email_input').value;
+    let errorMessage = document.getElementById('emailError');
+    let regEmail = /^[a-zA-Z0-9_-]{3,15}@[a-zA-Z]{4,}\.[a-zA-Z]{2,}$/gm;
+
+    
+    if(!regEmail.test(email) ){
+        errorMessage.innerHTML =
+                'Email is uncorrect';
+        document.getElementById('email_input').style.borderColor = "red"
+        return false;
+    }
+    else{
+        errorMessage.innerHTML = '';
+        document.getElementById('email_input').style.borderColor = "black"
+        return true;
+    } 
+});
+
+document.getElementById('name_input').addEventListener('keyup', function (e) {
+
+    e.stopPropagation();
+  
+  }, false);
+  document.getElementById('name_input').addEventListener('keydown', function (e) {
+  
+    e.stopPropagation();
+  
+  }, false);
+
+
+  document.getElementById('email_input').addEventListener('keyup', function (e) {
+
+    e.stopPropagation();
+  
+  }, false);
+  document.getElementById('email_input').addEventListener('keydown', function (e) {
+  
+    e.stopPropagation();
+  
+  }, false);
+
+  document.getElementById('tel').addEventListener('keyup', function (e) {
+
+    e.stopPropagation();
+  
+  }, false);
+  document.getElementById('tel').addEventListener('keydown', function (e) {
+  
+    e.stopPropagation();
+  
+  }, false);

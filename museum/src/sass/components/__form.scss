@@ -114,7 +114,9 @@ margin: 14px 0 9px 0;
     max-width: 400px;
 }
 
-
+#time{
+    padding: 0 0 0 40px;
+}
 .booking input{
   
     font-style: normal;
@@ -554,6 +556,15 @@ display: inline-block;
 }
 
 
+.error_email{
+    color: #E00000;
+    margin: 0;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+    
 
 .error {
 	color: #E00000;
@@ -567,7 +578,19 @@ input {outline:none;}
 margin: 0 0 20px 0;
 position: relative;
 }
+
+.wrapper_email_input{
+    margin: 0 0 20px 0;
+    position: relative;
+    }
+
 #name_input{
 margin: 0;
 cursor: text;
 }
+
+
+#email_input{
+    margin: 0;
+    cursor: text;
+    }

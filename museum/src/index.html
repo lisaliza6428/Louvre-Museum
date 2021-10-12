@@ -354,9 +354,12 @@
                         <input autocomplete="off" id="name_input" class = "name_input" type = "text" placeholder="Name"> <br>
                         <span id="nameError" class="error"></span>
                     </div>
-                   
-                    <input class = "email_input" type = "email" placeholder="E-mail">
-                    <input class = "tel" type = "tel" placeholder="Phone">
+                    <div class = "wrapper_email_input">
+                    <input autocomplete="off" id="email_input" class = "email_input" type = "email" placeholder="E-mail">
+                    <span id="emailError" class="error_email"></span>
+                    </div>
+
+                    <input id = "tel" class = "tel" type = "tel" placeholder="Phone">
                     <select class = "ticketselect" id="selectTypeTicket" name="select"> 
                         <option value="20">Permanent exhibition</option>
                         <option value="25">Temporary exhibition</option>
