@@ -146,38 +146,13 @@ function videoFull() {
 }
 
 
-function speedUp(){
- 
-  video.play();
-  video.currentTime += 3;
-
-}
-
-function speedDown(){
- 
-  video.play();
-  video.currentTime -= 3;
-}
 
 
 
 
-document.addEventListener('keyup', function(e){
-  e.preventDefault();
-  
-  if (e.keyCode === 0 || e.keyCode === 39) {
-    speedUp()
-  }
-  if (e.keyCode === 0 || e.keyCode === 37) {
-    speedDown()
-  }
-});
 
+ document.addEventListener('keyup', function(e){
 
-
-
-document.addEventListener('keyup', function(e){
-  e.preventDefault();
   if (e.code === 'Space') {
     play()
   }
@@ -189,6 +164,18 @@ document.addEventListener('keyup', function(e){
   }
 });
 
-document.onkeydown = function(e){
-  if (e.keyCode == 32) e.preventDefault();
-};
+window.onload = () => {
+  let observer = new IntersectionObserver(() => {
+    console.log('hhcx!')
+    
+
+      document.addEventListener('keyup', function(e){
+
+        e.preventDefault()
+      }); 
+
+  
+  }, { threshold: 0.4 })
+
+  observer.observe(video)
+}

@@ -552,3 +552,22 @@ display: inline-block;
 .year_ex{ 
     margin-left: 15px;
 }
+
+
+
+.error {
+	color: #E00000;
+    position: absolute;
+	 }
+
+
+input {outline:none;}
+
+.wrapper_name_input{
+margin: 0 0 20px 0;
+position: relative;
+}
+#name_input{
+margin: 0;
+cursor: text;
+}
