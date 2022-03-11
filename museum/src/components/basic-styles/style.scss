@@ -1,8 +1,8 @@
 
 
-@import "../components/visiting-section/visiting.scss";
-@import "../components/footer/footer.scss";
-@import "components/reset.scss";
+@import "../visiting-section/visiting.scss";
+@import "../footer/footer.scss";
+@import "./reset";
 
 html {
   scroll-behavior: smooth;

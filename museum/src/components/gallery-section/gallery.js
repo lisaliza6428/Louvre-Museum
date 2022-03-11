@@ -1,21 +1,23 @@
+import './gallery.scss'
+
 function addImage(){
     const pictureInnerContainer = document.querySelector('.picture-inner-container');
     const array = [
-        `/assets/galery/galery1.jpg`,
-        `/assets/galery/galery2.jpg`,
-        `/assets/galery/galery3.jpg`,
-        `/assets/galery/galery4.jpg`,
-        `/assets/galery/galery5.jpg`,
-        `/assets/galery/galery6.jpg`,
-        `/assets/galery/galery7.jpg`,
-        `/assets/galery/galery8.jpg`,
-        `/assets/galery/galery9.jpg`,
-        `/assets/galery/galery10.jpg`,
-        `/assets/galery/galery11.jpg`,
-        `/assets/galery/galery12.jpg`,
-        `/assets/galery/galery13.jpg`,
-        `/assets/galery/galery14.jpg`,
-        `/assets/galery/galery15.jpg`,
+        `./assets/gallery/galery1.jpg`,
+        `/assets/gallery/galery2.jpg`,
+        `/assets/gallery/galery3.jpg`,
+        `/assets/gallery/galery4.jpg`,
+        `/assets/gallery/galery5.jpg`,
+        `/assets/gallery/galery6.jpg`,
+        `/assets/gallery/galery7.jpg`,
+        `/assets/gallery/galery8.jpg`,
+        `/assets/gallery/galery9.jpg`,
+        `/assets/gallery/galery10.jpg`,
+        `/assets/gallery/galery11.jpg`,
+        `/assets/gallery/galery12.jpg`,
+        `/assets/gallery/galery13.jpg`,
+        `/assets/gallery/galery14.jpg`,
+        `/assets/gallery/galery15.jpg`,
     ]
         function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
@@ -35,7 +37,7 @@ function addImage(){
     addImage()
 
     /////////////Animation/////////////////////
-    animOnSrroll
+
     const animItems = document.querySelectorAll('.img_gallery');
     if (animItems.length > 0){
         animOnSrroll()

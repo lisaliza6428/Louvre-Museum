@@ -1,3 +1,4 @@
+
 let ticketType = document.getElementsByName("ticket_type");
 let ticketBasic = document.getElementsByName("ticket_basic");
 let ticketSenior = document.getElementsByName("ticket_senior");

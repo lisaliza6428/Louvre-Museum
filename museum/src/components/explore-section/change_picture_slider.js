@@ -1,3 +1,5 @@
+import './explore.scss';
+
 comparePictures();
 
 function comparePictures() {

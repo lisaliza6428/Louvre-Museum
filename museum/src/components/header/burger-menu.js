@@ -1,7 +1,4 @@
-/* BURGER */
-
-
-
+import './header.scss'
 const menuIcon = document.querySelector('.burger-menu');
 const menuIconClose = document.querySelector('.burger-close');
 const menuNav = document.querySelector('.header-nav');
