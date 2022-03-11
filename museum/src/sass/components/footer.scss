@@ -1,0 +1,212 @@
+.dark-section.footer {
+  padding: 55px 0 60px 0;
+  background-color: #030303;
+  @media (max-width: 1024px) {
+    padding: 52px 0 60px 0;
+  }
+  @media (max-width: 768px) {
+    padding: 42px 0 60px 0;
+  }
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  :last-child {
+    align-self: flex-end;
+  }
+  margin-bottom: 40px;
+  @media (max-width: 1024px) {
+    align-items: flex-start;
+    justify-content: initial;
+    row-gap: 42px;
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    justify-content: initial;
+    row-gap: 42px;
+    flex-wrap: wrap;
+    margin-bottom: 29px;
+  }
+  @media (max-width: 420px) {
+    align-items: center;
+    justify-content: center;
+    row-gap: 0;
+  }
+}
+
+.footer-item.footer-logo {
+  margin-right: 142px;
+  @media (max-width: 1500px) {
+    margin-right: 39px;
+  }
+  @media (max-width: 1024px) {
+    margin-right: 39px;
+  }
+  @media (max-width: 768px) {
+    margin-right: 100px;
+    display: inline-block;
+  }
+
+  @media (max-width: 420px) {
+    align-self: flex-start;
+  }
+}
+
+.footer-nav__link.footer-menu {
+  margin-right: 397px;
+  @media (max-width: 1500px) {
+    margin-right: 92px;
+  }
+  @media (max-width: 1024px) {
+    margin-right: 92px;
+  }
+  @media (max-width: 768px) {
+    height: 121px;
+    margin-top: 15px;
+    margin-right: 0;
+  }
+  @media (max-width: 420px) {
+    height: 68px;
+  }
+}
+
+.footer-nav {
+  height: auto;
+  column-count: 2;
+  column-gap: 155px;
+
+  @media (max-width: 1500px) {
+    column-gap: 105px;
+  }
+  @media (max-width: 1024px) {
+    column-gap: 105px;
+  }
+  @media (max-width: 768px) {
+    column-gap: 167px;
+    height: 121px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 420px) {
+    column-count: 3;
+    column-gap: 80px;
+  }
+}
+
+.footer-nav__link > * {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  &:hover {
+    color: #9d8665;
+  }
+  &:active {
+    color: #7e6c51;
+  }
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  @media (max-width: 420px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-nav__link {
+    margin-bottom: 25px;
+  }
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  @media (max-width: 1024px) {
+    margin-bottom: 8px;
+  }
+  @media (max-width: 768px) {
+    margin-left: 296px;
+  }
+  @media (max-width: 420px) {
+    margin-left: 0;
+  }
+}
+
+.social-media__link {
+  cursor: pointer;
+  display: block;
+  border: 1px solid #666666;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-left: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &:hover {
+    filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+  }
+}
+.social-media__link.youtube {
+  margin-left: 1px;
+}
+
+.youtube {
+  background-image: url('/assets/social-media/youtube.svg');
+}
+.instagram {
+  background-image: url('/assets/social-media/inst.svg');
+}
+.facebook {
+  background-image: url('/assets/social-media/fb.svg');
+}
+.twitter {
+  background-image: url('/assets/social-media/twit.svg');
+}
+.pinterest {
+  background-image: url('/assets/social-media/pintr.svg');
+}
+
+.footer-line {
+  width: 100%;
+  height: 3px;
+  margin: 25px 0 50px 0;
+  background-color: #666666;
+  border: none;
+  @media (max-width: 768px) {
+    height: 1px;
+    margin: 25px 0 43px 0;
+  }
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+}
+.footer-bottom span > a {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  &:hover {
+    color: #9d8665;
+  }
+  &:active {
+    color: #7e6c51;
+  }
+}

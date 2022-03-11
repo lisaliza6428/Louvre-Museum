@@ -2,10 +2,10 @@
 
 
 
-const menuIcon = document.querySelector('.burger');
-const menuIconClose = document.querySelector('.burger_close');
-const menuNav = document.querySelector('.header_navigation');
-const welcomeContent = document.querySelector('.welcome_content');
+const menuIcon = document.querySelector('.burger-menu');
+const menuIconClose = document.querySelector('.burger-close');
+const menuNav = document.querySelector('.header-nav');
+const welcomeContent = document.querySelector('.welcome-content');
 
 
 function toggleMenu() {

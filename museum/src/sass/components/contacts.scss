@@ -1,0 +1,98 @@
+.contacts-section {
+    padding-bottom: 63px;
+    @media (max-width: 768px) {
+        padding-bottom: 71px;
+    }
+    @media (max-width: 420px) {
+        padding-bottom: 45px;
+    }
+}
+
+.container-2-column_contacts {
+    @media (max-width: 1024px) {
+        display: flex;
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.contacts_png {
+    @media (max-width: 1024px) {
+        width: 694px;
+        height: 454px;
+    }
+    @media (max-width: 768px) {
+        margin-top: 24px;
+        width: 728px;
+        height: 476px;
+    }
+    @media (max-width: 420px) {
+        margin-top: 24px;
+        width: 380px;
+        height: 248px;
+    }
+}
+
+.contacts {
+    &__title {
+        font-family: "Roboto", sans-serif;
+        max-width: 277px;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+        margin-bottom: 50px;
+        @media (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 35px;
+        }
+        @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 23px;
+            margin-bottom: 42px;
+        }
+        @media (max-width: 420px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 42px;
+        }
+    }
+
+    &__info {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 25px;
+        & > a {
+            &:hover {
+                color: #9d8665;
+            }
+            &:active {
+                color: #7e6c51;
+            }
+        }
+        @media (max-width: 1024px) {
+            font-size: 20px;
+            line-height: 23px;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 14px;
+        }
+        @media (max-width: 420px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+.map {
+    width: 960px;
+    height: 620px;
+}

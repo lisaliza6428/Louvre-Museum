@@ -1,21 +1,21 @@
 function addImage(){
     const pictureInnerContainer = document.querySelector('.picture-inner-container');
     const array = [
-        `/img/galery/galery1.jpg`,
-        `/img/galery/galery2.jpg`,
-        `/img/galery/galery3.jpg`,
-        `/img/galery/galery4.jpg`,
-        `/img/galery/galery5.jpg`,
-        `/img/galery/galery6.jpg`,
-        `/img/galery/galery7.jpg`,
-        `/img/galery/galery8.jpg`,
-        `/img/galery/galery9.jpg`,
-        `/img/galery/galery10.jpg`,
-        `/img/galery/galery11.jpg`,
-        `/img/galery/galery12.jpg`,
-        `/img/galery/galery13.jpg`,
-        `/img/galery/galery14.jpg`,
-        `/img/galery/galery15.jpg`,
+        `/assets/galery/galery1.jpg`,
+        `/assets/galery/galery2.jpg`,
+        `/assets/galery/galery3.jpg`,
+        `/assets/galery/galery4.jpg`,
+        `/assets/galery/galery5.jpg`,
+        `/assets/galery/galery6.jpg`,
+        `/assets/galery/galery7.jpg`,
+        `/assets/galery/galery8.jpg`,
+        `/assets/galery/galery9.jpg`,
+        `/assets/galery/galery10.jpg`,
+        `/assets/galery/galery11.jpg`,
+        `/assets/galery/galery12.jpg`,
+        `/assets/galery/galery13.jpg`,
+        `/assets/galery/galery14.jpg`,
+        `/assets/galery/galery15.jpg`,
     ]
         function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);

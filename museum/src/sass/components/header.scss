@@ -1,0 +1,150 @@
+.dark-section.header {
+  padding: 50px 0;
+  @media (max-width: 1024px) {
+    padding: 48px 0 38px 0;
+  }
+  @media (max-width: 768px) {
+    padding: 55px 0 25px 0;
+  }
+  @media (max-width: 420px) {
+    padding: 33px 0 25px 0;
+  }
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ffffff;
+  &:hover {
+    filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
+    cursor: pointer;
+  }
+}
+
+.logo__img {
+  width: 49px;
+  height: 26px;
+  padding-bottom: 8px;
+  @media (max-width: 420px) {
+    width: 29px;
+    height: 16px;
+  }
+}
+.header-nav {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    display: none;
+    .header-link {
+      margin-bottom: 25px;
+    }
+  }
+}
+.burger_open {
+  display: block;
+  @media (max-width: 1024px) {
+    position: absolute;
+    top: 122px;
+    left: 15px;
+  }
+}
+.header-link__arrow {
+  width: 7px;
+  height: 12px;
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+    margin-left: 20px;
+  }
+}
+.burger-menu {
+  display: none;
+  position: absolute;
+  right: 20px;
+  width: 32px;
+  height: 18px;
+
+  @media (max-width: 1024px) {
+    display: block;
+    margin-bottom: 2px;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 420px) {
+    margin-bottom: 0;
+  }
+}
+.burger_none {
+  display: none;
+}
+.burger-close {
+  display: none;
+  position: absolute;
+  right: 20px;
+  width: 32px;
+  height: 18px;
+}
+
+.burger_close_active {
+  display: block;
+}
+.logo__title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: "Forum", cursive;
+  margin-left: 25px;
+  @media (max-width: 420px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.header-link > a {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  margin-left: 56px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  & * :first-child {
+    margin-left: 0;
+  }
+  &:hover {
+    color: #9d8665;
+  }
+  &:active {
+    color: #7e6c51;
+  }
+  @media (max-width: 1550px) {
+    margin-left: 40px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 2px;
+  }
+}
+
+.header-link {
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

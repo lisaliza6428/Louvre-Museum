@@ -2,7 +2,7 @@ comparePictures();
 
 function comparePictures() {
   let x, i;
-  x = document.getElementsByClassName("img_explore_overlay");
+  x = document.getElementsByClassName("img-explore_overlay");
   for (i = 0; i < x.length; i++) {
     compare(x[i]);
   }

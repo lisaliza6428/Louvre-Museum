@@ -1,4 +1,4 @@
-section.video_section{
+section.video-section{
   padding-top: 75px;
   height: auto;
   @media (max-width: 1024px) {
@@ -168,7 +168,7 @@ background-position: center center;
 
 }
 .btn_on{
-background-image: url(/btn/play.svg);
+background-image: url(/assets/video-section/buttons/play.svg);
 }
 
 
@@ -199,7 +199,7 @@ background-repeat: no-repeat;
 background-position: center center;
 }
 .btn_soundon{
-background-image: url(/btn/volume.svg);
+background-image: url(/assets/video-section/buttons/volume.svg);
 
 } 
 
@@ -349,8 +349,8 @@ display: none;
 }
 
 .btn_pause{
-  background-image: url(/btn/pause.svg);
+  background-image: url(/assets/video-section/buttons/pause.svg);
 }
 .btn_soundoff{
-  background-image: url(/btn/mute.svg);
+  background-image: url(/assets/video-section/buttons/mute.svg);
 }
