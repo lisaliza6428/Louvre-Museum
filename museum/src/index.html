@@ -201,28 +201,24 @@
 
     <section class="section video-section">
       <div class="container">
-        <div class="video-description">
+        <div class="container video-description">
           <h2 id="video" class="section__title section__title-gold">Video journey</h2>
-          <p class="video-description__text">Enter and visit one of the most famous museums in the world and enjoy <br>
-            masterpieces such as Mona Lisa or Hammurabi's Code</p>
+          <p class="video-description__text">Enter and visit one of the most famous museums in the world and enjoy <br> masterpieces such as Mona Lisa or Hammurabi's Code</p>
         </div>
 
-        <div class="player">
-          <div class="video_container">
-            <button><img class="largebtn large filter-white" src="./assets/video-section/buttons/largebtn.svg" alt="1"></button>
-            <video class="video active" id="glass" width="1440" height="650" src="./assets/video-section/video0.mp4"
+          <div class="player">
+            <button type="button" class="player__btn"></button>
+            <video class="player__video" src="./assets/video-section/video0.mp4"
               poster="./assets/video-section/poster0.jpg">
             </video>
-          </div>
-          <div class="videopanel">
-            <button id="playbtn" class="play btn_on" type="button"></button>
-            <input type="range" class="video_bar" value="0" min="0" max="100" step="0.1">
-            <button class="sound btn_soundon" type="button"></button>
-            <input type="range" class="sound_bar" value="20" min="0" max="100">
-            <button class="fullsceen">
-              <img class="filter-white fullsceen_btn" src="./assets/video-section/buttons/fullscr.svg" alt="fullscreen">
-            </button>
-          </div>
+          
+            <div class="controls">
+              <button type="button" id="playbtn" class="controls__btn-play"></button>
+              <input type="range" class="controls__video-bar" value="0" min="0" max="100" step="0.1">
+              <button type="button" class="controls__sound-btn"></button>
+              <input type="range" class="controls__sound-bar" value="20" min="0" max="100">
+              <button type="button" class="controls__fullscreen-btn"></button>
+            </div>
         </div>
       </div>
     </section>
