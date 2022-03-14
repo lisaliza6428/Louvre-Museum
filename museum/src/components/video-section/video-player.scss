@@ -10,7 +10,7 @@ section.video-section {
     padding-bottom: 75px;
   }
 }
-.video_content {
+.video-description {
   display: flex;
   justify-content: space-between;
   justify-items: center;
@@ -36,7 +36,7 @@ section.video-section {
     object-fit: cover;
   }
 }
-.video_text {
+.video-description__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 300;

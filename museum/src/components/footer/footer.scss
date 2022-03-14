@@ -1,4 +1,4 @@
-.dark-section.footer {
+.footer {
   padding: 55px 0 60px 0;
   background-color: #030303;
   @media (max-width: 1024px) {
@@ -31,6 +31,7 @@
     flex-wrap: wrap;
     margin-bottom: 29px;
   }
+  
   @media (max-width: 420px) {
     align-items: center;
     justify-content: center;
