@@ -4,6 +4,9 @@
     @media (max-width: 1024px) {
         height: auto;
     }
+    @media (max-width: 768px) {
+        justify-content: space-between;
+    }
     @media (max-width: 420px) {
         flex-wrap: wrap;
         justify-content: center;
