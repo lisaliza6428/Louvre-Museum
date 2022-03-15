@@ -59,6 +59,9 @@ section.video-section {
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 1024px){
+    margin: 0;
+  }
 }
 .controls {
   display: flex;
@@ -110,12 +113,7 @@ input {
   *:hover {
     filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
   }
-  @media (max-width: 1024px) {
-    width: 152px;
-    height: 152px;
-    top: calc(50% - 76px);
-    left: calc(50% - 76px);
-  }
+
 }
 
 .controls__btn-play {

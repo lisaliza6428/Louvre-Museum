@@ -11,6 +11,8 @@ const controls = document.querySelector('.controls');
 const fullscreenButton = document.querySelector('.controls__fullscreen-btn');
 let isPlay = false;
 
+video.volume = 0.2;
+
 function toggleBtn() {
   if (!isPlay) {
     controlsButton.classList.toggle('controls__btn-pause');
@@ -66,7 +68,8 @@ function progressUpdate() {
     playerButton.classList.toggle('player__btn_none');
   };
 }
-function progr() {
+
+function fillProgressColor() {
   progressBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${this.value}%, #C4C4C4 ${this.value}%, #C4C4C4 100%)`;
 }
 
@@ -116,7 +119,6 @@ function videoFull() {
 }
 
 document.addEventListener('keyup', function (e) {
-
   if (e.code === 'Space') {
     play();
   }
@@ -138,7 +140,7 @@ controlsButton.onclick = play;
 video.onclick = play;
 video.ontimeupdate = progressUpdate;
 soundBar.oninput = changeVolume;
-progressBar.oninput = progr;
+progressBar.oninput = fillProgressColor;
 progressBar.onclick = videoreWind;
 soundButton.onclick = videoMute;
 fullscreenButton.onclick = videoFull;

@@ -56,6 +56,9 @@
   position: relative;
   width: 720px;
   height: 700px;
+  @media (max-width: 1460px) {
+    margin: 0 auto;
+  }
 }
 
 .explore-slider__img {

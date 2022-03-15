@@ -57,7 +57,6 @@ if (animItems.length > 0) {
       } else {
         animItem.classList.remove('animate')
       }
-
     }
   }
 
