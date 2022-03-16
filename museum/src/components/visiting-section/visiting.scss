@@ -1,152 +1,152 @@
 .visiting-section {
-    padding: 75px 0;
-    @media (max-width: 1024px) {
-        padding: 60px 0;
-    }
-    @media (max-width: 768px) {
-        padding: 37px 0 80px 0;
-    }
-    @media (max-width: 420px) {
-        padding: 40px 0 42px 0;
-    }
+  padding: 75px 0;
+  @media (max-width: 1024px) {
+    padding: 60px 0;
+  }
+  @media (max-width: 768px) {
+    padding: 37px 0 80px 0;
+  }
+  @media (max-width: 420px) {
+    padding: 40px 0 42px 0;
+  }
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    @media (max-width: 1500px) {
-        justify-content: center;
-        column-gap: 108px;
-        row-gap: 61px;
-    }
-    @media (max-width: 1024px) {
-        justify-content: center;
-        column-gap: 108px;
-        row-gap: 61px;
-    }
-    @media (max-width: 768px) {
-        column-gap: 56px;
-        row-gap: 40px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 1500px) {
+    justify-content: center;
+    column-gap: 108px;
+    row-gap: 61px;
+  }
+  @media (max-width: 1024px) {
+    justify-content: center;
+    column-gap: 108px;
+    row-gap: 61px;
+  }
+  @media (max-width: 768px) {
+    column-gap: 56px;
+    row-gap: 40px;
+  }
 }
 .card {
-    @media (max-width: 1024px) {
-        .card {
-            width: 330px;
-        }
+  @media (max-width: 1024px) {
+    .card {
+      width: 330px;
     }
-    @media (max-width: 796px) {
-        .card {
-            width: 280px;
-        }
+  }
+  @media (max-width: 796px) {
+    .card {
+      width: 280px;
     }
+  }
 }
 
 .card__img {
-    @media (max-width: 1024px) {
-        width: 330px;
-        height: 215px;
-    }
-    @media (max-width: 768px) {
-        width: 280px;
-        height: 180px;
-    }
+  @media (max-width: 1024px) {
+    width: 330px;
+    height: 215px;
+  }
+  @media (max-width: 768px) {
+    width: 280px;
+    height: 180px;
+  }
 }
 .card__title {
-    text-decoration: none;
-    display: block;
-    font-family: "Forum", cursive;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 35px;
+  text-decoration: none;
+  display: block;
+  font-family: "Forum", cursive;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 20px 0 10px 0;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    line-height: 31px;
+    letter-spacing: 3px;
+  }
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 21px 0 10px 0;
+  }
+  @media (max-width: 420px) {
+    font-size: 18px;
+    line-height: 20px;
     letter-spacing: 5px;
-    text-transform: uppercase;
-    margin: 20px 0 10px 0;
-    @media (max-width: 1024px) {
-        font-size: 28px;
-        line-height: 31px;
-        letter-spacing: 3px;
-    }
-    @media (max-width: 768px) {
-        font-size: 22px;
-        line-height: 24px;
-        margin: 21px 0 10px 0;
-    }
-    @media (max-width: 420px) {
-        font-size: 18px;
-        line-height: 20px;
-        letter-spacing: 5px;
-        margin: 21px 0 10px 0;
-    }
+    margin: 21px 0 10px 0;
+  }
 }
 .card__line {
-    width: 300px;
-    height: 2px;
-    margin: 0;
-    background-color: #710707;
-    border: none;
-    @media (max-width: 1024px) {
-        width: 150px;
-    }
-    @media (max-width: 768px) {
-        margin: 0 0 1px 0;
-    }
-    @media (max-width: 768px) {
-        margin: 0 0 0 0;
-    }
+  width: 300px;
+  height: 2px;
+  margin: 0;
+  background-color: #710707;
+  border: none;
+  @media (max-width: 1024px) {
+    width: 150px;
+  }
+  @media (max-width: 768px) {
+    margin: 0 0 1px 0;
+  }
+  @media (max-width: 768px) {
+    margin: 0 0 0 0;
+  }
 }
 .card__tour {
-    font-family: "Roboto", sans-serif;
-    font-weight: 200;
-    font-size: 22px;
-    line-height: 26px;
-    padding: 10px 0 10px;
-    display: block;
-    @media (max-width: 1024px) {
-        font-size: 20px;
-        line-height: 23px;
-    }
-    @media (max-width: 768px) {
-        font-size: 18px;
-        line-height: 21px;
-    }
-    @media (max-width: 420px) {
-        font-size: 16px;
-        line-height: 19px;
-    }
-}
-.card__panorama {
-    font-family: "Roboto", sans-serif;
-    font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  padding: 10px 0 10px;
+  display: block;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media (max-width: 768px) {
     font-size: 18px;
     line-height: 21px;
-    @media (max-width: 1024px) {
-        font-size: 16px;
-        line-height: 19px;
-    }
-    @media (max-width: 768px) {
-        font-size: 16px;
-        line-height: 19px;
-    }
+  }
+  @media (max-width: 420px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+.card__panorama {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 21px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 .panorama_padding {
-    padding-bottom: 77px;
-    @media (max-width: 1024px) {
-        padding: 0;
-    }
+  padding-bottom: 77px;
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
 }
 
 a.card:hover {
-    cursor: pointer;
-    .card__line {
-        width: 440px;
-        transition: 1s ease-in-out;
-        @media (max-width: 1024px) {
-            width: 340px;
-        }
-        @media (max-width: 768px) {
-            width: 280px;
-        }
+  cursor: pointer;
+  .card__line {
+    width: 440px;
+    transition: 1s ease-in-out;
+    @media (max-width: 1024px) {
+      width: 340px;
     }
+    @media (max-width: 768px) {
+      width: 280px;
+    }
+  }
 }

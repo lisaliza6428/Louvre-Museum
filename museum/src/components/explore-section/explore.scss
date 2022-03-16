@@ -49,9 +49,6 @@
   }
 }
 
-
-///////////////////////////
-
 .explore-slider {
   position: relative;
   width: 720px;
@@ -63,12 +60,11 @@
 
 .explore-slider__img {
   position: absolute;
-  width: 720px;
-  height: 700px;
+
   overflow: hidden;
   display: block;
   cursor: pointer;
-  max-width: 720px;
+  //max-width: 720px; 
   margin-left: auto;
   margin-right: auto;
   top: 0;
@@ -82,7 +78,7 @@
 
 .explore-slider__img img {
   display: block;
-  width: 720px;
+  //width: 720px;
   top: 0;
 }
 
@@ -99,9 +95,9 @@
 }
 
 .explore-slider__img.explore-slider__img_overlay {
-  max-width: 720px;
+  //max-width: 720px;
 }
 
 .explore-slider__img_overlay {
-  max-width: 720px;
+  //max-width: 720px;
 }

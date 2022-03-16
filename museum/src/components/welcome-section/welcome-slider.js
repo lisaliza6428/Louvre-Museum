@@ -6,135 +6,117 @@ let currentBullet = 0;
 let slideNumber = document.getElementById("slide_number");
 let isEnabled = true;
 
-
-
-function changeCurrentItem (sld, blt) {
+function changeCurrentItem(sld, blt) {
 	currentItem = (sld + items.length) % items.length;
-    currentBullet = (blt + bullets.length) % bullets.length;
+	currentBullet = (blt + bullets.length) % bullets.length;
 }
-
-
 
 function hideItem(direction) {
 	isEnabled = false;
-	items[currentItem ].classList.add(direction);
-	items [currentItem ].addEventListener('animationend', function() {
+	items[currentItem].classList.add(direction);
+	items[currentItem].addEventListener('animationend', function () {
 		this.classList.remove('active', direction);
-
 	});
 	bullets[currentBullet].classList.remove('active');
-
-	
 }
 
-function showItem (direction) {
-	items [currentItem].classList.add('next', direction);
-	items [currentItem].addEventListener('animationend', function() {
+function showItem(direction) {
+	items[currentItem].classList.add('next', direction);
+	items[currentItem].addEventListener('animationend', function () {
 		this.classList.remove('next', direction);
 		this.classList.add('active');
 		isEnabled = true;
 	});
 	bullets[currentBullet].classList.add('active');
-		
-
 }
 
 //animation
-function nextItem (currentItem, currentBullet) {
-	hideItem ('to-left');
-	changeCurrentItem (currentItem + 1, currentBullet + 1);
-	showItem ('from-right');
-	if (currentItem === 0){
+function nextItem(currentItem, currentBullet) {
+	hideItem('to-left');
+	changeCurrentItem(currentItem + 1, currentBullet + 1);
+	showItem('from-right');
+	if (currentItem === 0) {
 		slideNumber.innerHTML = `02`;
 	}
-	if (currentItem === 1){
+	if (currentItem === 1) {
 		slideNumber.innerHTML = `03`;
 	}
-	if (currentItem === 2){
+	if (currentItem === 2) {
 		slideNumber.innerHTML = `04`;
 	}
-	if (currentItem === 3){
+	if (currentItem === 3) {
 		slideNumber.innerHTML = `05`;
 	}
-	if (currentItem === 4){
+	if (currentItem === 4) {
 		slideNumber.innerHTML = `01`;
-	}
-
-}
-
-function previousItem (currentItem, currentBullet) {
-	hideItem ('to-right');
-	changeCurrentItem (currentItem - 1 , currentBullet - 1);
-	showItem ('from-left');  
-
-	if (currentItem === 0){
-		slideNumber.innerHTML = `05`;
-	}
-	if (currentItem === 1){
-		slideNumber.innerHTML = `01`;
-	}
-	if (currentItem === 2){
-		slideNumber.innerHTML = `02`;
-	}
-	if (currentItem === 3){
-		slideNumber.innerHTML = `03`;
-	}
-	if (currentItem === 4){
-		slideNumber.innerHTML = `04`;
 	}
 }
 
+function previousItem(currentItem, currentBullet) {
+	hideItem('to-right');
+	changeCurrentItem(currentItem - 1, currentBullet - 1);
+	showItem('from-left');
+	if (currentItem === 0) {
+		slideNumber.innerHTML = `05`;
+	}
+	if (currentItem === 1) {
+		slideNumber.innerHTML = `01`;
+	}
+	if (currentItem === 2) {
+		slideNumber.innerHTML = `02`;
+	}
+	if (currentItem === 3) {
+		slideNumber.innerHTML = `03`;
+	}
+	if (currentItem === 4) {
+		slideNumber.innerHTML = `04`;
+	}
+}
 
-
-document.querySelector('.arrowleft').addEventListener('click', function() {
+document.querySelector('.arrowleft').addEventListener('click', function () {
 	if (isEnabled) {
-		previousItem(currentItem, currentBullet);   
+		previousItem(currentItem, currentBullet);
 	}
 });
 
-document.querySelector('.arrowright').addEventListener('click', function() {
+document.querySelector('.arrowright').addEventListener('click', function () {
 	if (isEnabled) {
 		nextItem(currentItem, currentBullet);
 	}
 });
 
-
 //////////////DOT CONTROLS////////////////
 
+function checkDotControls() {
+	for (let i = 0; i < bullets.length; i++) {
+		bullets[i].addEventListener('click', function (a) {
 
-function funDotControls(){
-	for (let i = 0; i < bullets.length; i++){
-		bullets[i].addEventListener('click', function(a){
-
-	if (i === 0) {
-		nextItem(4,4)
-		}
-		
-	if (i === 1) {
-		nextItem(0,0)
-		}
-	if (i === 2) {
-		nextItem(1,1);
-		}
-	if (i === 3) {
-		nextItem(2,2)
-		}
-	if (i === 4) {
-		nextItem(3,3)
-		}
-
-})
-
+			if (i === 0) {
+				nextItem(4, 4)
+			}
+			if (i === 1) {
+				nextItem(0, 0)
+			}
+			if (i === 2) {
+				nextItem(1, 1);
+			}
+			if (i === 3) {
+				nextItem(2, 2)
+			}
+			if (i === 4) {
+				nextItem(3, 3)
+			}
+		})
+	}
 }
-} 
-funDotControls()
 
+checkDotControls()
 
 ///////////SWIPE//////////////////////
 
 const el = document.querySelector('.slides');
 const swipedetect = (el) => {
-  
+
 	let surface = el;
 	let startX = 0;
 	let startY = 0;
@@ -147,19 +129,19 @@ const swipedetect = (el) => {
 	let restraint = 100;
 	let allowedTime = 300;
 
-	surface.addEventListener('mousedown', function(e){
+	surface.addEventListener('mousedown', function (e) {
 		startX = e.pageX;
 		startY = e.pageY;
 		startTime = new Date().getTime();
 		e.preventDefault();
 	}, false);
 
-	surface.addEventListener('mouseup', function(e){
+	surface.addEventListener('mouseup', function (e) {
 		distX = e.pageX - startX;
 		distY = e.pageY - startY;
 		elapsedTime = new Date().getTime() - startTime;
-		if (elapsedTime <= allowedTime){
-			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+		if (elapsedTime <= allowedTime) {
+			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
 				if ((distX > 0)) {
 					if (isEnabled) {
 						previousItem(currentItem, currentBullet);
@@ -174,7 +156,7 @@ const swipedetect = (el) => {
 		e.preventDefault();
 	}, false);
 
-	surface.addEventListener('touchstart', function(e){
+	surface.addEventListener('touchstart', function (e) {
 		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
 			if (e.target.classList.contains('left')) {
 				if (isEnabled) {
@@ -186,38 +168,37 @@ const swipedetect = (el) => {
 				}
 			}
 		}
-			let touchobj = e.changedTouches[0];
-			startX = touchobj.pageX;
-			startY = touchobj.pageY;
-			startTime = new Date().getTime();
-			e.preventDefault();
+		let touchobj = e.changedTouches[0];
+		startX = touchobj.pageX;
+		startY = touchobj.pageY;
+		startTime = new Date().getTime();
+		e.preventDefault();
 	}, false);
 
-	surface.addEventListener('touchmove', function(e){
-			e.preventDefault();
+	surface.addEventListener('touchmove', function (e) {
+		e.preventDefault();
 	}, false);
 
-	surface.addEventListener('touchend', function(e){
-			let touchobj = e.changedTouches[0];
-			distX = touchobj.pageX - startX;
-			distY = touchobj.pageY - startY;
-			elapsedTime = new Date().getTime() - startTime;
-			if (elapsedTime <= allowedTime){
-					if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
-							if ((distX > 0)) {
-								if (isEnabled) {
-									previousItem(currentItem);
-								}
-							} else {
-								if (isEnabled) {
-									nextItem(currentItem);
-								}
-							}
+	surface.addEventListener('touchend', function (e) {
+		let touchobj = e.changedTouches[0];
+		distX = touchobj.pageX - startX;
+		distY = touchobj.pageY - startY;
+		elapsedTime = new Date().getTime() - startTime;
+		if (elapsedTime <= allowedTime) {
+			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+				if ((distX > 0)) {
+					if (isEnabled) {
+						previousItem(currentItem);
 					}
+				} else {
+					if (isEnabled) {
+						nextItem(currentItem);
+					}
+				}
 			}
-			e.preventDefault();
+		}
+		e.preventDefault();
 	}, false);
 }
-
 
 swipedetect(el);
