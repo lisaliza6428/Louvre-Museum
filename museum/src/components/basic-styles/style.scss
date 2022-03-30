@@ -59,7 +59,7 @@ section,
   color: #ffffff;
 }
 
-h2.section__title.section__title-white.welcome {
+h2.section__title.section__title--light.welcome {
   @media (max-width: 1024px) {
     font-size: 50px;
     line-height: 90px;
@@ -73,7 +73,7 @@ h2.section__title.section__title-white.welcome {
     line-height: 40px;
   }
 }
-.section__title.section__title-gold {
+.section__title.section__title--bright {
   color: #9d8665;
 }
 h2 {

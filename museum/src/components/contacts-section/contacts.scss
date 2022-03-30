@@ -9,10 +9,8 @@
 }
 
 .container-2-column_contacts {
+display: flex;
 
-   @media (max-width: 1024px) {
-    display: flex;
-  }
   @media (max-width: 768px) {
     flex-direction: column;
   } 

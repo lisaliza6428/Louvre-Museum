@@ -23,12 +23,13 @@
     margin-bottom: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 930px) {
     align-items: flex-start;
     justify-content: initial;
     row-gap: 42px;
     flex-wrap: wrap;
     margin-bottom: 29px;
+
   }
   
   @media (max-width: 420px) {

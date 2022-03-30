@@ -1,4 +1,4 @@
-import './welcome.scss'
+ import './welcome.scss'
 let items = document.querySelectorAll('.slide');
 let bullets = document.querySelectorAll('.slider-dots__dot');
 let currentItem = 0;

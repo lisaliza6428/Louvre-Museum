@@ -1,4 +1,4 @@
-import './video-player.scss';
+ import './video-player.scss';
 
 const playerButton = document.querySelector('.player__btn');
 const controlsButton = document.querySelector('.controls__btn-play');
@@ -143,4 +143,4 @@ soundBar.oninput = changeVolume;
 progressBar.oninput = fillProgressColor;
 progressBar.onclick = videoreWind;
 soundButton.onclick = videoMute;
-fullscreenButton.onclick = videoFull;
+fullscreenButton.onclick = videoFull; 

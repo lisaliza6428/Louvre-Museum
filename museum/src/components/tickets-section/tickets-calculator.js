@@ -1,124 +1,165 @@
 
-let ticketType = document.getElementsByName("ticket_type");
-let ticketBasic = document.getElementsByName("ticket_basic");
-let ticketSenior = document.getElementsByName("ticket_senior");
-const totalPrice = document.getElementById('total_amount');
-let ticketTypeValue;
-let ticketBasicValue = 1;
-let ticketSeniorValue = 1;
+const ticketType = document.getElementsByName("ticket-type");
+console.log(ticketType)
+const ticketBasic = document.getElementsByName("ticket-basic");
+const ticketSenior = document.getElementsByName("ticket-senior");
+const totalPrice = document.getElementById('ticket-amount__total');
 
 function getTicketType() {
   for (let i = 0; i < ticketType.length; i++) {
-    ticketType[i].addEventListener('click', getTicketType)
     if (ticketType[i].checked) {
-      ticketTypeValue = Number(ticketType[i].value);
+      return +ticketType[i].value;
     }
-
   }
-  getTicketPrice()
 }
-getTicketType()
+
+function listenRadioButtons() {
+  for (let i = 0; i < ticketType.length; i++) {
+    ticketType[i].addEventListener('click', countTotalPrice)
+  }
+}
+listenRadioButtons();
+
+function countTotalPrice() {
+  const ticketBasicValue = getBasicValue();
+  const ticketSeniorValue = getSeniorValue();
+  const TicketPrice = getTicketType();
+  const totalPrice = TicketPrice * ticketBasicValue + TicketPrice / 2 * ticketSeniorValue;
+  document.querySelector('.ticket-amount__total').innerHTML = `Total €${totalPrice}`;
+  document.querySelector('#total_sum').innerHTML = `€${totalPrice}`
+}
+countTotalPrice()
 
 /////////////////GETticketBasicValue/////////////////////////////////// 
-const minusButton_basic = document.getElementById('minus_basic');
-const plusButton_basic = document.getElementById('plus_basic');
-const inputField_basic = document.getElementById('ticket_basic');
-const inputField_basic_form = document.getElementById('form_basic');
-
-minusButton_basic.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue_basic = Number(inputField_basic.value);
-  if (currentValue_basic > 0) {
-    inputField_basic.value = currentValue_basic - 1;
-    ticketBasicValue = Number(inputField_basic.value);
-    inputField_basic_form.value = ticketBasicValue;
+function getBasicValue() {
+  const ticketBasicValue = localStorage.getItem('ticketBasicValue');
+  if (!ticketBasicValue) {
+    localStorage.setItem('ticketBasicValue', '1');
   }
-  getTicketPrice()
-});
-
-plusButton_basic.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue_basic = Number(inputField_basic.value);
-  if (currentValue_basic < 20) {
-    inputField_basic.value = currentValue_basic + 1;
-    ticketBasicValue = Number(inputField_basic.value);
-    inputField_basic_form.value = ticketBasicValue;
-  }
-  getTicketPrice()
-});
-
-/////////////////GETticketSeniorValue/////////////////////////////////// 
-const minusButton_senior = document.getElementById('minus_senior');
-const plusButton_senior = document.getElementById('plus_senior');
-const inputField_senior = document.getElementById('ticket_senior');
-const inputField_senior_form = document.getElementById('form_senior');
-
-minusButton_senior.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue_senior = Number(inputField_senior.value);
-  if (currentValue_senior > 0) {
-    inputField_senior.value = currentValue_senior - 1;
-    ticketSeniorValue = Number(inputField_senior.value);
-    inputField_senior_form.value = ticketSeniorValue;
-  }
-  getTicketPrice()
-});
-
-plusButton_senior.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue_senior = Number(inputField_senior.value);
-  if (currentValue_senior < 20) {
-    inputField_senior.value = currentValue_senior + 1;
-    ticketSeniorValue = Number(inputField_senior.value);
-    inputField_senior_form.value = ticketSeniorValue;
-  }
-  getTicketPrice()
-});
-
-///////////////GETprice//////////////////////////
-function getTicketPrice() {
-  ticketPrice = Number(ticketTypeValue * ticketBasicValue + ticketTypeValue / 2 * ticketSeniorValue);
-  totalPrice.innerHTML = `Total €${ticketPrice}`;
-  putValuesToForm()
+  return +ticketBasicValue
 }
+getBasicValue();
 
-function putValuesToForm() {
-  if (ticketTypeValue == 20) {
-    document.getElementById('typeExhibition').innerHTML = 'Permanent exhibition';
-    document.getElementById('selectTypeTicket').options[0].selected = true;
-    document.getElementById('age_wrapper_tic_basic').innerHTML = 'Basic 18+ (20 €)';
-    document.getElementById('basket_descr_basic').innerHTML = 'Basic (20 €)';
-    document.getElementById('age_wrapper_tic_senior').innerHTML = 'Senior 65+ (10 €)';
-    document.getElementById('basket_descr_senior').innerHTML = 'Senior (10 €)';
-    document.getElementById('basket_amount_basic').innerHTML = `${20 * ticketBasicValue} €`;
-    document.getElementById('basket_amount_senior').innerHTML = `${10 * ticketSeniorValue} €`;
-  }
-  else if (ticketTypeValue == 25) {
-    document.getElementById('typeExhibition').innerHTML = 'Temporary exhibition';
-    document.getElementById('selectTypeTicket').options[1].selected = true;
-    document.getElementById('age_wrapper_tic_basic').innerHTML = 'Basic 18+ (25 €)';
-    document.getElementById('basket_descr_basic').innerHTML = 'Basic (25 €)';
-    document.getElementById('age_wrapper_tic_senior').innerHTML = 'Senior 65+ (12.5 €)';
-    document.getElementById('basket_descr_senior').innerHTML = 'Senior (12.5 €)';
-    document.getElementById('basket_amount_basic').innerHTML = `${25 * ticketBasicValue} €`;
-    document.getElementById('basket_amount_senior').innerHTML = `${12.5 * ticketSeniorValue} €`;
-  }
-  else {
-    document.getElementById('typeExhibition').innerHTML = 'Combined Admission';
-    document.getElementById('selectTypeTicket').options[2].selected = true;
-    document.getElementById('age_wrapper_tic_basic').innerHTML = 'Basic 18+ (40 €)';
-    document.getElementById('basket_descr_basic').innerHTML = 'Basic (40 €)';
-    document.getElementById('age_wrapper_tic_senior').innerHTML = 'Senior 65+ (20 €)';
-    document.getElementById('basket_descr_senior').innerHTML = 'Senior (20 €)';
-    document.getElementById('basket_amount_basic').innerHTML = `${40 * ticketBasicValue} €`;
-    document.getElementById('basket_amount_senior').innerHTML = `${20 * ticketSeniorValue} €`;
-  }
+const minusButtonBasic = document.getElementById('minus-basic');
+const plusButtonBasic = document.getElementById('plus-basic');
+const inputFieldBasic = document.getElementById('ticket-basic');
+inputFieldBasic.value = getBasicValue();
+const inputFieldBasic_form = document.getElementById('form_ticket-basic');
+inputFieldBasic_form.value = getBasicValue();
+const fieldBasic_form = document.getElementById('form_basic');
+fieldBasic_form.value = getBasicValue();
 
-  let formTicketBasicValue = ticketBasicValue;
-  document.getElementById('form_ticket_basic').value = formTicketBasicValue;
-  let formTicketSeniorValue = ticketSeniorValue;
-  document.getElementById('form_ticket_senior').value = formTicketSeniorValue;
-  let totalTicketPrice = ticketPrice;
-  document.getElementById('total_sum').innerHTML = `€${totalTicketPrice}`;
+minusButtonBasic.addEventListener('click', event => {
+  event.preventDefault();
+  let ticketBasicValue = getBasicValue();
+  if (ticketBasicValue > 0) {
+    localStorage.setItem('ticketBasicValue', `${ticketBasicValue - 1}`);
+    inputFieldBasic.value = getBasicValue();
+    inputFieldBasic_form.value = getBasicValue();
+    fieldBasic_form.value = getBasicValue();
+    countTotalPrice();
+  }
+});
+
+plusButtonBasic.addEventListener('click', event => {
+  event.preventDefault();
+  let ticketBasicValue = getBasicValue();
+  if (ticketBasicValue < 20) {
+    localStorage.setItem('ticketBasicValue', `${ticketBasicValue + 1}`);
+    inputFieldBasic.value = getBasicValue();
+    inputFieldBasic_form.value = getBasicValue();
+    fieldBasic_form.value = getBasicValue();
+    countTotalPrice();
+  }
+});
+
+/////////////////GETticketBasicValue/////////////////////////////////// 
+function getSeniorValue() {
+  const ticketSeniorValue = localStorage.getItem('ticketSeniorValue');
+  if (!ticketSeniorValue) {
+    localStorage.setItem('ticketSeniorValue', '1');
+  }
+  return +ticketSeniorValue
 }
+getSeniorValue()
 
+const minusButtonSenior = document.getElementById('minus-senior');
+const plusButtonSenior = document.getElementById('plus-senior');
+const inputFieldSenior = document.getElementById('ticket-senior');
+inputFieldSenior.value = getSeniorValue();
+const inputFieldSenior_form = document.getElementById('form_ticket-senior');
+inputFieldSenior_form.value = getSeniorValue();
+const fieldSenior_form = document.getElementById('form_senior');
+fieldSenior_form.value = getSeniorValue();
+
+minusButtonSenior.addEventListener('click', event => {
+  event.preventDefault();
+  let ticketSeniorValue = getSeniorValue();
+  if (ticketSeniorValue > 0) {
+    localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue - 1}`);
+    inputFieldSenior.value = getSeniorValue();
+    inputFieldSenior_form.value = getSeniorValue();
+    fieldSenior_form.value = getSeniorValue();
+    countTotalPrice();
+  }
+});
+
+plusButtonSenior.addEventListener('click', event => {
+  event.preventDefault();
+  let ticketSeniorValue = getSeniorValue();
+  if (ticketSeniorValue < 20) {
+    localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue + 1}`);
+    inputFieldSenior.value = getSeniorValue();
+    inputFieldSenior_form.value = getSeniorValue();
+    fieldSenior_form.value = getSeniorValue();
+    countTotalPrice();
+  }
+});
+
+document.getElementById('form_minus-basic').addEventListener('click', event => {
+  event.preventDefault();
+  let ticketBasicValue = getBasicValue();
+  if (ticketBasicValue > 0) {
+    localStorage.setItem('ticketBasicValue', `${ticketBasicValue - 1}`);
+    inputFieldBasic.value = getBasicValue();
+    inputFieldBasic_form.value = getBasicValue();
+    fieldBasic_form.value = getBasicValue();
+    countTotalPrice();
+  }
+});
+
+document.getElementById('form_plus-basic').addEventListener('click', event => {
+  event.preventDefault();
+  let ticketBasicValue = getBasicValue();
+  if (ticketBasicValue < 20) {
+    localStorage.setItem('ticketBasicValue', `${ticketBasicValue + 1}`);
+    inputFieldBasic.value = getBasicValue();
+    inputFieldBasic_form.value = getBasicValue();
+    fieldBasic_form.value = getBasicValue();
+    countTotalPrice();
+  }
+});
+
+document.getElementById('form_minus-senior').addEventListener('click', event => {
+  event.preventDefault();
+  let ticketSeniorValue = getSeniorValue();
+  if (ticketSeniorValue > 0) {
+    localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue - 1}`);
+    inputFieldSenior.value = getSeniorValue();
+    inputFieldSenior_form.value = getSeniorValue();
+    fieldSenior_form.value = getSeniorValue();
+    countTotalPrice();
+  }
+});
+
+document.getElementById('form_plus-senior').addEventListener('click', event => {
+  event.preventDefault();
+  let ticketSeniorValue = getSeniorValue();
+  if (ticketSeniorValue < 20) {
+    localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue + 1}`);
+    inputFieldSenior.value = getSeniorValue();
+    inputFieldSenior_form.value = getSeniorValue();
+    fieldSenior_form.value = getSeniorValue();
+    countTotalPrice();
+  }
+});

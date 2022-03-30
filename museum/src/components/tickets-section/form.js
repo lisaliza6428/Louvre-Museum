@@ -72,56 +72,56 @@ document.getElementById("time").addEventListener("change", function () {
 });
 
 //Name Validation
-document.getElementById("name_input").addEventListener("keyup", function (e) {
-  let name = document.getElementById('name_input').value;
+document.getElementById("form__name-input").addEventListener("keyup", function (e) {
+  let name = document.getElementById('form__name-input').value;
   let errorMessage = document.getElementById('nameError');
   let regName = /^[a-zа-яё\s]+$/iu;
 
   if (!regName.test(name) || name.length < 3 || name.length > 15) {
     errorMessage.innerHTML =
       'Only English and Russian alphabet, from 3 to 15 letters';
-    document.getElementById('name_input').style.borderColor = "red"
+    document.getElementById('form__name-input').style.borderColor = "red"
     return false;
   }
   else {
     errorMessage.innerHTML = '';
-    document.getElementById('name_input').style.borderColor = "black"
+    document.getElementById('form__name-input').style.borderColor = "black"
     return true;
   }
 });
 
-document.getElementById("email_input").addEventListener("keyup", function (e) {
-  let email = document.getElementById('email_input').value;
+document.getElementById("form__email-input").addEventListener("keyup", function (e) {
+  let email = document.getElementById('form__email-input').value;
   let errorMessage = document.getElementById('emailError');
   let regEmail = /^[a-zA-Z0-9_-]{3,15}@[a-zA-Z]{4,}\.[a-zA-Z]{2,}$/gm;
 
   if (!regEmail.test(email)) {
     errorMessage.innerHTML =
       'Email is uncorrect';
-    document.getElementById('email_input').style.borderColor = "red"
+    document.getElementById('form__email-input').style.borderColor = "red"
     return false;
   }
   else {
     errorMessage.innerHTML = '';
-    document.getElementById('email_input').style.borderColor = "black"
+    document.getElementById('form__email-input').style.borderColor = "black"
     return true;
   }
 });
 
-document.getElementById('name_input').addEventListener('keyup', function (e) {
+document.getElementById('form__name-input').addEventListener('keyup', function (e) {
   e.stopPropagation();
 }, false);
 
-document.getElementById('name_input').addEventListener('keydown', function (e) {
+document.getElementById('form__name-input').addEventListener('keydown', function (e) {
   e.stopPropagation();
 }, false);
 
 
-document.getElementById('email_input').addEventListener('keyup', function (e) {
+document.getElementById('form__email-input').addEventListener('keyup', function (e) {
   e.stopPropagation();
 }, false);
 
-document.getElementById('email_input').addEventListener('keydown', function (e) {
+document.getElementById('form__email-input').addEventListener('keydown', function (e) {
   e.stopPropagation();
 }, false);
 

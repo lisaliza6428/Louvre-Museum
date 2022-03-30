@@ -38,17 +38,17 @@
     height: 16px;
   }
 }
-.header-nav {
+.nav__items {
   display: flex;
   justify-content: center;
   @media (max-width: 1024px) {
     display: none;
-    .header-link {
+    .nav__item {
       margin-bottom: 25px;
     }
   }
 }
-.burger_open {
+.nav__burger--open {
   display: block;
   @media (max-width: 1024px) {
     position: absolute;
@@ -57,7 +57,7 @@
     z-index: 5;
   }
 }
-.header-link__arrow {
+.nav__item-arrow {
   width: 7px;
   height: 12px;
   display: none;
@@ -66,7 +66,7 @@
     margin-left: 20px;
   }
 }
-.burger-menu {
+.nav__burger {
   display: none;
   position: absolute;
   right: 20px;
@@ -84,10 +84,10 @@
     margin-bottom: 0;
   }
 }
-.burger_none {
+.nav__burger--none {
   display: none;
 }
-.burger-close {
+.nav__burger-close {
   display: none;
   position: absolute;
   right: 20px;
@@ -95,7 +95,7 @@
   height: 18px;
 }
 
-.burger_close_active {
+.nav__burger-close--active {
   display: block;
 }
 .logo__title {
@@ -112,7 +112,7 @@
   }
 }
 
-.header-link > a {
+.nav__item > a {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 100;
@@ -142,7 +142,7 @@
   }
 }
 
-.header-link {
+.nav__item {
   @media (max-width: 1024px) {
     display: flex;
     justify-content: space-between;

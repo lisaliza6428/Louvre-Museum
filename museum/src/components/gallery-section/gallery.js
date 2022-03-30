@@ -1,4 +1,4 @@
-import './gallery.scss'
+ import './gallery.scss'
 
 function addImage() {
   const pictureInnerContainer = document.querySelector('.picture-inner-container');
@@ -35,11 +35,11 @@ function addImage() {
   }
 }
 
-addImage()
+addImage() 
 
 /////////////Animation/////////////////////
 
-const animItems = document.querySelectorAll('.img_gallery');
+  const animItems = document.querySelectorAll('.img_gallery');
 if (animItems.length > 0) {
   animOnSrroll()
   window.addEventListener('scroll', animOnSrroll);
@@ -66,4 +66,4 @@ if (animItems.length > 0) {
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
   }
-}
+}  

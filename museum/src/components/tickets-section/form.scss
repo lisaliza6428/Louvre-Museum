@@ -7,6 +7,7 @@
 
 .overlay {
   position: fixed;
+  z-index: 15;
   top: 0;
   left: 0;
   width: 100vw;
@@ -20,8 +21,11 @@
   opacity: 1;
   pointer-events: all;
   transition: 0.75s all;
+
 }
 .form {
+  box-sizing: border-box;
+  padding: 80px 100px;
   z-index: 1000;
   position: absolute;
   top: 50%;
@@ -31,12 +35,17 @@
 
   transition: 0.75s all;
   @media (max-width: 1024px) {
-    width: 1024px;
-    height: 768px;
+    padding: 20px;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+   
   }
   @media (max-width: 768px) {
-    width: 590px;
-    height: 1479px;
+    width: 100%;
+
+
   }
 }
 .form.active {
@@ -50,13 +59,13 @@
   cursor: pointer;
 }
 
-.logo_ {
-  background-image: url(/assets/form/form_logo.svg);
+.form__logo {
+  background-image: url('/assets/form/form_logo.svg');
   background-repeat: no-repeat;
   width: 85px;
   height: 41px;
 }
-.form_title {
+.form__title {
   font-weight: normal;
   font-size: 50px;
   line-height: 55px;
@@ -65,18 +74,26 @@
   color: #9d8665;
 }
 
-.form_content {
+.form-content {
   display: flex;
-  padding: 91px 235px;
-
   justify-content: space-between;
+  @media (max-width: 1010px) {
+  flex-direction: column;
+  justify-content: center;
+  }
 }
 
-.booking {
+.form-content__left {
   display: flex;
   flex-direction: column;
+  @media (max-width: 1010px) {
+    justify-content: center;
+    margin: 0 auto;
+    padding: 25px 30px;
 }
-.text_tour {
+}
+
+.form__subtitle {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -84,8 +101,8 @@
   color: #710707;
   margin: 14px 0 9px 0;
 }
-.hr_form {
-  width: 400px;
+.form__line {
+  width: 100%;
   height: 3px;
   background: #740c11;
   border: none;
@@ -93,20 +110,32 @@
 }
 
 .hr_entry {
-  width: 370px;
+  width: 100%;
   height: 2px;
   margin: 0 0 15px 0;
 }
-.date_time {
+.date-time-wrapper {
   display: flex;
   justify-content: space-between;
   max-width: 400px;
+  @media (max-width: 1024px){
+    max-width: none;
+  }
 }
+.date-time-wrapper select {
 
+  background: url('/assets/form/time.svg') no-repeat scroll 15px 15px;
+  padding: 0 0 0 30px;
+
+  &.form__date-input,
+  &.form__time-input {
+    width: 190px;
+  }
+}
 #time {
   padding: 0 0 0 40px;
 }
-.booking input {
+.form-content__left input {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -118,44 +147,51 @@
   width: 400px;
   height: 45px;
   margin-bottom: 20px;
-  &.short {
+  
+  &.form__date-input,
+  &.form__time-input {
     width: 190px;
+    
   }
-  &.date {
-    padding: 0 0 0 38px;
+  &.form__date-input {
+    background: url('/assets/form/date.svg') no-repeat scroll 12px 15px;
+    padding: 0 0 0 30px;
+    
   }
+  @media (max-width: 1010px){
+    width: 470px;
+  }
+
 }
 
-.name_input {
+.form__name-input {
   background: url(/assets/form/name.svg) no-repeat scroll 15px 15px;
 }
-.email_input {
+.form__email-input {
   background: url(/assets/form/email.svg) no-repeat scroll 15px 15px;
 }
 .tel {
   background: url(/assets/form/tel.svg) no-repeat scroll 15px 15px;
   background-position: left 15px center;
 }
-.date {
-  background: url(/assets/form/date.svg) no-repeat scroll 12px 15px;
-  padding: 0 0 0 45px;
-}
-#form_ticket_basic,
-#form_ticket_senior {
+
+#form_ticket-basic,
+#form_ticket-senior {
   padding: 0;
 }
 
-.ticketselect {
+.form__select {
   background: url(/assets/form/type.svg) no-repeat scroll 15px 15px;
   padding: 0 0 0 45px;
-}
-.date_time select {
-  background: url(/assets/form/time.svg) no-repeat scroll 15px 15px;
-  padding: 0 0 0 30px;
 
-  &.short {
-    width: 190px;
+
+  @media (max-width: 768px){
+    width: 470px;
   }
+}
+
+.wrapper_data {
+  height: 27px;
 }
 .age_wrapper input {
   width: 105px;
@@ -188,6 +224,9 @@ select {
   border: 1px solid #030303;
   margin: 0 0 20px 0;
   padding: 0 0 0 15px;
+  @media (max-width: 1010px){
+    width: 470px;
+  }
 }
 
 option .optionval {
@@ -200,6 +239,9 @@ option .optionval {
   padding: 10px 15px;
   border: 1px solid #030303;
   box-sizing: border-box;
+  @media (max-width: 1024px){
+    max-width: 470px;
+  }
 }
 .entry_ticket {
   font-family: "Forum", cursive;
@@ -230,7 +272,7 @@ option .optionval {
   color: #030303;
 }
 
-.numborber_ {
+.ticket-amount__input_ {
   display: flex;
 
   & > .btnplus {
@@ -244,7 +286,7 @@ option .optionval {
     font-weight: 400;
   }
 }
-.numborber_.btnplus {
+.ticket-amount__input_.btnplus {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +307,7 @@ option .optionval {
   align-items: center;
   justify-content: center;
 }
-.numborber_ input {
+.ticket-amount__input_ input {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -281,13 +323,20 @@ option .optionval {
 }
 
 /* overwiew //////////////////////////////////////*/
-.overwiew {
+.form-content__right {
   margin-left: 40px;
   padding: 25px 30px;
   border: 1px solid #030303;
   box-sizing: border-box;
   width: 530px;
   height: 663px;
+  @media (max-width: 1010px) {
+    margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      border: 1px solid white;
+      margin: 0 auto;
+    }
 }
 
 .overview_wrapper {
@@ -498,6 +547,12 @@ option .optionval {
   margin-left: 15px;
 }
 
+
+
+.error {
+  color: #e00000;
+  position: absolute;
+}
 .error_email {
   color: #e00000;
   margin: 0;
@@ -506,31 +561,26 @@ option .optionval {
   left: 0;
 }
 
-.error {
-  color: #e00000;
-  position: absolute;
-}
-
 input {
   outline: none;
 }
 
-.wrapper_name_input {
+.name-input-wrapper {
   margin: 0 0 20px 0;
   position: relative;
 }
 
-.wrapper_email_input {
+.email-input-wrapper {
   margin: 0 0 20px 0;
   position: relative;
 }
 
-#name_input {
+#form__name-input {
   margin: 0;
   cursor: text;
 }
 
-#email_input {
+#form__email-input {
   margin: 0;
   cursor: text;
 }

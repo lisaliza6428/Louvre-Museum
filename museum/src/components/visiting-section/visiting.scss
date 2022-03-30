@@ -11,7 +11,7 @@
   }
 }
 
-.cards-container {
+.cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -130,7 +130,7 @@
     line-height: 19px;
   }
 }
-.panorama_padding {
+.card__panorama--padding {
   padding-bottom: 77px;
   @media (max-width: 1024px) {
     padding: 0;
