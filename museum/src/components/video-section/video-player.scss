@@ -29,7 +29,7 @@ section.video-section {
   }
   @media (max-width: 768px) {
     margin: 20px 0 0 0;
-    height: 329px;
+    height: 300px;
     object-fit: cover;
   }
   &.fullscreen {
@@ -75,8 +75,9 @@ section.video-section {
     height: 60px;
   }
   @media (max-width: 768px) {
-    height: 58px;
+    height: 45px;
   }
+
   &.fullscreen {
     justify-content: space-between;
 
@@ -84,6 +85,14 @@ section.video-section {
       width: 1400px;
     }
   }
+  * {
+    margin: 0 20px;
+    @media (max-width: 768px) {
+      margin: 0 5px;
+    }
+  }
+
+
 }
 
 button,
@@ -114,13 +123,19 @@ input {
   *:hover {
     filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
   }
+  @media (max-width: 1024px) {
+    width: 110px;
+    height: 110px;
+    top: calc(50% - 55px);
+    left: calc(50% - 55px);
+  }
 
 }
 
 .controls__btn-play {
-  margin-left: 28px;
-  width: 23px;
-  height: 30px;
+  //margin-left: 28px;
+  width: 40px;
+  height: 40px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -134,7 +149,7 @@ input {
   background: linear-gradient(to right, #710707 0%, #710707 0%, #c4c4c4 0%, #c4c4c4 100%);
   height: 8px;
   width: 100%;
-  margin-left: 46px;
+  //margin-left: 46px;
   outline: none;
   -webkit-appearance: none;
   &::-webkit-slider-thumb {
@@ -147,7 +162,7 @@ input {
 }
 
 .controls__sound-btn {
-  margin-left: 48px;
+  //margin-left: 48px;
   width: 38px;
   height: 30px;
   background-repeat: no-repeat;
@@ -163,7 +178,7 @@ input {
   background: linear-gradient(to right, #710707 0%, #710707 20%, #c4c4c4 20%, #c4c4c4 100%);
   height: 8px;
   width: 155px;
-  margin-left: 50px;
+  //margin-left: 50px;
   outline: none;
   -webkit-appearance: none;
   &::-webkit-slider-thumb {
@@ -181,9 +196,8 @@ input {
   background-size: contain;
   background-position: center center;
   background-image: url("/assets/video-section/buttons/fullscr.svg");
-  margin: 0 23px 0 50px;
-  margin-left: 47px;
+  //margin-left: 47px;
   @media (max-width: 1024px) {
-    margin: 0 10px 0 47px;
+    //margin: 0 10px 0 47px;
   }
 }

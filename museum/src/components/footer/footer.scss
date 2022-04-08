@@ -26,10 +26,11 @@
   @media (max-width: 930px) {
     align-items: flex-start;
     justify-content: initial;
+    justify-content: space-between;
     row-gap: 42px;
     flex-wrap: wrap;
     margin-bottom: 29px;
-
+    justify-content: center;
   }
   
   @media (max-width: 420px) {
@@ -54,6 +55,8 @@
 
   @media (max-width: 420px) {
     align-self: flex-start;
+    margin: 0 auto 30px auto;
+
   }
 }
 
@@ -79,7 +82,6 @@
   height: auto;
   column-count: 2;
   column-gap: 155px;
-
   @media (max-width: 1500px) {
     column-gap: 105px;
   }
@@ -93,7 +95,7 @@
   }
   @media (max-width: 420px) {
     column-count: 3;
-    column-gap: 80px;
+    column-gap: 20px;
   }
 }
 
@@ -127,15 +129,12 @@
   }
 }
 
-.social-media {
+.social-media-list {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 16px;
+  margin: 0 0 16px 10px;
   @media (max-width: 1024px) {
     margin-bottom: 8px;
-  }
-  @media (max-width: 768px) {
-    margin-left: 296px;
   }
   @media (max-width: 420px) {
     margin-left: 0;
@@ -155,24 +154,24 @@
   &:hover {
     filter: invert(53%) sepia(42%) saturate(268%) hue-rotate(356deg) brightness(94%) contrast(93%);
   }
-}
-.social-media__link.youtube {
-  margin-left: 1px;
+  @media (max-width: 420px) {
+    margin-left: 10px;
+  }
 }
 
-.youtube {
+.social-media__link--youtube {
   background-image: url('/assets/social-media/youtube.svg');
 }
-.instagram {
+.social-media__link--instagram {
   background-image: url('/assets/social-media/inst.svg');
 }
-.facebook {
+.social-media__link--facebook {
   background-image: url('/assets/social-media/fb.svg');
 }
-.twitter {
+.social-media__link--twitter {
   background-image: url('/assets/social-media/twit.svg');
 }
-.pinterest {
+.social-media__link--pinterest {
   background-image: url('/assets/social-media/pintr.svg');
 }
 
@@ -192,10 +191,19 @@
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
+  row-gap: 10px;
+  column-gap: 20px;
   font-weight: 100;
   font-size: 22px;
   line-height: 22px;
   letter-spacing: 2px;
+  @media (max-width: 600px){
+    font-size: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .footer-bottom span > a {
   font-family: "Roboto", sans-serif;
@@ -209,5 +217,8 @@
   }
   &:active {
     color: #7e6c51;
+  }
+  @media (max-width: 768px){
+    font-size: 16px;
   }
 }

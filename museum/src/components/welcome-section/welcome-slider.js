@@ -1,204 +1,49 @@
- import './welcome.scss'
-let items = document.querySelectorAll('.slide');
-let bullets = document.querySelectorAll('.slider-dots__dot');
-let currentItem = 0;
-let currentBullet = 0;
-let slideNumber = document.getElementById("slide_number");
-let isEnabled = true;
+import './welcome.scss'
 
-function changeCurrentItem(sld, blt) {
-	currentItem = (sld + items.length) % items.length;
-	currentBullet = (blt + bullets.length) % bullets.length;
+let currentIndex = 1;
+const slideNumber = document.querySelector('.number__current');
+const slides = Array.from(document.querySelectorAll('.slide'));
+const dots = Array.from(document.querySelectorAll('.slider-dots__dot'));
+
+showSlides(currentIndex);
+
+
+
+function nextSlide() {
+    showSlides(currentIndex += 1);
+		slideNumber.innerText = `0${currentIndex}`
 }
 
-function hideItem(direction) {
-	isEnabled = false;
-	items[currentItem].classList.add(direction);
-	items[currentItem].addEventListener('animationend', function () {
-		this.classList.remove('active', direction);
-	});
-	bullets[currentBullet].classList.remove('active');
+function previousSlide() {
+    showSlides(currentIndex -= 1);
+		slideNumber.innerText = `0${currentIndex}`
 }
 
-function showItem(direction) {
-	items[currentItem].classList.add('next', direction);
-	items[currentItem].addEventListener('animationend', function () {
-		this.classList.remove('next', direction);
-		this.classList.add('active');
-		isEnabled = true;
-	});
-	bullets[currentBullet].classList.add('active');
+function currentSlide(n) {
+    showSlides(currentIndex = n);
 }
 
-//animation
-function nextItem(currentItem, currentBullet) {
-	hideItem('to-left');
-	changeCurrentItem(currentItem + 1, currentBullet + 1);
-	showItem('from-right');
-	if (currentItem === 0) {
-		slideNumber.innerHTML = `02`;
-	}
-	if (currentItem === 1) {
-		slideNumber.innerHTML = `03`;
-	}
-	if (currentItem === 2) {
-		slideNumber.innerHTML = `04`;
-	}
-	if (currentItem === 3) {
-		slideNumber.innerHTML = `05`;
-	}
-	if (currentItem === 4) {
-		slideNumber.innerHTML = `01`;
-	}
+function showSlides(n) {
+    let i = 0;
+    if (n > slides.length) {
+      currentIndex = 1;
+    }
+    if (n < 1) {
+        currentIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[currentIndex - 1].style.display = "block";
+    dots[currentIndex - 1].className += " active";
 }
 
-function previousItem(currentItem, currentBullet) {
-	hideItem('to-right');
-	changeCurrentItem(currentItem - 1, currentBullet - 1);
-	showItem('from-left');
-	if (currentItem === 0) {
-		slideNumber.innerHTML = `05`;
-	}
-	if (currentItem === 1) {
-		slideNumber.innerHTML = `01`;
-	}
-	if (currentItem === 2) {
-		slideNumber.innerHTML = `02`;
-	}
-	if (currentItem === 3) {
-		slideNumber.innerHTML = `03`;
-	}
-	if (currentItem === 4) {
-		slideNumber.innerHTML = `04`;
-	}
-}
-
-document.querySelector('.arrowleft').addEventListener('click', function () {
-	if (isEnabled) {
-		previousItem(currentItem, currentBullet);
-	}
-});
-
-document.querySelector('.arrowright').addEventListener('click', function () {
-	if (isEnabled) {
-		nextItem(currentItem, currentBullet);
-	}
-});
-
-//////////////DOT CONTROLS////////////////
-
-function checkDotControls() {
-	for (let i = 0; i < bullets.length; i++) {
-		bullets[i].addEventListener('click', function (a) {
-
-			if (i === 0) {
-				nextItem(4, 4)
-			}
-			if (i === 1) {
-				nextItem(0, 0)
-			}
-			if (i === 2) {
-				nextItem(1, 1);
-			}
-			if (i === 3) {
-				nextItem(2, 2)
-			}
-			if (i === 4) {
-				nextItem(3, 3)
-			}
-		})
-	}
-}
-
-checkDotControls()
-
-///////////SWIPE//////////////////////
-
-const el = document.querySelector('.slides');
-const swipedetect = (el) => {
-
-	let surface = el;
-	let startX = 0;
-	let startY = 0;
-	let distX = 0;
-	let distY = 0;
-	let startTime = 0;
-	let elapsedTime = 0;
-
-	let threshold = 150;
-	let restraint = 100;
-	let allowedTime = 300;
-
-	surface.addEventListener('mousedown', function (e) {
-		startX = e.pageX;
-		startY = e.pageY;
-		startTime = new Date().getTime();
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('mouseup', function (e) {
-		distX = e.pageX - startX;
-		distY = e.pageY - startY;
-		elapsedTime = new Date().getTime() - startTime;
-		if (elapsedTime <= allowedTime) {
-			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
-				if ((distX > 0)) {
-					if (isEnabled) {
-						previousItem(currentItem, currentBullet);
-					}
-				} else {
-					if (isEnabled) {
-						nextItem(currentItem, currentBullet);
-					}
-				}
-			}
-		}
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchstart', function (e) {
-		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
-			if (e.target.classList.contains('left')) {
-				if (isEnabled) {
-					previousItem(currentItem);
-				}
-			} else {
-				if (isEnabled) {
-					nextItem(currentItem);
-				}
-			}
-		}
-		let touchobj = e.changedTouches[0];
-		startX = touchobj.pageX;
-		startY = touchobj.pageY;
-		startTime = new Date().getTime();
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchmove', function (e) {
-		e.preventDefault();
-	}, false);
-
-	surface.addEventListener('touchend', function (e) {
-		let touchobj = e.changedTouches[0];
-		distX = touchobj.pageX - startX;
-		distY = touchobj.pageY - startY;
-		elapsedTime = new Date().getTime() - startTime;
-		if (elapsedTime <= allowedTime) {
-			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
-				if ((distX > 0)) {
-					if (isEnabled) {
-						previousItem(currentItem);
-					}
-				} else {
-					if (isEnabled) {
-						nextItem(currentItem);
-					}
-				}
-			}
-		}
-		e.preventDefault();
-	}, false);
-}
-
-swipedetect(el);
+document.querySelector('.control__left').addEventListener('click', previousSlide );
+document.querySelector('.control__right').addEventListener('click', nextSlide );
+dots.forEach(dot => dot.addEventListener('click', () => {
+	const index = dots.indexOf(dot) + 1;
+	currentSlide(index);
+}))

@@ -14,7 +14,6 @@
   <link rel="icon" href="./assets/favicon.ico">
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css' rel='stylesheet' />
-
 </head>
 
 <body>
@@ -77,8 +76,8 @@
           <div class="welcome__content">
             <h2 class="section__title section__title--light welcome">Welcome</h2>
             <h2 class="section__title section__title--light welcome">to the Louvre</h2>
-            <p class="welcome__content-text">From the castle to the museum</p>
-            <a class="welcome__content-button" href="/tour/tour1.html" target="_blank">Discover the Louvre</a>
+            <p class="welcome__text">From the castle to the museum</p>
+            <a class="welcome__button" href="/tour/tour1.html" target="_blank">Discover the Louvre</a>
           </div>
 
           <div class="slides">
@@ -105,7 +104,7 @@
 
             <div class="slider-controls">
               <div class="slide-numbers">
-                <span class="number__current" id="slide_number">01</span>
+                <span class="number__current">01</span>
                 <span class="number__divider">|</span>
                 <span class="number__slide-count">05</span>
               </div>
@@ -116,10 +115,10 @@
                 <div class="slider-dots__dot"></div>
                 <div class="slider-dots__dot"></div>
               </div>
-              <button class="arrowleft" id="arrowleft" ><img class="filter-golden"
-                  src="./assets/welcome-slider/arrowleft.svg" alt="1"></button>
-              <button class="arrowright" id="arrowright" ><img class="filter-golden"
-                  src="./assets/welcome-slider/arrowright.svg" alt="2"></button>
+              <button class="control__left"><img class="control__img control__img--active"
+                  src="./assets/welcome-slider/arrowleft.svg" alt="next"></button>
+              <button class="control__right"><img class="control__img control__img--active"
+                  src="./assets/welcome-slider/arrowright.svg" alt="prev"></button>
             </div>
           </div>
         </div>
@@ -189,47 +188,50 @@
       <div class="container">
         <div class="container-2">
           <div class="explore-content">
-            <h2 class="section__title section__title--light" id="explore" >Picture explore</h2>
+            <h2 class="section__title section__title--light" id="explore">Picture explore</h2>
             <hr class="explore-content__line">
             <p class="explore-content__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of
               the Spanish Golden Age.</p>
-            <p class="explore-content__text">It was cleaned in 1984 to remove a 
+            <p class="explore-content__text">It was cleaned in 1984 to remove a
               <span class="explore-content__text explore-content__text--bright">"yellow veil"</span>
               of dust that had gathered since the previous restoration in the 19th
-              century.</p>
+              century.
+            </p>
             <p class="explore-content__text">The cleaning provoked furious protests, not because
               the picture had been damaged in any way, but because it looked different.</p>
           </div>
 
           <div class="explore-slider">
-            <div class="explore-slider__img">
-              <img src="./assets/explore-slider/after.jpg" alt="">
+            <div class="explore-slider__img explore-slider__img--before">
+              <img src="../assets/explore-slider/before.jpg" alt="">
             </div>
-            <div class="explore-slider__img explore-slider__img_overlay">
-              <img src="./assets/explore-slider/before.jpg" alt="">
+            <div class="explore-slider__img explore-slider__img--after">
+              <img src="../assets/explore-slider/after.jpg" alt="">
             </div>
+            <div class="explore-slider__control"></div>
           </div>
         </div>
     </section>
 
-     <section class="section video-section">
+    <section class="section video-section">
       <div class="container">
         <div class="container video-description">
-          <h2  class="section__title section__title--bright" id="video">Video journey</h2>
+          <h2 class="section__title section__title--bright" id="video">Video journey</h2>
           <p class="video-description__text">Enter and visit one of the most famous museums in the world and enjoy <br>
             masterpieces such as Mona Lisa or Hammurabi's Code</p>
         </div>
 
         <div class="player">
           <button class="player__btn" type="button"></button>
-          <video class="player__video" src="./assets/video-section/video0.mp4"poster="./assets/video-section/poster0.jpg">
+          <video class="player__video" src="./assets/video-section/video0.mp4"
+            poster="./assets/video-section/poster0.jpg">
           </video>
 
           <div class="controls">
-            <button class="controls__btn-play" type="button" id="playbtn" ></button>
-            <input class="controls__video-bar" type="range"  value="0" min="0" max="100" step="0.1">
-            <button class="controls__sound-btn" type="button" ></button>
-            <input class="controls__sound-bar" type="range"  value="20" min="0" max="100">
+            <button class="controls__btn-play" type="button" id="playbtn"></button>
+            <input class="controls__video-bar" type="range" value="0" min="0" max="100" step="0.1">
+            <button class="controls__sound-btn" type="button"></button>
+            <input class="controls__sound-bar" type="range" value="20" min="0" max="100">
             <button class="controls__fullscreen-btn" type="button"></button>
           </div>
         </div>
@@ -249,19 +251,28 @@
 
     <section class="section tickets-section">
       <div class="container">
-        <h2 class="section__title section__title--bright" id="tickets" >Buy tickets</h2>
+        <h2 class="section__title section__title--bright" id="tickets">Buy tickets</h2>
         <hr class="section__line">
         <div class="tickets-section__content">
-          <div><img class="tickets-section__img" src="./assets/tickets.jpg" alt="picture"></div>
+          <div class="tickets-section__image">
+            <img class="tickets-section__img" src="./assets/tickets.jpg" alt="picture">
+          </div>
+
           <div class="ticket-type">
             <h4 class="ticket-type__title">Ticket Type</h4>
             <div class="ticket-type__options">
-              <label class="ticket-type__option"><input type="radio" name="ticket-type" value="20" checked><span></span>
-                Permanent exhibition</label>
-              <label class="ticket-type__option"><input type="radio" name="ticket-type"
-                  value="25"><span></span>Temporary exhibition</label>
-              <label class="ticket-type__option"><input type="radio" name="ticket-type" value="40"><span></span>Combined
-                Admission</label>
+              <label class="ticket-type__option">
+                <input type="radio" name="ticket-type" value="20" checked><span></span>
+                Permanent exhibition
+              </label>
+              <label class="ticket-type__option">
+                <input type="radio" name="ticket-type" value="25"><span></span>
+                Temporary exhibition
+              </label>
+              <label class="ticket-type__option">
+                <input type="radio" name="ticket-type" value="40"><span></span>
+                Combined Admission
+              </label>
             </div>
           </div>
 
@@ -269,18 +280,19 @@
             <h4 class="ticket-amount__title">Amount</h4>
             <p class="ticket-amount__age">Basic 18+</p>
             <div class="ticket-amount__input">
-              <button class="btnplus" name="minus-basic" id="minus-basic"  type="button">–</button>
-              <input name="ticket-basic" id="ticket-basic" type="number" min="0" max="20" value="1" readonly
-                class="number" />
-              <button class="btnplus" name="plus-basic" id="plus-basic"  type="button">+</button>
+              <button class="count-control-button" name="minus-basic" id="minus-basic" type="button">–</button>
+              <input class="number" name="ticket-basic" id="ticket-basic" type="number" min="0" max="20" value="1"
+                readonly />
+              <button class="count-control-button" name="plus-basic" id="plus-basic" type="button">+</button>
             </div>
 
             <p class="ticket-amount__age">Senior 65+</p>
             <div class="ticket-amount__input">
-              <button class="btnplus" name="minus-senior" id="minus-senior" class="btnplus" type="button">–</button>
-              <input name="ticket-senior" id="ticket-senior" type="number" min="0" max="20" id="d" value="1"
-                class="number">
-              <button class="btnplus" name="plus-senior" id="plus-senior"  type="button">+</button>
+              <button class="count-control-button" name="minus-senior" id="minus-senior" class="count-control-button"
+                type="button">–</button>
+              <input class="number" name="ticket-senior" id="ticket-senior" type="number" min="0" max="20" id="d"
+                value="1">
+              <button class="count-control-button" name="plus-senior" id="plus-senior" type="button">+</button>
             </div>
             <h4 class="ticket-amount__total" id="ticket-amount__total">Total €0</h4>
             <button class="ticket-amount__button open-form" type="button">Buy Now</button>
@@ -289,8 +301,8 @@
       </div>
     </section>
 
-    <div class="overlay ">
-      <form class="form ">
+    <div class="overlay">
+      <form class="form">
         <img class="close-form" src="./assets/form/close.svg" alt="1">
         <div class="form-content">
           <div class="form-content__left">
@@ -300,7 +312,7 @@
             <h3 class="form__subtitle">Tour to Louvre</h3>
             <hr class="form__line">
             <div class="date-time-wrapper">
-              <input id="date" input="setDate()" name="date" class="form__date-input" type="date">
+              <input class="form__date-input" id="date" input="setDate()" name="date" type="date">
               <select class="form__time-input" id="time">
                 <option value="09.00">09.00</option>
                 <option value="09.30">09.30</option>
@@ -324,18 +336,18 @@
               </select>
             </div>
             <div class="name-input-wrapper">
-              <input autocomplete="off" id="form__name-input" class="form__name-input" type="text" placeholder="Name">
-              <span id="nameError" class="error"></span>
+              <input class="form__name-input" id="form__name-input" autocomplete="off" type="text" placeholder="Name">
+              <span class="form__error" id="nameError"></span>
             </div>
             <div class="email-input-wrapper">
-              <input autocomplete="off" id="form__email-input" class="form__email-input" type="email"
+              <input class="form__email-input" id="form__email-input" autocomplete="off" type="email"
                 placeholder="E-mail">
-              <span id="emailError" class="error_email"></span>
+              <span class="form__error" id="emailError"></span>
             </div>
 
             <div class="tel-input-wrapper">
-              <input autocomplete="off" id="tel" class="form__tel-input tel" type="tel" placeholder="Phone">
-              <span id="telError" class="error"></span>
+              <input class="form__tel-input" id="form__tel-input" autocomplete="off" type="tel" placeholder="Phone">
+              <span class="form__error" id="telError"></span>
             </div>
 
             <select class="form__select" id="form__select" name="select">
@@ -344,97 +356,99 @@
               <option value="40">Combined Admission</option>
             </select>
 
-            <div class="entry_wrapper">
-              <h3 class="entry_ticket">Entry ticket</h3>
-              <hr class="form__line hr_entry">
-              <div class="age_wrapper">
-                <p id="age_wrapper_tic_basic" class="age_wrapper_tic">Basic 18+ (20 €)</p>
-                <div class="ticket-amount__input_">
-                  <button id="form_minus-basic" class="btnplus numberbtn" type="button">−</button>
-                  <input id="form_ticket-basic" type="number" min="0" max="20" value="2" readonly class="number_">
-                  <button id="form_plus-basic" class="btnplus numberbtn" type="button">+</button>
+            <div class="entry-wrapper">
+              <h3 class="entry-wrapper__title">Entry ticket</h3>
+              <hr class="form__line form__line--entry">
+              <div class="entry__item">
+                <p class="item__info">Basic 18+ (20 €)</p>
+                <div class="item__input">
+                  <button class="count-control-button numberbtn" id="form-minus-basic" type="button">−</button>
+                  <input class="" id="form-ticket-basic" type="number" min="0" max="20" value="2" readonly>
+                  <button class="count-control-button numberbtn" id="form-plus-basic" type="button">+</button>
                 </div>
               </div>
-              <div class="age_wrapper">
-                <p id="age_wrapper_tic_senior" class="age_wrapper_tic">Senior 65+ (10 €)</p>
-                <div class="ticket-amount__input_">
-                  <button id="form_minus-senior" class="btnplus numberbtn" type="button">−</button>
-                  <input id="form_ticket-senior" type="number" min="0" max="20" value="2" readonly class="number_">
-                  <button id="form_plus-senior" class="btnplus numberbtn" type="button">+</button>
+              <div class="entry__item">
+                <p class="item__info">Senior 65+ (10 €)</p>
+                <div class="item__input">
+                  <button class="count-control-button numberbtn" id="form-minus-senior" type="button">−</button>
+                  <input class="" id="form-ticket-senior" type="number" min="0" max="20" value="2" readonly >
+                  <button class="count-control-button numberbtn" id="form-plus-senior" type="button">+</button>
                 </div>
               </div>
-
             </div>
-
           </div>
           <div class="form-content__right">
-            <div class="overview_wrapper">
-              <div class="overview_wrapper_text">
-                <p class="overwiew_title">Overview</p>
-                <p class="overwiew_subtitle">Tour to Louvre</p>
-                <div class="wrapper_data">
-                  <img class="overwiew_info_text" src="./assets/form/overview/date.svg" alt="">
-                  <div id="dateText" class="overwiew_info">--</div>
+            <div class="overview">
+              <div class="overview__text">
+                <p class="overview__title">Overview</p>
+                <p class="overview__subtitle">Tour to Louvre</p>
+                <div class="overview-item">
+                  <img class="overview-item__img" src="./assets/form/overview/date.svg" alt="">
+                  <div class="overview-item__info" id="dateText">--</div>
                 </div>
-
-                <img class="overwiew_info_text" src="./assets/form/overview/Time.svg" alt="">
-                <div id="timeEntered" class="overwiew_info">--</div>
-                <div class="wrapper_data">
-                  <img class="overwiew_info_text" src="./assets/form/overview/check_circle_outline.svg" alt="">
-                  <div id="typeExhibition" class="overwiew_info">Temporary exhibition</div>
+                <div class="overview-item">
+                  <img class="overview-item__img" src="./assets/form/overview/Time.svg" alt="">
+                  <div class="overview-item__info" id="timeEntered">--</div>
+                </div>
+                <div class="overview-item">
+                  <img class="overview-item__img" src="./assets/form/overview/check_circle_outline.svg" alt="">
+                  <div class="overview-item__info" id="typeExhibition">Temporary exhibition</div>
                 </div>
               </div>
-
-
-              <img src="./assets/form/overview/louvre.jpg" width="150" height="120" alt="">
+              <img class="overview__img" src="./assets/form/overview/louvre.jpg" width="150" height="120" alt="">
             </div>
-            <div class="basket">
-              <div class="items">
-                <input id="form_basic" type="number" min="0" max="20" value="1" readonly class="number_ black">
-                <div id="basket_descr_basic" class="basket_descr">Basic (20 €)</div>
+
+            <div class="cart">
+              <div class="cart-item">
+                <div class="cart-item__wrapper">
+                  <input class="cart-item__count" id="form-basic" type="number" min="0" max="20" value="1" readonly>
+                  <div class="cart-item__info">Basic (20 €)</div>
+                </div>
+                <div class="cart-item__info">40 €</div>
               </div>
 
-              <div id="basket_amount_basic" class="basket_descr">40 €</div>
-            </div>
-            <div class="basket">
-              <div class="items">
-                <input id="form_senior" type="number" min="0" max="20" value="1" readonly class="number_ black">
-                <div id="basket_descr_senior" class="basket_descr">Senior (10 €)</div>
+              <div class="cart-item">
+                <div class="cart-item__wrapper">
+                  <input class="cart-item__count" id="form-senior" type="number" min="0" max="20" value="1" readonly>
+                  <div class="cart-item__info">Senior (10 €)</div>
+                </div>
+                <div class="cart-item__info">20 €</div>
               </div>
 
-              <div id="basket_amount_senior" class="basket_descr">20 €</div>
-            </div>
-            <hr class="hr_backet">
-            <div class="total_am">
-              <div class="total_text">Total:</div>
-              <div id="total_sum" class="total_sum">60 €</div>
-            </div>
-            <div class="bank_cards">
-              <div class="card_inside">
+              <hr class="cart-line">
 
-                <img class="visa" src="./assets/form/overview/Visa.svg" alt="">
-                <img class="master" src="./assets/form/overview/Mastercard.svg" alt="">
-                <p class="card_text">Card number</p>
-                <input class="card_number" type="text">
-                <p class="card_text">Expiration date</p>
-                <input class="date_ex" type="text"><input class="year_ex" type="text">
-                <p class="card_text">Cardholder name</p>
-                <input class="cardholder" type="text">
-
+              <div class="cart-total">
+                <div class="cart-total__text">Total:</div>
+                <div class="cart-total__count">60 €</div>
               </div>
-              <div class="card_outside">
+            </div>
 
-                <div class="card_blackhr"></div>
-                <span class="card_cvc">CVC/CVV</span>
-                <input class="card_cvccode" type="text">
-                <p class="card_digit">The last <br>
+            <div class="bank-cards">
+              <div class="card-front">
+                <img class="card__visa-img" src="./assets/form/overview/Visa.svg" alt="">
+                <img class="card__master-img" src="./assets/form/overview/Mastercard.svg" alt="">
+                <p class="card__input-title">Card number</p>
+                <input class="card__number" type="text">
+                <p class="card__input-title">Expiration date</p>
+                <input class="card__date-expiration" type="text">
+                <input class="card__year-expiration" type="text">
+                <p class="card__input-title">Cardholder name</p>
+                <input class="card__cardholder" type="text">
+              </div>
+
+              <div class="card-back">
+                <div class="card__magnetic-stripe"></div>
+                <span class="card__cvc">CVC/CVV</span>
+                <input class="card__cvc-code" type="text">
+                <p class="card__caption">
+                  The last <br>
                   3 or 4 digits <br>
                   on back <br>
                   of the card</p>
               </div>
             </div>
 
-            <button class="button_book btn_ripple" type="button">Book
+            <button class="button-book button-book--ripple" type="button">Book
               <span class="ripple"></span>
             </button>
 
@@ -447,16 +461,16 @@
 
     <section class="section contacts-section">
       <div class="container">
-        <h2 id="contacts" class="section__title section__title--bright">Contacts</h2>
+        <h2 class="section__title section__title--bright" id="contacts">Contacts</h2>
         <hr class="section__line">
-        <div class="container-2-column_contacts">
+        <div class="contacts-content">
           <div class="contacts">
             <p class="contacts__title">Palais Royal <br> Musee du Louvre</p>
             <p class="contacts__info">address: 75001 Paris, France</p>
             <p class="contacts__info">phone: <a href="tel:+33(0)140205050">+33(0) 1 40 20 50 50</a></p>
             <p class="contacts__info">mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a></p>
           </div>
-          <div class="map" id='map'></div>
+          <div class="map" id="map"></div>
         </div>
       </div>
     </section>
@@ -465,14 +479,12 @@
 
   <footer class="footer dark-section">
     <div class="container footer-top">
-
       <div class="footer-item footer-logo">
         <a class="logo" href="#">
           <img class="logo__img" src="/assets/logo.svg" alt="logo">
           <h2 class="logo__title">Louvre</h2>
         </a>
       </div>
-
       <nav class="nav footer-item footer-menu">
         <ul class="footer-nav">
           <li class="footer-nav__link"><a href="#visiting">Visiting</a></li>
@@ -483,27 +495,30 @@
           <li class="footer-nav__link"><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
-
       <div class="footer-item">
-        <ul class="social-media">
-          <li>
-            <a class="social-media__link youtube" href="https://www.youtube.com/user/louvre" target="blank"></a>
+        <ul class="social-media-list">
+          <li class="social-media-list__item">
+            <a class="social-media__link social-media__link--youtube" href="https://www.youtube.com/user/louvre"
+              target="blank"></a>
           </li>
-          <li>
-            <a class="social-media__link instagram" href="https://www.instagram.com/museelouvre/" target="blank"></a>
+          <li class="social-media-list__item">
+            <a class="social-media__link social-media__link--instagram" href="https://www.instagram.com/museelouvre/"
+              target="blank"></a>
           </li>
-          <li>
-            <a class="social-media__link facebook" href="https://www.facebook.com/museedulouvre" target="blank"></a>
+          <li class="social-media-list__item">
+            <a class="social-media__link social-media__link--facebook" href="https://www.facebook.com/museedulouvre"
+              target="blank"></a>
           </li>
-          <li>
-            <a class="social-media__link twitter" href="http://twitter.com/museelouvre" target="blank"></a>
+          <li class="social-media-list__item">
+            <a class="social-media__link social-media__link--twitter" href="http://twitter.com/museelouvre"
+              target="blank"></a>
           </li>
-          <li>
-            <a class="social-media__link pinterest" href="https://www.pinterest.fr/museedulouvre/" target="blank"></a>
+          <li class="social-media-list__item">
+            <a class="social-media__link social-media__link--pinterest" href="https://www.pinterest.fr/museedulouvre/"
+              target="blank"></a>
           </li>
         </ul>
       </div>
-
     </div>
     </div>
     <hr class="footer-line">

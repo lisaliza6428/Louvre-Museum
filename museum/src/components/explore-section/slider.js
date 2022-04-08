@@ -1,64 +1,77 @@
 import './explore.scss';
 
-function comparePictures() {
-  let x, i;
-  x = document.getElementsByClassName("explore-slider__img_overlay");
-  for (i = 0; i < x.length; i++) {
-    compare(x[i]);
+const slider = document.querySelector('.explore-slider');
+const before = document.querySelector('.explore-slider__img--before');
+const beforeImage = before.querySelector('img');
+const change = document.querySelector('.explore-slider__control');
+const body = document.body;
+
+let isActive = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+	let width = slider.offsetWidth;
+	beforeImage.style.width = `${width}px`;
+});
+
+change.addEventListener('mousedown', () => {
+	isActive = true;
+});
+
+body.addEventListener('mouseup', () => {
+	isActive = false;
+});
+
+body.addEventListener('mouseleave', () => {
+	isActive = false;
+});
+
+const beforeAfterSlider = (x) => {
+	let shift = Math.max(0, Math.min(x, slider.offsetWidth));
+	before.style.width = `${shift}px`;
+	change.style.left = `${shift}px`;
+};
+
+const pauseEvents = (e) => {
+	e.stopPropagation();
+	e.preventDefault();
+	return false;
+};
+
+body.addEventListener('mousemove', (e) => {
+	if (!isActive) {
+		return;
+	}
+
+	let x = e.pageX;
+	x -= slider.getBoundingClientRect().left;
+	beforeAfterSlider(x);
+	pauseEvents(e);
+});
+
+change.addEventListener('touchstart', () => {
+	isActive = true;
+});
+
+body.addEventListener('touchend', () => {
+	isActive = false;
+});
+
+body.addEventListener('touchcancel', () => {
+	isActive = false;
+});
+
+body.addEventListener('touchmove', (e) => {
+	if (!isActive) return;
+
+  let x;
+  let i;
+  
+  for (i = 0; i < e.changedTouches.length; i++) {
+  	x = e.changedTouches[i].pageX; 
   }
+  
+  x -= slider.getBoundingClientRect().left;
 
-  function compare(img) {
-    let slider;
-    let clicked = 0;
-    let w;
-    let h;
-    w = img.offsetWidth;
-    h = img.offsetHeight;
-    img.style.width = (w / 2) + "px";
-    slider = document.createElement("DIV");
-    slider.setAttribute("class", "img-comp-slider");
-    img.parentElement.insertBefore(slider, img);
-    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-    slider.addEventListener("mousedown", slideReady);
-    window.addEventListener("mouseup", slideFinish);
-    slider.addEventListener("touchstart", slideReady);
-    window.addEventListener("touchstop", slideFinish);
-
-    function slideReady(e) {
-      e.preventDefault();
-      clicked = 1;
-      window.addEventListener("mousemove", slideMove);
-      window.addEventListener("touchmove", slideMove);
-    }
-
-    function slideFinish() {
-      clicked = 0;
-    }
-
-    function slideMove(e) {
-      let pos;
-      if (clicked == 0) return false;
-      pos = getCursorPos(e)
-      if (pos < 0) pos = 0;
-      if (pos > w) pos = w;
-      slide(pos);
-    }
-
-    function getCursorPos(e) {
-      let a, x = 0;
-      e = e || window.event;
-      a = img.getBoundingClientRect();
-      x = e.pageX - a.left;
-      x = x - window.pageXOffset;
-      return x;
-    }
-    
-    function slide(x) {
-      img.style.width = x + "px";
-      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-    }
-    
-  }
-}
-
-comparePictures();
+  beforeAfterSlider(x);
+  pauseEvents(e);
+});

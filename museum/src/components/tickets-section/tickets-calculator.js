@@ -26,7 +26,7 @@ function countTotalPrice() {
   const TicketPrice = getTicketType();
   const totalPrice = TicketPrice * ticketBasicValue + TicketPrice / 2 * ticketSeniorValue;
   document.querySelector('.ticket-amount__total').innerHTML = `Total €${totalPrice}`;
-  document.querySelector('#total_sum').innerHTML = `€${totalPrice}`
+  document.querySelector('.cart-total__count').innerHTML = `€${totalPrice}`
 }
 countTotalPrice()
 
@@ -44,9 +44,9 @@ const minusButtonBasic = document.getElementById('minus-basic');
 const plusButtonBasic = document.getElementById('plus-basic');
 const inputFieldBasic = document.getElementById('ticket-basic');
 inputFieldBasic.value = getBasicValue();
-const inputFieldBasic_form = document.getElementById('form_ticket-basic');
+const inputFieldBasic_form = document.getElementById('form-ticket-basic');
 inputFieldBasic_form.value = getBasicValue();
-const fieldBasic_form = document.getElementById('form_basic');
+const fieldBasic_form = document.getElementById('form-basic');
 fieldBasic_form.value = getBasicValue();
 
 minusButtonBasic.addEventListener('click', event => {
@@ -87,9 +87,9 @@ const minusButtonSenior = document.getElementById('minus-senior');
 const plusButtonSenior = document.getElementById('plus-senior');
 const inputFieldSenior = document.getElementById('ticket-senior');
 inputFieldSenior.value = getSeniorValue();
-const inputFieldSenior_form = document.getElementById('form_ticket-senior');
+const inputFieldSenior_form = document.getElementById('form-ticket-senior');
 inputFieldSenior_form.value = getSeniorValue();
-const fieldSenior_form = document.getElementById('form_senior');
+const fieldSenior_form = document.getElementById('form-senior');
 fieldSenior_form.value = getSeniorValue();
 
 minusButtonSenior.addEventListener('click', event => {
@@ -116,7 +116,7 @@ plusButtonSenior.addEventListener('click', event => {
   }
 });
 
-document.getElementById('form_minus-basic').addEventListener('click', event => {
+document.getElementById('form-minus-basic').addEventListener('click', event => {
   event.preventDefault();
   let ticketBasicValue = getBasicValue();
   if (ticketBasicValue > 0) {
@@ -128,7 +128,7 @@ document.getElementById('form_minus-basic').addEventListener('click', event => {
   }
 });
 
-document.getElementById('form_plus-basic').addEventListener('click', event => {
+document.getElementById('form-plus-basic').addEventListener('click', event => {
   event.preventDefault();
   let ticketBasicValue = getBasicValue();
   if (ticketBasicValue < 20) {
@@ -140,7 +140,7 @@ document.getElementById('form_plus-basic').addEventListener('click', event => {
   }
 });
 
-document.getElementById('form_minus-senior').addEventListener('click', event => {
+document.getElementById('form-minus-senior').addEventListener('click', event => {
   event.preventDefault();
   let ticketSeniorValue = getSeniorValue();
   if (ticketSeniorValue > 0) {
@@ -152,7 +152,7 @@ document.getElementById('form_minus-senior').addEventListener('click', event => 
   }
 });
 
-document.getElementById('form_plus-senior').addEventListener('click', event => {
+document.getElementById('form-plus-senior').addEventListener('click', event => {
   event.preventDefault();
   let ticketSeniorValue = getSeniorValue();
   if (ticketSeniorValue < 20) {

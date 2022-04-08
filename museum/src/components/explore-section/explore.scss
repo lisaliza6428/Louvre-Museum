@@ -26,6 +26,9 @@
     display: block;
   }
 }
+.explore-content {
+  margin-bottom: 10px;
+}
 .explore-content__line {
   width: 660px;
   height: 3px;
@@ -38,7 +41,7 @@
   }
   @media (max-width: 768px) {
     width: 100%;
-    margin: 20px 0 38px;
+    margin: 15px 0 20px;
   }
 }
 .explore-content__text {
@@ -48,14 +51,20 @@
   font-size: 22px;
   line-height: 38px;
   margin-bottom: 26px;
+  @media (max-width: 1450px) {
+    width: 100%;
+    text-align: justify;
+  }
   @media (max-width: 1024px) {
     font-size: 20px;
     line-height: 35px;
     width: auto;
     margin-bottom: 2px;
   }
-  @media (max-width: 1450px) {
-    width: 100%;
+  @media (max-width: 600px) {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 2px;
   }
   .explore-content__text--bright {
     color: #caaa7d;
@@ -63,64 +72,48 @@
 }
 
 .explore-slider {
-  position: relative;
-  width: 720px;
-  height: 700px;
-  @media (max-width: 1460px) {
-    margin: 0 auto;
-  }
-  margin-bottom: 100px;
-  @media (max-width: 768px) {
-    width: 400px;
-    height: 380px;
-  }
+	position: relative;
+	overflow: hidden;
+	width: 100%;
 }
 
-.explore-slider__img {
-  position: absolute;
-  overflow: hidden;
-  display: block;
+.explore-slider img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.explore-slider__img--before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	z-index: 2;
+	width: 50%;
+	height: 100%;
+}
+
+.explore-slider__control {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	z-index: 10;
+	width: 3px;
+	height: 100%;
+	background-color: white;
   cursor: pointer;
-  //max-width: 720px;
-  margin: 0 auto;
-  top: 0;
-
-  @media (max-width: 768px) {
-    width: 400px;
-    height: 380px;
-  }
-  @media (max-width: 450px) {
-    width: 300px;
-    height: 280px;
-  }
 }
 
-.explore-slider__img img {
-  display: block;
-  @media (max-width: 768px) {
-    width: 400px;
-    height: 380px;
-  }
-  @media (max-width: 450px) {
-    width: 300px;
-    height: 280px;
-  }
+.explore-slider__control::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	transform: translate(-50%, -50%);
 }
 
-.img-comp-slider {
-  top: 0;
-  bottom: 0;
-  left: 340.5px;
-  position: absolute;
-  z-index: 9;
-  cursor: ew-resize;
-  width: 39px;
-  height: 700px;
-  background-image: url('/assets/explore-slider/control.svg');
-  @media (max-width: 768px) {
-    height: 380px;
-  }
-  @media (max-width: 450px) {
-    height: 280px;
-  }
-}
