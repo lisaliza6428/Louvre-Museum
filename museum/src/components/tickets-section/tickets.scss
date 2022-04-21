@@ -96,7 +96,7 @@ label {
   border-radius: 50%;
 }
 
-/*AMOUNT*****************************/
+/*AMOUNT*/
 
 input {
   cursor: pointer;
@@ -182,7 +182,7 @@ input::-webkit-inner-spin-button {
   }
 
   &.numberbtn {
-    @media (max-width:450px){
+    @media (max-width: 450px) {
       padding: 0;
     }
   }

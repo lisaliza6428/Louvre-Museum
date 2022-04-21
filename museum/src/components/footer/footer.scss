@@ -32,7 +32,7 @@
     margin-bottom: 29px;
     justify-content: center;
   }
-  
+
   @media (max-width: 420px) {
     align-items: center;
     justify-content: center;
@@ -56,7 +56,6 @@
   @media (max-width: 420px) {
     align-self: flex-start;
     margin: 0 auto 30px auto;
-
   }
 }
 
@@ -160,19 +159,19 @@
 }
 
 .social-media__link--youtube {
-  background-image: url('/assets/social-media/youtube.svg');
+  background-image: url("/assets/social-media/youtube.svg");
 }
 .social-media__link--instagram {
-  background-image: url('/assets/social-media/inst.svg');
+  background-image: url("/assets/social-media/inst.svg");
 }
 .social-media__link--facebook {
-  background-image: url('/assets/social-media/fb.svg');
+  background-image: url("/assets/social-media/fb.svg");
 }
 .social-media__link--twitter {
-  background-image: url('/assets/social-media/twit.svg');
+  background-image: url("/assets/social-media/twit.svg");
 }
 .social-media__link--pinterest {
-  background-image: url('/assets/social-media/pintr.svg');
+  background-image: url("/assets/social-media/pintr.svg");
 }
 
 .footer-line {
@@ -197,7 +196,7 @@
   font-size: 22px;
   line-height: 22px;
   letter-spacing: 2px;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 16px;
     flex-wrap: wrap;
     justify-content: center;
@@ -218,7 +217,7 @@
   &:active {
     color: #7e6c51;
   }
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     font-size: 16px;
   }
 }

@@ -197,6 +197,7 @@
 .form__tel-input {
   background: url("/assets/form/tel.svg") no-repeat scroll 15px 15px;
   background-position: left 15px center;
+  cursor: text;
 }
 
 #form-ticket-basic,
@@ -348,7 +349,7 @@ select {
   margin: 0;
 }
 
-/* overwiew //////////////////////////////////////*/
+/* overwiew */
 .form-content__right {
   margin-left: 40px;
   padding: 25px 30px;
@@ -372,7 +373,6 @@ select {
 .overview {
   display: flex;
   justify-content: space-between;
-  //gap: 124px;
   width: 470px;
   height: 151px;
   margin-bottom: 22px;
@@ -516,7 +516,6 @@ select {
     width: 100%;
     position: static;
   }
-
 }
 .card-back {
   position: relative;
@@ -661,7 +660,7 @@ input {
   position: relative;
 }
 
-.tel-input-wrapper{
+.tel-input-wrapper {
   position: relative;
 }
 

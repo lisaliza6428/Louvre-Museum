@@ -1,17 +1,18 @@
- import './video-player.scss';
+import './video-player.scss';
 
 const playerButton = document.querySelector('.player__btn');
 const controlsButton = document.querySelector('.controls__btn-play');
 const video = document.querySelector('.player__video');
+video.volume = 0.2;
+const DEFAULT_VOLUME = 20;
 const soundButton = document.querySelector('.controls__sound-btn');
 const soundBar = document.querySelector('.controls__sound-bar');
 const progressBar = document.querySelector('.controls__video-bar');
 const player = document.querySelector('.player');
 const controls = document.querySelector('.controls');
 const fullscreenButton = document.querySelector('.controls__fullscreen-btn');
-let isPlay = false;
 
-video.volume = 0.2;
+let isPlay = false;
 
 function toggleBtn() {
   if (!isPlay) {
@@ -29,44 +30,40 @@ function toggleBtn() {
 
 function play() {
   if (video.paused) {
-    video.play()
+    video.play();
     toggleBtn();
-  }
-  else {
+  } else {
     video.pause();
     toggleBtn();
   }
 }
 
 function changeVolume() {
-  let v = this.value;
+  const v = this.value;
   video.volume = v / 100;
   soundBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${v}%, #C4C4C4 ${v}%, #C4C4C4 100%)`;
   if (video.volume === 0) {
     soundButton.classList.add('controls__sound-btn_off');
-  }
-  else {
+  } else {
     soundButton.classList.remove('controls__sound-btn_off');
     if (video.muted) {
       video.muted = false;
       soundBar.value = v;
-      soundBar.style.background = `linear-gradient(to right, #710707 0%, #710707 20%, #C4C4C4 20%, #C4C4C4 100%)`;
+      soundBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${DEFAULT_VOLUME}%, #C4C4C4 ${DEFAULT_VOLUME}%, #C4C4C4 100%)`;
     }
   }
-
 }
 
-
 function progressUpdate() {
-  let duration = video.duration;
-  let ctime = video.currentTime;
-  progressBar.value = 100 * ctime / duration;
+  const { duration } = video;
+  const ctime = video.currentTime;
+  progressBar.value = (100 * ctime) / duration;
   progressBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${progressBar.value}%, #C4C4C4 ${progressBar.value}%, #C4C4C4 100%)`;
   if (ctime === duration) {
     isPlay = false;
     controlsButton.classList.toggle('controls__btn-pause');
     playerButton.classList.toggle('player__btn_none');
-  };
+  }
 }
 
 function fillProgressColor() {
@@ -74,9 +71,10 @@ function fillProgressColor() {
 }
 
 function videoreWind() {
-  let w = this.offsetWidth;
-  let o = event.offsetX;
-  this.value = 100 * o / w;
+  const w = this.offsetWidth;
+  // eslint-disable-next-line no-restricted-globals
+  const o = event.offsetX;
+  this.value = (100 * o) / w;
   video.currentTime = video.duration * (o / w);
   if (video.currentTime === video.duration) {
     isPlay = false;
@@ -91,15 +89,15 @@ function videoMute() {
   if (video.muted) {
     video.muted = false;
     soundButton.classList.toggle('controls__sound-btn_off');
-    soundBar.value = 20;
+    soundBar.value = DEFAULT_VOLUME;
     soundBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${soundBar.value}%, #C4C4C4 ${soundBar.value}%, #C4C4C4 100%)`;
   } else {
     video.muted = true;
     soundButton.classList.toggle('controls__sound-btn_off');
     soundBar.value = 0;
-    soundBar.style.background = `linear-gradient(to right, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 100%)`;
-    if (soundBar.value = 0) {
-      soundBar.value = 20;
+    soundBar.style.background = 'linear-gradient(to right, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 0%, #C4C4C4 100%)';
+    if (soundBar.value === 0) {
+      soundBar.value = DEFAULT_VOLUME;
     }
   }
 }
@@ -118,10 +116,7 @@ function videoFull() {
   }
 }
 
-document.addEventListener('keyup', function (e) {
-  if (e.code === 'Space') {
-    play();
-  }
+document.addEventListener('keyup', (e) => {
   if (e.code === 'KeyM') {
     videoMute();
   }
@@ -130,12 +125,6 @@ document.addEventListener('keyup', function (e) {
   }
 });
 
-window.onkeydown = function (e) {
-  if (e.keyCode == 32 && e.target == document.body) {
-    e.preventDefault();
-  }
-};
-
 controlsButton.onclick = play;
 video.onclick = play;
 video.ontimeupdate = progressUpdate;
@@ -143,4 +132,4 @@ soundBar.oninput = changeVolume;
 progressBar.oninput = fillProgressColor;
 progressBar.onclick = videoreWind;
 soundButton.onclick = videoMute;
-fullscreenButton.onclick = videoFull; 
+fullscreenButton.onclick = videoFull;

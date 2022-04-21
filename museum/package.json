@@ -8,6 +8,8 @@
     "build": "rss-scripts build"
   },
   "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
     "rss-scripts": "^0.2.1"
   }
 }

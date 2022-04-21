@@ -9,17 +9,16 @@
 }
 
 .contacts-content {
-display: flex;
+  display: flex;
   @media (max-width: 768px) {
     flex-direction: column;
-  } 
+  }
 }
 
 .map {
   width: 70%;
   height: 620px;
-   @media (max-width: 1024px) {
-    //width: 694px;
+  @media (max-width: 1024px) {
     height: 454px;
   }
   @media (max-width: 768px) {
@@ -30,15 +29,15 @@ display: flex;
   @media (max-width: 420px) {
     margin-top: 24px;
     height: 248px;
-  } 
+  }
 }
 
 .contacts {
   width: 30%;
   @media (max-width: 768px) {
     width: 100%;
-  };
-  
+  }
+
   &__title {
     font-family: "Roboto", sans-serif;
     max-width: 277px;
@@ -95,4 +94,3 @@ display: flex;
     }
   }
 }
-
