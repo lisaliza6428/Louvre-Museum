@@ -53,7 +53,7 @@ function countTotalPrice() {
   const ticketBasicValue = getBasicValue();
   const ticketSeniorValue = getSeniorValue();
   const TicketPrice = getTicketType();
-  const totalPrice = (TicketPrice * ticketBasicValue + TicketPrice / 2) * ticketSeniorValue;
+  const totalPrice = TicketPrice * ticketBasicValue + (TicketPrice / 2) * ticketSeniorValue;
 
   document.querySelector('.ticket-amount__total').innerHTML = `Total €${totalPrice}`;
   document.querySelector('.cart-total__count').innerHTML = `€${totalPrice}`;

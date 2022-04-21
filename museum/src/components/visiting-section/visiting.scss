@@ -140,13 +140,7 @@
 a.card:hover {
   cursor: pointer;
   .card__line {
-    width: 440px;
+    width: 100%;
     transition: 1s ease-in-out;
-    @media (max-width: 1024px) {
-      width: 340px;
-    }
-    @media (max-width: 768px) {
-      width: 280px;
-    }
   }
 }
