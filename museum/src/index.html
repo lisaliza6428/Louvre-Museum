@@ -360,7 +360,7 @@
               <h3 class="entry-wrapper__title">Entry ticket</h3>
               <hr class="form__line form__line--entry">
               <div class="entry__item">
-                <p class="item__info">Basic 18+ (20 €)</p>
+                <p class="item__info" id="item__info-entry-basic">Basic 18+ (20 €)</p>
                 <div class="item__input">
                   <button class="count-control-button numberbtn" id="form-minus-basic" type="button">−</button>
                   <input class="" id="form-ticket-basic" type="number" min="0" max="20" value="2" readonly>
@@ -368,10 +368,10 @@
                 </div>
               </div>
               <div class="entry__item">
-                <p class="item__info">Senior 65+ (10 €)</p>
+                <p class="item__info" id="item__info-entry-senior">Senior 65+ (10 €)</p>
                 <div class="item__input">
                   <button class="count-control-button numberbtn" id="form-minus-senior" type="button">−</button>
-                  <input class="" id="form-ticket-senior" type="number" min="0" max="20" value="2" readonly >
+                  <input class="" id="form-ticket-senior" type="number" min="0" max="20" value="2" readonly>
                   <button class="count-control-button numberbtn" id="form-plus-senior" type="button">+</button>
                 </div>
               </div>
@@ -402,17 +402,17 @@
               <div class="cart-item">
                 <div class="cart-item__wrapper">
                   <input class="cart-item__count" id="form-basic" type="number" min="0" max="20" value="1" readonly>
-                  <div class="cart-item__info">Basic (20 €)</div>
+                  <div class="cart-item__info" id="cart-item__info-basic">Basic (20 €)</div>
                 </div>
-                <div class="cart-item__info">40 €</div>
+                <div class="cart-item__info" id="cart-item__info-basic-total">40 €</div>
               </div>
 
               <div class="cart-item">
                 <div class="cart-item__wrapper">
                   <input class="cart-item__count" id="form-senior" type="number" min="0" max="20" value="1" readonly>
-                  <div class="cart-item__info">Senior (10 €)</div>
+                  <div class="cart-item__info" id="cart-item__info-senior">Senior (10 €)</div>
                 </div>
-                <div class="cart-item__info">20 €</div>
+                <div class="cart-item__info" id="cart-item__info-senior-total">20 €</div>
               </div>
 
               <hr class="cart-line">

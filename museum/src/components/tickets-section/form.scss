@@ -372,7 +372,8 @@ option .optionval {
 
 .overview {
   display: flex;
-  gap: 124px;
+  justify-content: space-between;
+  //gap: 124px;
   width: 470px;
   height: 151px;
   margin-bottom: 22px;

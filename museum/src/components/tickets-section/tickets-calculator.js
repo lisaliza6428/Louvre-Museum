@@ -1,36 +1,83 @@
 
 const ticketType = document.getElementsByName("ticket-type");
-console.log(ticketType)
 const ticketBasic = document.getElementsByName("ticket-basic");
 const ticketSenior = document.getElementsByName("ticket-senior");
 const totalPrice = document.getElementById('ticket-amount__total');
+const selectForm = document.getElementById('form__select');
 
-function getTicketType() {
+const MAX_TICKETS_COUNT = 20;
+const PRICE_TICKET_PERMANENT = 20;
+const PRICE_TICKETS_TEMPORARY = 25;
+const PRICE_TICKETS_COMBINED = 40;
+
+function setTicketType() {
   for (let i = 0; i < ticketType.length; i++) {
     if (ticketType[i].checked) {
-      return +ticketType[i].value;
+      localStorage.setItem('ticketTypeValue', `${+ticketType[i].value}`);
     }
   }
 }
 
-function listenRadioButtons() {
-  for (let i = 0; i < ticketType.length; i++) {
-    ticketType[i].addEventListener('click', countTotalPrice)
+ticketType.forEach(type => type.addEventListener('click', () => {
+  if (type.checked) {
+    localStorage.setItem('ticketTypeValue', `${+type.value}`);
   }
+  countTotalPrice();
+}))
+
+function getTicketType() {
+  const type = localStorage.getItem('ticketTypeValue');
+  if (!type) {
+    localStorage.setItem('ticketTypeValue', `${PRICE_TICKET_PERMANENT}`);
+    return PRICE_TICKET_PERMANENT;
+  }
+  if (+type === PRICE_TICKET_PERMANENT) {
+    ticketType[0].checked = true;
+    selectForm[0].selected = true;
+    document.getElementById('typeExhibition').innerText = `${selectForm[0].innerText}`;
+  }
+  if (+type === PRICE_TICKETS_TEMPORARY) {
+    ticketType[1].checked = true;
+    selectForm[1].selected = true;
+    document.getElementById('typeExhibition').innerText = `${selectForm[1].innerText}`;
+  }
+  if (+type === PRICE_TICKETS_COMBINED) {
+    ticketType[2].checked = true;
+    selectForm[2].selected = true;
+    document.getElementById('typeExhibition').innerText = `${selectForm[2].innerText}`;
+  }
+  return +type;
 }
-listenRadioButtons();
+getTicketType()
+
 
 function countTotalPrice() {
   const ticketBasicValue = getBasicValue();
   const ticketSeniorValue = getSeniorValue();
   const TicketPrice = getTicketType();
   const totalPrice = TicketPrice * ticketBasicValue + TicketPrice / 2 * ticketSeniorValue;
+
   document.querySelector('.ticket-amount__total').innerHTML = `Total €${totalPrice}`;
-  document.querySelector('.cart-total__count').innerHTML = `€${totalPrice}`
+  document.querySelector('.cart-total__count').innerHTML = `€${totalPrice}`;
+
+  document.querySelector('#cart-item__info-basic').innerText = `Basic +18 (${TicketPrice}€)`;
+  document.querySelector('#item__info-entry-basic').innerText = `Basic +18 (${TicketPrice}€)`;
+  document.querySelector('#cart-item__info-basic-total').innerText = `${TicketPrice * ticketBasicValue}€`;
+
+  document.querySelector('#cart-item__info-senior').innerText = `Senior +65 (${TicketPrice / 2}€)`;
+  document.querySelector('#item__info-entry-senior').innerText = `Senior +65 (${TicketPrice / 2}€)`;
+  document.querySelector('#cart-item__info-senior-total').innerText = `${TicketPrice / 2 * ticketSeniorValue}€`;
+
+  document.getElementById('ticket-basic').value = ticketBasicValue;
+  document.getElementById('form-ticket-basic').value = ticketBasicValue;
+  document.getElementById('form-basic').value = ticketBasicValue;
+
+  document.getElementById('ticket-senior').value = ticketSeniorValue;
+  document.getElementById('form-ticket-senior').value = ticketSeniorValue;
+  document.getElementById('form-senior').value = ticketSeniorValue;
 }
 countTotalPrice()
 
-/////////////////GETticketBasicValue/////////////////////////////////// 
 function getBasicValue() {
   const ticketBasicValue = localStorage.getItem('ticketBasicValue');
   if (!ticketBasicValue) {
@@ -40,40 +87,24 @@ function getBasicValue() {
 }
 getBasicValue();
 
-const minusButtonBasic = document.getElementById('minus-basic');
-const plusButtonBasic = document.getElementById('plus-basic');
-const inputFieldBasic = document.getElementById('ticket-basic');
-inputFieldBasic.value = getBasicValue();
-const inputFieldBasic_form = document.getElementById('form-ticket-basic');
-inputFieldBasic_form.value = getBasicValue();
-const fieldBasic_form = document.getElementById('form-basic');
-fieldBasic_form.value = getBasicValue();
-
-minusButtonBasic.addEventListener('click', event => {
+document.getElementById('minus-basic').addEventListener('click', event => {
   event.preventDefault();
   let ticketBasicValue = getBasicValue();
   if (ticketBasicValue > 0) {
     localStorage.setItem('ticketBasicValue', `${ticketBasicValue - 1}`);
-    inputFieldBasic.value = getBasicValue();
-    inputFieldBasic_form.value = getBasicValue();
-    fieldBasic_form.value = getBasicValue();
     countTotalPrice();
   }
 });
 
-plusButtonBasic.addEventListener('click', event => {
+document.getElementById('plus-basic').addEventListener('click', event => {
   event.preventDefault();
   let ticketBasicValue = getBasicValue();
-  if (ticketBasicValue < 20) {
+  if (ticketBasicValue < MAX_TICKETS_COUNT) {
     localStorage.setItem('ticketBasicValue', `${ticketBasicValue + 1}`);
-    inputFieldBasic.value = getBasicValue();
-    inputFieldBasic_form.value = getBasicValue();
-    fieldBasic_form.value = getBasicValue();
     countTotalPrice();
   }
 });
 
-/////////////////GETticketBasicValue/////////////////////////////////// 
 function getSeniorValue() {
   const ticketSeniorValue = localStorage.getItem('ticketSeniorValue');
   if (!ticketSeniorValue) {
@@ -83,35 +114,20 @@ function getSeniorValue() {
 }
 getSeniorValue()
 
-const minusButtonSenior = document.getElementById('minus-senior');
-const plusButtonSenior = document.getElementById('plus-senior');
-const inputFieldSenior = document.getElementById('ticket-senior');
-inputFieldSenior.value = getSeniorValue();
-const inputFieldSenior_form = document.getElementById('form-ticket-senior');
-inputFieldSenior_form.value = getSeniorValue();
-const fieldSenior_form = document.getElementById('form-senior');
-fieldSenior_form.value = getSeniorValue();
-
-minusButtonSenior.addEventListener('click', event => {
+document.getElementById('minus-senior').addEventListener('click', event => {
   event.preventDefault();
   let ticketSeniorValue = getSeniorValue();
   if (ticketSeniorValue > 0) {
     localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue - 1}`);
-    inputFieldSenior.value = getSeniorValue();
-    inputFieldSenior_form.value = getSeniorValue();
-    fieldSenior_form.value = getSeniorValue();
     countTotalPrice();
   }
 });
 
-plusButtonSenior.addEventListener('click', event => {
+document.getElementById('plus-senior').addEventListener('click', event => {
   event.preventDefault();
   let ticketSeniorValue = getSeniorValue();
-  if (ticketSeniorValue < 20) {
+  if (ticketSeniorValue < MAX_TICKETS_COUNT) {
     localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue + 1}`);
-    inputFieldSenior.value = getSeniorValue();
-    inputFieldSenior_form.value = getSeniorValue();
-    fieldSenior_form.value = getSeniorValue();
     countTotalPrice();
   }
 });
@@ -121,9 +137,6 @@ document.getElementById('form-minus-basic').addEventListener('click', event => {
   let ticketBasicValue = getBasicValue();
   if (ticketBasicValue > 0) {
     localStorage.setItem('ticketBasicValue', `${ticketBasicValue - 1}`);
-    inputFieldBasic.value = getBasicValue();
-    inputFieldBasic_form.value = getBasicValue();
-    fieldBasic_form.value = getBasicValue();
     countTotalPrice();
   }
 });
@@ -131,11 +144,8 @@ document.getElementById('form-minus-basic').addEventListener('click', event => {
 document.getElementById('form-plus-basic').addEventListener('click', event => {
   event.preventDefault();
   let ticketBasicValue = getBasicValue();
-  if (ticketBasicValue < 20) {
+  if (ticketBasicValue < MAX_TICKETS_COUNT) {
     localStorage.setItem('ticketBasicValue', `${ticketBasicValue + 1}`);
-    inputFieldBasic.value = getBasicValue();
-    inputFieldBasic_form.value = getBasicValue();
-    fieldBasic_form.value = getBasicValue();
     countTotalPrice();
   }
 });
@@ -145,9 +155,6 @@ document.getElementById('form-minus-senior').addEventListener('click', event => 
   let ticketSeniorValue = getSeniorValue();
   if (ticketSeniorValue > 0) {
     localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue - 1}`);
-    inputFieldSenior.value = getSeniorValue();
-    inputFieldSenior_form.value = getSeniorValue();
-    fieldSenior_form.value = getSeniorValue();
     countTotalPrice();
   }
 });
@@ -155,11 +162,8 @@ document.getElementById('form-minus-senior').addEventListener('click', event => 
 document.getElementById('form-plus-senior').addEventListener('click', event => {
   event.preventDefault();
   let ticketSeniorValue = getSeniorValue();
-  if (ticketSeniorValue < 20) {
+  if (ticketSeniorValue < MAX_TICKETS_COUNT) {
     localStorage.setItem('ticketSeniorValue', `${ticketSeniorValue + 1}`);
-    inputFieldSenior.value = getSeniorValue();
-    inputFieldSenior_form.value = getSeniorValue();
-    fieldSenior_form.value = getSeniorValue();
     countTotalPrice();
   }
 });

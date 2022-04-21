@@ -1,28 +1,6 @@
-import './form.scss'
-
-import './tickets.scss'
-
-//RIPPLE-effect for button
-const btn = document.querySelector(".button-book--ripple");
-const ripple = document.querySelector(".ripple");
-
-const pointerdown = ({ clientX, clientY }) => {
-  const rect = btn.getBoundingClientRect();
-  ripple.style.top = `${clientY - rect.top - 150}px`;
-  ripple.style.left = `${clientX - rect.left - 150}px`;
-  ripple.classList.add("ripple--active");
-};
-
-const pointerup = () => {
-  setTimeout(() => {
-    ripple.classList.remove("ripple--active");
-  }, 500);
-};
-
-btn.addEventListener("mousedown", pointerdown);
-btn.addEventListener("touchstart", pointerdown);
-btn.addEventListener("mouseup", pointerup);
-btn.addEventListener("touchend", pointerup);
+import './form.scss';
+import './tickets.scss';
+import './book-button-ripple-effect';
 
 //Open FORM
 const overlay = document.querySelector('.overlay');
@@ -50,7 +28,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-//Past Date Restricted
+//Past Date Restricted in Date input
 const today = new Date().toISOString().split('T')[0];
 document.getElementsByName("date")[0].setAttribute('min', today);
 
@@ -108,19 +86,8 @@ document.getElementById("form__email-input").addEventListener("keyup", function 
   }
 });
 
-// Telephone number validation
-
-/* let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-let phone = '89000000000';
-if(!regex.test(phone){
-console.log('Не соответствует');
-}else{
-console.log('Соответствует');
-} */
-
 document.getElementById("form__tel-input").addEventListener("keyup", function (e) {
   const tel = this.value;
-  console.log(tel);
   const errorMessage = document.getElementById('telError');
   const regEmail = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
@@ -136,8 +103,6 @@ document.getElementById("form__tel-input").addEventListener("keyup", function (e
     return true;
   } 
 });
-
-
 
 document.getElementById('form__name-input').addEventListener('keyup', function (e) {
   e.stopPropagation();
