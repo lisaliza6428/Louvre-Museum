@@ -1,5 +1,4 @@
 import './form.scss';
-import './tickets.scss';
 import './book-button-ripple-effect';
 
 // Open Form
@@ -42,7 +41,7 @@ document.getElementById('date').addEventListener('change', function anon() {
 });
 
 // Get Time
-document.getElementById('time').addEventListener('change', () => {
+document.getElementById('time').addEventListener('change', function anon() {
   const timeField = document.getElementById('timeEntered');
   const timeEntered = this.value;
   timeField.innerHTML = timeEntered;

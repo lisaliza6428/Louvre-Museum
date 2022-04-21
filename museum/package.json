@@ -5,7 +5,8 @@
   "name": "museum",
   "scripts": {
     "start": "rss-scripts start",
-    "build": "rss-scripts build"
+    "build": "rss-scripts build",
+    "lint": "eslint . --ext .js"
   },
   "devDependencies": {
     "eslint": "^8.13.0",

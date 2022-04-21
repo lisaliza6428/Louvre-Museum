@@ -1,3 +1,5 @@
+import './tickets.scss';
+
 const ticketType = document.getElementsByName('ticket-type');
 const selectForm = document.getElementById('form__select');
 
