@@ -160,6 +160,9 @@ input {
     -webkit-appearance: none;
     background: #ffffff;
   }
+  @media (max-width: 700px){
+    height: 5px;
+  }
 }
 
 .controls__sound-btn {
@@ -186,6 +189,10 @@ input {
     border-radius: 50%;
     -webkit-appearance: none;
     background: #ffffff;
+  }
+  @media (max-width: 700px){
+    height: 5px;
+    width: 60px;
   }
 }
 .controls__fullscreen-btn {

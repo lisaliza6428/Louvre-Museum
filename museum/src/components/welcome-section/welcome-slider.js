@@ -44,4 +44,5 @@ document.querySelector('.control__right').addEventListener('click', nextSlide);
 dots.forEach((dot) => dot.addEventListener('click', () => {
   const index = dots.indexOf(dot) + 1;
   currentSlide(index);
+  slideNumber.innerText = `0${index}`;
 }));
