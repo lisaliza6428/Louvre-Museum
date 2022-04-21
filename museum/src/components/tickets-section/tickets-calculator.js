@@ -10,6 +10,12 @@ const PRICE_TICKET_PERMANENT = 20;
 const PRICE_TICKETS_TEMPORARY = 25;
 const PRICE_TICKETS_COMBINED = 40;
 
+selectForm.addEventListener('change', ()=> {
+  console.log(selectForm.value);
+  localStorage.setItem('ticketTypeValue', `${+selectForm.value}`);
+  countTotalPrice();
+})
+
 function setTicketType() {
   for (let i = 0; i < ticketType.length; i++) {
     if (ticketType[i].checked) {

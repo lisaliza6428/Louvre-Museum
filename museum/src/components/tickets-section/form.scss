@@ -214,6 +214,9 @@
   @media (max-width: 450px) {
     width: 100%;
   }
+  * {
+    font-size: 18px;
+  }
 }
 
 .overview-item {
@@ -256,10 +259,6 @@ select {
   @media (max-width: 450px) {
     width: 100%;
   }
-}
-
-option .optionval {
-  cursor: pointer;
 }
 
 .entry-wrapper {
