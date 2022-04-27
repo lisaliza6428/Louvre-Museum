@@ -1,2 +1,2 @@
-# lisaliza6428-JSFE2021Q3
-Private repository for @lisaliza6428
+# Louvre Museum
+Code and description are in the branch  [develop](https://github.com/lisaliza6428/Museum/tree/develop)
