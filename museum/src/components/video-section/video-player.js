@@ -131,5 +131,6 @@ video.ontimeupdate = progressUpdate;
 soundBar.oninput = changeVolume;
 progressBar.oninput = fillProgressColor;
 progressBar.onclick = videoreWind;
+progressBar.ontouchend = videoreWind;
 soundButton.onclick = videoMute;
 fullscreenButton.onclick = videoFull;
