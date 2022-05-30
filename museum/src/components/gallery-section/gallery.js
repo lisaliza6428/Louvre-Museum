@@ -3,21 +3,21 @@ import './gallery.scss';
 function addImage() {
   const pictureInnerContainer = document.querySelector('.picture-inner-container');
   const array = [
-    './assets/gallery/galery1.jpg',
-    './assets/gallery/galery2.jpg',
-    './assets/gallery/galery3.jpg',
-    './assets/gallery/galery4.jpg',
-    './assets/gallery/galery5.jpg',
-    './assets/gallery/galery6.jpg',
-    './assets/gallery/galery7.jpg',
-    './assets/gallery/galery8.jpg',
-    './assets/gallery/galery9.jpg',
-    './assets/gallery/galery10.jpg',
-    './assets/gallery/galery11.jpg',
-    './assets/gallery/galery12.jpg',
-    './assets/gallery/galery13.jpg',
-    './assets/gallery/galery14.jpg',
-    './assets/gallery/galery15.jpg',
+    './assets/gallery/gallery1.jpg',
+    './assets/gallery/gallery2.jpg',
+    './assets/gallery/gallery3.jpg',
+    './assets/gallery/gallery4.jpg',
+    './assets/gallery/gallery5.jpg',
+    './assets/gallery/gallery6.jpg',
+    './assets/gallery/gallery7.jpg',
+    './assets/gallery/gallery8.jpg',
+    './assets/gallery/gallery9.jpg',
+    './assets/gallery/gallery10.jpg',
+    './assets/gallery/gallery11.jpg',
+    './assets/gallery/gallery12.jpg',
+    './assets/gallery/gallery13.jpg',
+    './assets/gallery/gallery14.jpg',
+    './assets/gallery/gallery15.jpg',
   ];
 
   function shuffle(arr) {
@@ -48,7 +48,7 @@ function offset(el) {
   return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
 }
 
-function animOnSrroll() {
+function animOnScroll() {
   for (let index = 0; index < animItems.length; index += 1) {
     const animItem = animItems[index];
     const animItemHeight = animItem.offsetHeight;
@@ -66,4 +66,4 @@ function animOnSrroll() {
   }
 }
 
-window.addEventListener('scroll', animOnSrroll);
+window.addEventListener('scroll', animOnScroll);

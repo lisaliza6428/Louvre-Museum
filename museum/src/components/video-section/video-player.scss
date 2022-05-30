@@ -120,7 +120,7 @@ input {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url("/assets/video-section/buttons/largebtn.svg");
+  background-image: url("/assets/video-section/buttons/large-play.svg");
   &.player__btn_none {
     display: none;
   }
@@ -201,5 +201,5 @@ input {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-image: url("/assets/video-section/buttons/fullscr.svg");
+  background-image: url("/assets/video-section/buttons/fullscreen.svg");
 }

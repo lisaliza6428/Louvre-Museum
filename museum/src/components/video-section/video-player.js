@@ -70,10 +70,9 @@ function fillProgressColor() {
   progressBar.style.background = `linear-gradient(to right, #710707 0%, #710707 ${this.value}%, #C4C4C4 ${this.value}%, #C4C4C4 100%)`;
 }
 
-function videoreWind() {
+function videoRewind() {
   const w = this.offsetWidth;
-  // eslint-disable-next-line no-restricted-globals
-  const o = event.offsetX;
+  const o = window.event.offsetX;
   this.value = (100 * o) / w;
   video.currentTime = video.duration * (o / w);
   if (video.currentTime === video.duration) {
@@ -130,7 +129,7 @@ video.onclick = play;
 video.ontimeupdate = progressUpdate;
 soundBar.oninput = changeVolume;
 progressBar.oninput = fillProgressColor;
-progressBar.onclick = videoreWind;
-progressBar.ontouchend = videoreWind;
+progressBar.onclick = videoRewind;
+progressBar.ontouchend = videoRewind;
 soundButton.onclick = videoMute;
 fullscreenButton.onclick = videoFull;
